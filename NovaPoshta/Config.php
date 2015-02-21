@@ -17,13 +17,10 @@ class Config
 	const LANGUAGE_RU = 'ru';
 	const LANGUAGE_EN = 'en';
 
-//	static private $apiKey = '79eba00b2ac89ffa762cc6355f8bd3bd';
-	static private $apiKey = '0b19dbe549096cf2112c4d2547d18098';
+	static private $apiKey = '';
 	static private $format = self::FORMAT_JSON;
 	static private $language = self::LANGUAGE_UA;
-//	static private $urlApi = 'https://api.novaposhta.ua/v2.0/json/';
-	static private $urlApi = 'http://webclient.v.np.ua/?r=data/get&container=JSON';
-//	static private $urlApi = 'http://webclient.sb.np.ua//?r=data/get&container=JSON';
+	static private $urlApi = 'https://api.novaposhta.ua/v2.0/json/';
 	static private $urlMyNovaPoshta = 'https://my.novaposhta.ua';
 
 	static public function getApiKey()
