@@ -9,31 +9,29 @@
 include_once "../NovaPoshta/autoload.php";
 
 use NovaPoshta\ApiModels\InternetDocument;
+use NovaPoshta\Models\CounterpartyContact;
 
 class InternetDocument_example
 {
     static public function save()
     {
+        $sender = new CounterpartyContact();
+        $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626');
+        $sender->setRef('f867c762-e66a-11e3-8c4a-0050568002cf');
+        $sender->setAddress('1ec09d88-e1c2-11e3-8c4a-0050568002cf');
+        $sender->setContact('e23f313c-e67a-11e3-8c4a-0050568002cf');
+        $sender->setPhone('+380660000000');
+
+        $recipient = new CounterpartyContact();
+        $recipient->setCity('db5c88de-391c-11dd-90d9-001a92567626');
+        $recipient->setRef('7da56a9c-f205-11e3-8c4a-0050568002cf');
+        $recipient->setAddress('daec7561-b457-11e4-a77a-005056887b8d');
+        $recipient->setContact('57065334-f211-11e3-8c4a-0050568002cf');
+        $recipient->setPhone('+380660000001');
+
         $internetDocument = new InternetDocument();
-
-//        $sender = new CounterpartyHelper();
-        $internetDocument->CitySender = '8d5a980d-391c-11dd-90d9-001a92567626';
-        $internetDocument->Sender = 'f867c762-e66a-11e3-8c4a-0050568002cf';
-        $internetDocument->SenderAddress = '1ec09d88-e1c2-11e3-8c4a-0050568002cf';
-        $internetDocument->ContactSender = 'e23f313c-e67a-11e3-8c4a-0050568002cf';
-        $internetDocument->SendersPhone  = '+380660000000';
-
-//        $internetDocument->Sender = $sender;
-
-//        $recipient = new CounterpartyHelper();
-        $internetDocument->CityRecipient  = 'db5c88de-391c-11dd-90d9-001a92567626';
-        $internetDocument->Recipient  = '7da56a9c-f205-11e3-8c4a-0050568002cf';
-        $internetDocument->RecipientAddress  = 'daec7561-b457-11e4-a77a-005056887b8d';
-        $internetDocument->ContactRecipient  = '57065334-f211-11e3-8c4a-0050568002cf';
-        $internetDocument->RecipientsPhone  = '+380660000001';
-
-//        $internetDocument->Recipient = $recipient;
-
+        $internetDocument->setSender($sender);
+        $internetDocument->setRecipient($recipient);
         $internetDocument->ServiceType  = 'WarehouseDoors';
         $internetDocument->PayerType  = 'Sender';
         $internetDocument->PaymentMethod  = 'Cash';
@@ -42,7 +40,7 @@ class InternetDocument_example
         $internetDocument->SeatsAmount  = '2';
         $internetDocument->Cost  = '2';
         $internetDocument->Description  = ' fd  fsf2';
-        $internetDocument->PreferredDeliveryDate  = '20.02.2015';
+        $internetDocument->PreferredDeliveryDate  = '20.03.2015';
         $internetDocument->TimeInterval  = 'CityDeliveryTimeInterval2';
 
         return $internetDocument->save();
@@ -157,6 +155,6 @@ class InternetDocument_example
 }
 
 
-$result = InternetDocument_example::delete();
+$result = InternetDocument_example::save();
 
 var_dump($result);

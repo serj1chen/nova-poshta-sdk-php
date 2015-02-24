@@ -41,6 +41,6 @@ class AddressExpanded_example
 }
 
 
-$result = AddressExpanded_example::getCountryRegions();
+$result = AddressExpanded_example::getSettlements();
 
 var_dump($result);

@@ -33,8 +33,9 @@ class ApiModel
 	}
 
 	/**
-	 * 
-	 * @param data
+	 * @param $methodName
+	 * @param null $data
+	 * @return bool|mixed
 	 */
  	static protected function sendData($methodName, $data = null)
 	{
