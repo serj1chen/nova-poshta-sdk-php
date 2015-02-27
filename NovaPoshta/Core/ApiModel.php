@@ -62,7 +62,7 @@ class ApiModel
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 			$response = curl_exec($ch);
-			var_dump($response);die;
+//			var_dump($response);die;
 
 			$response = json_decode($response);
 //			var_dump($response);

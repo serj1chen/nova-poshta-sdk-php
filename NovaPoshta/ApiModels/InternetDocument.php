@@ -2,6 +2,7 @@
 
 namespace NovaPoshta\ApiModels;
 
+use NovaPoshta\Models\BackwardDeliveryData;
 use stdClass;
 use NovaPoshta\Core\ApiModel;
 use NovaPoshta\Models\CounterpartyContact;
@@ -40,7 +41,6 @@ class InternetDocument extends ApiModel
 	public $Pack;
 	public $AdditionalInformation;
 	public $PackingNumber;
-	public $AccompanyingDocument;
 	public $InfoRegClientBarcodes;
 	public $SaturdayDelivery;
 	public $SameDayDelivery;
@@ -48,6 +48,8 @@ class InternetDocument extends ApiModel
 	public $IsTakeAttorney;
 	public $PreferredDeliveryDate;
 	public $TimeInterval;
+	public $NumberOfFloorsLifting;
+	public $AccompanyingDocuments;
 
 	public $CargoDetails;
 	public $OptionsSeat = array();
@@ -266,13 +268,13 @@ class InternetDocument extends ApiModel
 
 	public function setAdditionalInformation($value)
 	{
-		$this->CargoType = $value;
+		$this->AdditionalInformation = $value;
 		return $this;
 	}
 
 	public function getAdditionalInformation()
 	{
-		return $this->CargoType;
+		return $this->AdditionalInformation;
 	}
 
 	public function setPackingNumber($value)
@@ -284,17 +286,6 @@ class InternetDocument extends ApiModel
 	public function getPackingNumber()
 	{
 		return $this->PackingNumber;
-	}
-
-	public function setAccompanyingDocument($value)
-	{
-		$this->AccompanyingDocument = $value;
-		return $this;
-	}
-
-	public function getAccompanyingDocument()
-	{
-		return $this->AccompanyingDocument;
 	}
 
 	public function setInfoRegClientBarcodes($value)
@@ -368,7 +359,7 @@ class InternetDocument extends ApiModel
 		$this->TimeInterval = $value;
 		return $this;
 	}
-
+//ops
 	public function getTimeInterval()
 	{
 		return $this->TimeInterval;
@@ -396,15 +387,43 @@ class InternetDocument extends ApiModel
 		return $this->OptionsSeat;
 	}
 
-	public function setBackwardDeliveryData(object $value)
+	public function addBackwardDeliveryData(BackwardDeliveryData $value)
 	{
-		$this->BackwardDeliveryData = $value;
+		$this->BackwardDeliveryData[] = $value;
 		return $this;
 	}
 
 	public function getBackwardDeliveryData()
 	{
 		return $this->BackwardDeliveryData;
+	}
+
+	public function clearBackwardDeliveryData()
+	{
+		$this->BackwardDeliveryData = array();
+		return $this;
+	}
+
+	public function setNumberOfFloorsLifting($value)
+	{
+		$this->NumberOfFloorsLifting = $value;
+		return $this;
+	}
+
+	public function getNumberOfFloorsLifting()
+	{
+		return $this->NumberOfFloorsLifting;
+	}
+
+	public function setAccompanyingDocuments($value)
+	{
+		$this->AccompanyingDocuments = $value;
+		return $this;
+	}
+
+	public function getAccompanyingDocuments()
+	{
+		return $this->AccompanyingDocuments;
 	}
 
 

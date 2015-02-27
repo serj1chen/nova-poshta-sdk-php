@@ -29,19 +29,39 @@ class InternetDocument_example
         $recipient->setContact('57065334-f211-11e3-8c4a-0050568002cf');
         $recipient->setPhone('+380660000001');
 
+        $backwardDeliveryData1 = new \NovaPoshta\Models\BackwardDeliveryData();
+        $backwardDeliveryData1->setCargoType('Money');
+        $backwardDeliveryData1->setPayerType('Recipient');
+        $backwardDeliveryData1->setRedeliveryString('452');
+
+        $backwardDeliveryData2 = new \NovaPoshta\Models\BackwardDeliveryData();
+        $backwardDeliveryData2->setCargoType('Documents');
+        $backwardDeliveryData2->setPayerType('Recipient');
+        $backwardDeliveryData2->setRedeliveryString('Тех. документация');
+
         $internetDocument = new InternetDocument();
         $internetDocument->setSender($sender);
         $internetDocument->setRecipient($recipient);
-        $internetDocument->ServiceType  = 'WarehouseDoors';
-        $internetDocument->PayerType  = 'Sender';
-        $internetDocument->PaymentMethod  = 'Cash';
-        $internetDocument->CargoType  = 'Cargo';
-        $internetDocument->Weight  = '2';
-        $internetDocument->SeatsAmount  = '2';
-        $internetDocument->Cost  = '2';
-        $internetDocument->Description  = ' fd  fsf2';
-        $internetDocument->PreferredDeliveryDate  = '20.03.2015';
-        $internetDocument->TimeInterval  = 'CityDeliveryTimeInterval2';
+        $internetDocument->setServiceType('WarehouseDoors');
+        $internetDocument->setPayerType('Recipient');
+        $internetDocument->setPaymentMethod('Cash');
+        $internetDocument->setCargoType('Cargo');
+        $internetDocument->setWeight('31');
+        $internetDocument->setVolumeGeneral('0.002');
+        $internetDocument->setSeatsAmount('2');
+        $internetDocument->setCost('2');
+        $internetDocument->setDescription(' fd  fsf2');
+        $internetDocument->setDateTime('10.03.2015');
+        $internetDocument->setPreferredDeliveryDate('20.03.2015');
+        $internetDocument->setTimeInterval('CityDeliveryTimeInterval2');
+        $internetDocument->setPackingNumber('55');
+        $internetDocument->setInfoRegClientBarcodes('55552');
+        $internetDocument->setSaturdayDelivery('true');
+        $internetDocument->setNumberOfFloorsLifting('12');
+        $internetDocument->setAccompanyingDocuments('Великий кошик');
+        $internetDocument->setAdditionalInformation('Скло');
+        $internetDocument->addBackwardDeliveryData($backwardDeliveryData1);
+        $internetDocument->addBackwardDeliveryData($backwardDeliveryData2);
 
         return $internetDocument->save();
     }

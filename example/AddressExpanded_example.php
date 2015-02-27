@@ -19,14 +19,16 @@ class AddressExpanded_example
     {
         $data = new AddressExpanded_getCountryRegions();
         $data->setParent('dcaadf02-4b33-11e4-ab6d-005056801329');
+        $data->setPage(1);
 
-        return AddressExpanded::getCountryRegions();
+        return AddressExpanded::getCountryRegions($data);
     }
 
     static public function getSettlements()
     {
         $data = new AddressExpanded_getSettlements();
         $data->setCountryRegion('dcaad3d6-4b33-11e4-ab6d-005056801329');
+        $data->setPage(1);
 
         return AddressExpanded::getSettlements($data);
     }
@@ -35,8 +37,19 @@ class AddressExpanded_example
     {
         $data = new AddressExpanded_getSettlementStreets();
         $data->setSettlement('04324fde-4d5f-11e4-ab6d-005056801329');
+        $data->setPage(1);
 
         return AddressExpanded::getSettlementStreets($data);
+    }
+
+    static public function getSettlementTypes()
+    {
+        return AddressExpanded::getSettlementTypes();
+    }
+
+    static public function getSettlementStreetTypes()
+    {
+        return AddressExpanded::getSettlementStreetTypes();
     }
 }
 

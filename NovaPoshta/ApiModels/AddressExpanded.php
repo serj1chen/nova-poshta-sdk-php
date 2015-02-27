@@ -26,4 +26,14 @@ class AddressExpanded extends ApiModel
 	{
 		return self::sendData(__FUNCTION__, $data);
 	}
+
+	static public function getSettlementTypes()
+	{
+		return self::sendData(__FUNCTION__);
+	}
+
+	static public function getSettlementStreetTypes()
+	{
+		return self::sendData(__FUNCTION__);
+	}
 }

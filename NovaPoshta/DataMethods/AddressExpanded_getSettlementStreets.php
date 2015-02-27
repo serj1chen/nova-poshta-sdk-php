@@ -12,6 +12,7 @@ namespace NovaPoshta\DataMethods;
  * Class Address_getStreet
  * @package NovaPoshta\DataMethods
  * @property string Parent
+ * @property string Page
  */
 class AddressExpanded_getSettlementStreets extends \stdClass
 {
@@ -24,5 +25,16 @@ class AddressExpanded_getSettlementStreets extends \stdClass
     public function getSettlement()
     {
         return $this->Settlement;
+    }
+
+    public function setPage($value)
+    {
+        $this->Page = $value;
+        return $this;
+    }
+
+    public function getPage()
+    {
+        return $this->Page;
     }
 }

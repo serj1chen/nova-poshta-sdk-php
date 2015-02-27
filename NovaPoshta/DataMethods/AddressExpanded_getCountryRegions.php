@@ -12,6 +12,7 @@ namespace NovaPoshta\DataMethods;
  * Class Address_getStreet
  * @package NovaPoshta\DataMethods
  * @property string Parent
+ * @property string Page
  */
 class AddressExpanded_getCountryRegions extends \stdClass
 {
@@ -24,5 +25,16 @@ class AddressExpanded_getCountryRegions extends \stdClass
     public function getParent()
     {
         return $this->Parent;
+    }
+
+    public function setPage($value)
+    {
+        $this->Page = $value;
+        return $this;
+    }
+
+    public function getPage()
+    {
+        return $this->Page;
     }
 }
