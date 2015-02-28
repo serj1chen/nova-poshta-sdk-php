@@ -18,7 +18,7 @@ namespace NovaPoshta\Models;
  */
 class BackwardDeliveryData
 {
-    private $Trays = array();
+    public $Trays = array();
     
     public function setPayerType($value)
     {

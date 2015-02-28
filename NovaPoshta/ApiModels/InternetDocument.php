@@ -3,6 +3,8 @@
 namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Models\BackwardDeliveryData;
+use NovaPoshta\Models\Cargo;
+use NovaPoshta\Models\OptionsSeat;
 use stdClass;
 use NovaPoshta\Core\ApiModel;
 use NovaPoshta\Models\CounterpartyContact;
@@ -51,7 +53,7 @@ class InternetDocument extends ApiModel
 	public $NumberOfFloorsLifting;
 	public $AccompanyingDocuments;
 
-	public $CargoDetails;
+	public $CargoDetails = array();
 	public $OptionsSeat = array();
 	public $BackwardDeliveryData = array();
 
@@ -72,12 +74,36 @@ class InternetDocument extends ApiModel
 				$data->RecipientAddress = $attr->getAddress();
 				$data->ContactRecipient = $attr->getContact();
 				$data->RecipientsPhone = $attr->getPhone();
+			} elseif($key == 'OptionsSeat' && isset($attr)){
+				$optionsSeats = array();
+				foreach($attr as $optionsSeat){
+					$optionsSeats[] = (array)$optionsSeat;
+				}
+				$data->{$key} = $optionsSeats;
+				$data->Weight = 1;
+//			} elseif($key == 'BackwardDeliveryData' && !empty($attr)){
+//				foreach($attr as $tray){
+//					var_dump($tray);die;
+//				}
+//				$data->{$key} = $attr;
+
 			} elseif(isset($this->{$key})){
 				$data->{$key} = $attr;
 			}
 		}
 
 		return $data;
+	}
+
+	public function setRef($value)
+	{
+		$this->Ref = $value;
+		return $this;
+	}
+
+	public function getRef()
+	{
+		return $this->Ref;
 	}
 
 	public function setSender(CounterpartyContact $counterparty)
@@ -365,9 +391,9 @@ class InternetDocument extends ApiModel
 		return $this->TimeInterval;
 	}
 
-	public function setCargoDetails(object $value)
+	public function addCargoDetail(Cargo $value)
 	{
-		$this->CargoDetails = $value;
+		$this->CargoDetails[] = $value;
 		return $this;
 	}
 
@@ -376,15 +402,27 @@ class InternetDocument extends ApiModel
 		return $this->CargoDetails;
 	}
 
-	public function setOptionsSeat(object $value)
+	public function clearCargoDetails()
 	{
-		$this->OptionsSeat = $value;
+		$this->CargoDetails = array();
+		return $this;
+	}
+
+	public function addOptionsSeat(OptionsSeat $value)
+	{
+		$this->OptionsSeat[] = $value;
 		return $this;
 	}
 
 	public function getOptionsSeat()
 	{
 		return $this->OptionsSeat;
+	}
+
+	public function clearOptionsSeat()
+	{
+		$this->OptionsSeat = array();
+		return $this;
 	}
 
 	public function addBackwardDeliveryData(BackwardDeliveryData $value)

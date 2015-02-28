@@ -11,20 +11,20 @@ namespace NovaPoshta\Models;
 /**
  * Class Cargo
  * @package NovaPoshta\Models
- * @property string CargoDescriptio
+ * @property string CargoDescription
  * @property string Amount
  */
 class Cargo
 {
-    public function setCargoDescriptio($value)
+    public function setCargoDescription($value)
     {
-        $this->CargoDescriptio = $value;
+        $this->CargoDescription = $value;
         return $this;
     }
 
-    public function getCargoDescriptio()
+    public function getCargoDescription()
     {
-        return $this->CargoDescriptio;
+        return $this->CargoDescription;
     }
 
     public function setAmount($value)

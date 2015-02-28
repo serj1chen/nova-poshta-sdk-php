@@ -94,6 +94,6 @@ class Common_example
 }
 
 
-$result = Common_example::getTimeIntervals();
+$result = Common_example::getTraysList();
 
 var_dump($result);
