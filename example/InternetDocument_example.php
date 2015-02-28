@@ -291,8 +291,8 @@ class InternetDocument_example
             ->setPhone('+380660000001');
 
         $internetDocument = new InternetDocument();
-        $internetDocument->setRef('70ec0f63-bf6b-11e4-a77a-005056887b8d');
-        $internetDocument->setSender($sender)
+        $internetDocument->setRef('70ec0f63-bf6b-11e4-a77a-005056887b8d')
+            ->setSender($sender)
             ->setRecipient($recipient)
             ->setServiceType('WarehouseDoors')
             ->setPayerType('Recipient')
@@ -317,21 +317,28 @@ class InternetDocument_example
 
     static public function getDocumentDeliveryDate()
     {
-        $internetDocument = new InternetDocument();
-        $internetDocument->DateTime = '16.02.2015';
-        $internetDocument->CitySender = '8d5a980d-391c-11dd-90d9-001a92567626';
-        $internetDocument->CityRecipient = 'db5c88de-391c-11dd-90d9-001a92567626';
-        $internetDocument->ServiceType = 'WarehouseDoors';
+        $data = new \NovaPoshta\DataMethods\InternetDocument_getDocumentDeliveryDate();
+        $data->setDateTime('16.05.2015');
+        $data->setCitySender('8d5a980d-391c-11dd-90d9-001a92567626');
+        $data->setCityRecipient('db5c88de-391c-11dd-90d9-001a92567626');
+        $data->setServiceType('WarehouseDoors');
 
-        return $internetDocument->getDocumentDeliveryDate();
+        return InternetDocument::getDocumentDeliveryDate($data);
     }
 
     static public function documentsTracking()
     {
-        $internetDocument = new InternetDocument();
-        $internetDocument->Documents = array('20400000310076', '20400000310077');
+        $refs = array('20400000310076', '20400000310077');
 
-        return $internetDocument->documentsTracking();
+        $data = new \NovaPoshta\DataMethods\InternetDocument_documentsTracking();
+        $data->setDocuments($refs);
+
+        // или
+
+        $data->addDocument('20400000310076');
+        $data->addDocument('20400000310077');
+
+        return InternetDocument::documentsTracking($data);
     }
 
     static public function getDocumentPrice()
@@ -388,6 +395,6 @@ class InternetDocument_example
 }
 
 
-$result = InternetDocument_example::delete();
+$result = InternetDocument_example::documentsTracking();
 
 var_dump($result);

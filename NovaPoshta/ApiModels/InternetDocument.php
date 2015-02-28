@@ -130,12 +130,13 @@ class InternetDocument extends ApiModel
 
 	public function setThirdPerson(CounterpartyContact $counterparty)
 	{
-
+		$this->ThirdPerson = $counterparty;
+		return $this;
 	}
 
 	public function getThirdPerson()
 	{
-
+		return $this->ThirdPerson;
 	}
 
 	public function setDateTime($value)
@@ -385,7 +386,7 @@ class InternetDocument extends ApiModel
 		$this->TimeInterval = $value;
 		return $this;
 	}
-//ops
+
 	public function getTimeInterval()
 	{
 		return $this->TimeInterval;
@@ -464,19 +465,6 @@ class InternetDocument extends ApiModel
 		return $this->AccompanyingDocuments;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public function save()
 	{
 		return $this->sendData(__FUNCTION__, $this->getDataInternetDocument());
@@ -492,8 +480,6 @@ class InternetDocument extends ApiModel
 		$this->DocumentRefs = array($this->Ref);
 		return $this->sendData(__FUNCTION__, $this->getThisData());
 	}
-
-
 
 	static public function getDocumentDeliveryDate($data)
 	{
