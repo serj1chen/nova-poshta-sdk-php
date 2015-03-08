@@ -2,6 +2,7 @@
 
 namespace NovaPoshta\ApiModels;
 
+use NovaPoshta\Core\CoreHelper;
 use NovaPoshta\Models\BackwardDeliveryData;
 use NovaPoshta\Models\Cargo;
 use NovaPoshta\Models\OptionsSeat;
@@ -81,12 +82,6 @@ class InternetDocument extends ApiModel
 				}
 				$data->{$key} = $optionsSeats;
 				$data->Weight = 1;
-//			} elseif($key == 'BackwardDeliveryData' && !empty($attr)){
-//				foreach($attr as $tray){
-//					var_dump($tray);die;
-//				}
-//				$data->{$key} = $attr;
-
 			} elseif(isset($this->{$key})){
 				$data->{$key} = $attr;
 			}
@@ -481,79 +476,41 @@ class InternetDocument extends ApiModel
 		return $this->sendData(__FUNCTION__, $this->getThisData());
 	}
 
-	static public function getDocumentDeliveryDate($data)
+	static public function getDocumentDeliveryDate(\stdClass $data = null)
 	{
 		return self::sendData(__FUNCTION__, $data);
 	}
 
-	static public function getDocument($data)
+	static public function getDocument(\stdClass $data = null)
 	{
 		return self::sendData(__FUNCTION__, $data);
 	}
 
-	static public function getDocumentList($data)
+	static public function getDocumentList(\stdClass $data = null)
 	{
 		return self::sendData(__FUNCTION__, $data);
 	}
 
-	private function _getPrintLink($typePrint)
+	static public function printDocument(\stdClass $data = null)
 	{
-		$config = new \Config();
-
-		if(isset($this->DocumentRefs)){
-			if(!is_array($this->DocumentRefs)){
-				throw new \Exception('InternetDocument.DocumentRefs_IS_NOT_ARRAY');
-			}
-
-			$refs = $this->DocumentRefs;
-		} else {
-			$refs = array($this->Ref);
-		}
-
-		if(empty($refs)){
-			return '';
-		}
-
-		$link = '';
-		$link .= $config->urlNewMyClient . '/orders/' . $typePrint;
-
-		foreach($refs as $ref){
-			if(isset($this->Copies) && $this->Copies == self::PRINT_COPIES_FOURFOLD){
-				$link .= '/orders[]/' . $ref;
-			}
-
-			$link .= '/orders[]/' . $ref;
-		}
-
-		if(isset($this->Type)){
-			$link .= '/type/' . $this->Type;
-		}
-
-		$link .= '/apiKey/' . $config->apiKey;
+		$link = CoreHelper::getPrintLink('printDocument', $data);
 
 		return $link;
 	}
 
-	public function printDocument()
+	static public function printMarkings(\stdClass $data = null)
 	{
-		$link = $this->_getPrintLink('printDocument');
+		$link = CoreHelper::getPrintLink('printMarkings', $data);
 
 		return $link;
 	}
 
-	public function printMarkings()
-	{
-		$link = $this->_getPrintLink('printMarkings');
-
-		return $link;
-	}
-
-	static public function documentsTracking($data)
+	static public function documentsTracking(\stdClass $data = null)
 	{
 		return self::sendData(__FUNCTION__, $data);
 	}
 
-	static public function getDocumentPrice($data)
+	static public function getDocumentPrice(\stdClass $data = null)
 	{
 		return self::sendData(__FUNCTION__, $data);
 	}

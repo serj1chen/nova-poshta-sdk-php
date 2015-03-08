@@ -10,6 +10,7 @@ include_once "../NovaPoshta/autoload.php";
 
 use NovaPoshta\ApiModels\InternetDocument;
 use NovaPoshta\Models\CounterpartyContact;
+use NovaPoshta\DataMethods\BasePrintDocument;
 
 class InternetDocument_example
 {
@@ -291,7 +292,7 @@ class InternetDocument_example
             ->setPhone('+380660000001');
 
         $internetDocument = new InternetDocument();
-        $internetDocument->setRef('70ec0f63-bf6b-11e4-a77a-005056887b8d')
+        $internetDocument->setRef('837b5200-bf7c-11e4-a77a-005056887b8d')
             ->setSender($sender)
             ->setRecipient($recipient)
             ->setServiceType('WarehouseDoors')
@@ -343,58 +344,70 @@ class InternetDocument_example
 
     static public function getDocumentPrice()
     {
-        $internetDocument = new InternetDocument();
-        $internetDocument->DateTime = '16.02.2015';
-        $internetDocument->CitySender = '8d5a980d-391c-11dd-90d9-001a92567626';
-        $internetDocument->CityRecipient = 'db5c88de-391c-11dd-90d9-001a92567626';
-        $internetDocument->Weight = '2';
-        $internetDocument->Cost = '2222';
-        $internetDocument->ServiceType = 'WarehouseDoors';
+        $data = new \NovaPoshta\DataMethods\InternetDocument_getDocumentPrice();
+        $data->setCitySender('8d5a980d-391c-11dd-90d9-001a92567626');
+        $data->setCityRecipient('db5c88de-391c-11dd-90d9-001a92567626');
+        $data->setWeight('2');
+        $data->setCost('2222');
+        $data->setServiceType('WarehouseDoors');
+        $data->setDateTime('15.03.2015');
 
-        return $internetDocument->getDocumentPrice();
+        return InternetDocument::getDocumentPrice($data);
     }
 
     static public function printDocument()
     {
-        $internetDocument = new InternetDocument();
-        $internetDocument->DocumentRefs = array('3b4e5620-b490-11e4-a77a-005056887b8d');
-        $internetDocument->Type = InternetDocument::PRINT_TYPE_PDF;
-        $internetDocument->Type = InternetDocument::PRINT_TYPE_HTML;
-        $internetDocument->Copies = InternetDocument::PRINT_COPIES_DOUBLE;
+        $data = new \NovaPoshta\DataMethods\InternetDocument_printDocument();
+        $data->setDocumentRefs(array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d'));
+        // или
+        $data->addDocumentRef('3b4e5620-b490-11e4-a77a-005056887b8d');
 
-        return $internetDocument->printDocument();
+        $data->setType(InternetDocument::PRINT_TYPE_PDF);
+        $data->setCopies(InternetDocument::PRINT_COPIES_DOUBLE);
+
+        return InternetDocument::printDocument($data);
     }
 
     static public function printMarkings()
     {
-        $internetDocument = new InternetDocument();
-        $internetDocument->DocumentRefs = array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d',);
-        $internetDocument->Type = InternetDocument::PRINT_TYPE_PDF;
-        $internetDocument->Type = InternetDocument::PRINT_TYPE_HTML;
-        $internetDocument->Copies = InternetDocument::PRINT_COPIES_FOURFOLD;
+        $data = new \NovaPoshta\DataMethods\InternetDocument_printMarkings();
+        $data->setDocumentRefs(array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d'));
+        // или
+        $data->addDocumentRef('3b4e5620-b490-11e4-a77a-005056887b8d');
 
-        return $internetDocument->printMarkings();
+        $data->setType(InternetDocument::PRINT_TYPE_HTML);
+        $data->setCopies(InternetDocument::PRINT_COPIES_FOURFOLD);
+
+        return InternetDocument::printMarkings($data);
     }
 
     static public function getDocument()
     {
-        $internetDocument = new InternetDocument();
-        $internetDocument->Ref = '3b4e56a3-b490-11e4-a77a-005056887b8d';
+        $data = new \NovaPoshta\DataMethods\InternetDocument_getDocument();
+        $data->setRef('70ec0f61-bf6b-11e4-a77a-005056887b8d');
 
-        return $internetDocument->getDocument();
+        return InternetDocument::getDocument($data);
     }
 
     static public function getDocumentList()
     {
-        $internetDocument = new InternetDocument();
-//        $internetDocument->IntDocNumber = '20400000310107';
-        $internetDocument->DateTime = '15.02.2015';
+        $data = new \NovaPoshta\DataMethods\InternetDocument_getDocumentList();
 
-        return $internetDocument->getDocumentList();
+        $data->IntDocNumber = '20400000310107';
+
+
+
+        $data->DateTime = '15.02.2015';
+
+        // или
+
+        $data->setInfoRegClientBarcodes('55552');
+
+        return InternetDocument::getDocumentList($data);
     }
 }
 
 
-$result = InternetDocument_example::documentsTracking();
+$result = InternetDocument_example::save();
 
 var_dump($result);
