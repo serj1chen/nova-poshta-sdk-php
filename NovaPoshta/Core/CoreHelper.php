@@ -14,31 +14,5 @@ use NovaPoshta\Models\DataContainer;
  */
 class CoreHelper
 {
-	static public function getPrintLink($typePrint, \stdClass $data = null)
-	{
-		$refs = isset($data->DocumentRefs) ? $data->DocumentRefs : null;
 
-		if(empty($refs)){
-			return '';
-		}
-
-		$link = '';
-		$link .= Config::getUrlMyNovaPoshta() . '/orders/' . $typePrint;
-
-		foreach($refs as $ref){
-			if(isset($data->Copies) && $data->Copies == InternetDocument::PRINT_COPIES_FOURFOLD){
-				$link .= '/orders[]/' . $ref;
-			}
-
-			$link .= '/orders[]/' . $ref;
-		}
-
-		if(isset($data->Type)){
-			$link .= '/type/' . $data->Type;
-		}
-
-		$link .= '/apiKey/' . Config::getApiKey();
-
-		return $link;
-	}
 }

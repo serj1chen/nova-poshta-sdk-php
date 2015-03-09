@@ -493,14 +493,14 @@ class InternetDocument extends ApiModel
 
 	static public function printDocument(\stdClass $data = null)
 	{
-		$link = CoreHelper::getPrintLink('printDocument', $data);
+		$link = self::getPrintLink('printDocument', $data);
 
 		return $link;
 	}
 
 	static public function printMarkings(\stdClass $data = null)
 	{
-		$link = CoreHelper::getPrintLink('printMarkings', $data);
+		$link = self::getPrintLink('printMarkings', $data);
 
 		return $link;
 	}
@@ -513,6 +513,34 @@ class InternetDocument extends ApiModel
 	static public function getDocumentPrice(\stdClass $data = null)
 	{
 		return self::sendData(__FUNCTION__, $data);
+	}
+
+	static private function getPrintLink($typePrint, \stdClass $data = null)
+	{
+		$refs = isset($data->DocumentRefs) ? $data->DocumentRefs : null;
+
+		if(empty($refs)){
+			return '';
+		}
+
+		$link = '';
+		$link .= Config::getUrlMyNovaPoshta() . '/orders/' . $typePrint;
+
+		foreach($refs as $ref){
+			if(isset($data->Copies) && $data->Copies == self::PRINT_COPIES_FOURFOLD){
+				$link .= '/orders[]/' . $ref;
+			}
+
+			$link .= '/orders[]/' . $ref;
+		}
+
+		if(isset($data->Type)){
+			$link .= '/type/' . $data->Type;
+		}
+
+		$link .= '/apiKey/' . Config::getApiKey();
+
+		return $link;
 	}
 
 }

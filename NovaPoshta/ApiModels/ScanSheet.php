@@ -2,6 +2,7 @@
 
 namespace NovaPoshta\ApiModels;
 
+use NovaPoshta\Config;
 use NovaPoshta\Core\ApiModel;
 use NovaPoshta\Core\CoreHelper;
 use NovaPoshta\Core\InterfaceMethodCRUD;
@@ -17,6 +18,9 @@ use stdClass;
  */
 class ScanSheet extends ApiModel implements InterfaceMethodCRUD
 {
+	const PRINT_TYPE_PDF = 'pdf';
+	const PRINT_TYPE_HTML = 'html';
+
 	public function save()
 	{
 		$this->Ref = null;
@@ -97,11 +101,25 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
 
 	static public function printScanSheet(stdClass $data = null)
 	{
-		$link = CoreHelper::getPrintLink('printScanSheet', $data);
+		$refs = isset($data->DocumentRefs) ? $data->DocumentRefs : null;
+
+		if(empty($refs)){
+			return '';
+		}
+
+		$link = '';
+		$link .= Config::getUrlMyNovaPoshta() . '/scanSheet/printScanSheet';
+
+		foreach($refs as $ref){
+			$link .= '/refs[]/' . $ref;
+		}
+
+		if(isset($data->Type)){
+			$link .= '/type/' . $data->Type;
+		}
+
+		$link .= '/apiKey/' . Config::getApiKey();
 
 		return $link;
 	}
 }
-
-
-

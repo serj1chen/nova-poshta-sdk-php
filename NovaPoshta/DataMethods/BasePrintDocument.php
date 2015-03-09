@@ -40,7 +40,7 @@ class BasePrintDocument extends \stdClass
 
     public function addDocumentRef($value)
     {
-        if(!$this->DocumentRefs){
+        if(!isset($this->DocumentRefs)){
             $this->DocumentRefs = array();
         }
         $this->DocumentRefs[] = $value;

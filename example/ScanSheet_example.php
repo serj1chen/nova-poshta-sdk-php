@@ -77,22 +77,23 @@ class ScanSheet_example
         return ScanSheet::getScanSheetList();
     }
 
-    // todo: 444
     static public function printScanSheet()
     {
-        $data = new \NovaPoshta\DataMethods\InternetDocument_printDocument();
-        $data->setDocumentRefs(array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d'));
+        $data = new \NovaPoshta\DataMethods\ScanSheet_printScanSheet();
+
+        $data->addDocumentRef('39d5aadd-c5ed-11e4-ac12-005056801333');
         // или
-        $data->addDocumentRef('3b4e5620-b490-11e4-a77a-005056887b8d');
+        //        $data->setDocumentRefs(array('39d5aadd-c5ed-11e4-ac12-005056801333'));
+        // или
+        // $data->addNumber('105-0002898');
 
-        $data->setType(InternetDocument::PRINT_TYPE_PDF);
-        $data->setCopies(InternetDocument::PRINT_COPIES_DOUBLE);
+        $data->setType(ScanSheet::PRINT_TYPE_PDF);
 
-        return InternetDocument::save($data);
+        return ScanSheet::printScanSheet($data);
     }
 }
 
 
-$result = ScanSheet_example::removeDocuments();
+$result = ScanSheet_example::printScanSheet();
 
 var_dump($result);
