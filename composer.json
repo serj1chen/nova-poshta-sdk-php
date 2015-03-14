@@ -1,7 +1,7 @@
 {
   "name": "NovaPoshta-SDK-PHP",
   "description": "SDK для Новой Пошты",
-  "keywords": ["novaposhta", "sdk", "php"],
+  "keywords": ["novaposhta", "sdk", "php", "api"],
   "type": "MIT",
   "license": "Apache2",
   "authors": [
