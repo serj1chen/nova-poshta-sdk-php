@@ -1,0 +1,23 @@
+{
+  "name": "NovaPoshta-SDK-PHP",
+  "description": "SDK для Новой Пошты",
+  "keywords": ["novaposhta", "sdk", "php"],
+  "type": "MIT",
+  "license": "Apache2",
+  "authors": [
+    {
+      "name": "Chenakal Sergii",
+      "homepage": "https://github.com/serj1chen"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "NovaPoshta": "lib/"
+    }
+  }
+}

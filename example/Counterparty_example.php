@@ -6,7 +6,7 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\Counterparty;
 use NovaPoshta\DataMethods\Counterparty_getCounterparties;
@@ -110,8 +110,3 @@ class Counterparty_example
         return Counterparty::cloneLoyaltyCounterpartySender($data);
     }
 }
-
-
-$result = Counterparty_example::cloneLoyaltyCounterpartySender();
-
-var_dump($result);

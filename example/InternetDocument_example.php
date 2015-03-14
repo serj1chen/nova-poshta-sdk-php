@@ -6,11 +6,11 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\InternetDocument;
 use NovaPoshta\Models\CounterpartyContact;
-use NovaPoshta\DataMethods\BasePrintDocument;
+use NovaPoshta\DataMethods\InternetDocument_getDocumentList;
 
 class InternetDocument_example
 {
@@ -52,8 +52,8 @@ class InternetDocument_example
         $internetDocument->setSeatsAmount('2');
         $internetDocument->setCost('2');
         $internetDocument->setDescription(' fd  fsf2');
-        $internetDocument->setDateTime('10.03.2015');
-        $internetDocument->setPreferredDeliveryDate('20.03.2015');
+        $internetDocument->setDateTime('10.04.2015');
+        $internetDocument->setPreferredDeliveryDate('20.04.2015');
         $internetDocument->setTimeInterval('CityDeliveryTimeInterval2');
         $internetDocument->setPackingNumber('55');
         $internetDocument->setInfoRegClientBarcodes('55552');
@@ -114,7 +114,6 @@ class InternetDocument_example
             ->setSeatsAmount('1')
             ->setCost('200')
             ->setDescription('ТЦ')
-            ->setDateTime('10.03.2015')
             ->addBackwardDeliveryData($backwardDeliveryData2)
             ->addBackwardDeliveryData($backwardDeliveryData1);
 
@@ -171,12 +170,14 @@ class InternetDocument_example
             ->setCargoType('Cargo')
             ->setCost('200')
             ->setDescription('ТЦ')
-            ->setDateTime('10.03.2015')
             ->addOptionsSeat($optionsSeat1)
             ->addOptionsSeat($optionsSeat2)
             ->addOptionsSeat($optionsSeat3)
             ->addOptionsSeat($optionsSeat4)
             ->addBackwardDeliveryData($backwardDeliveryData);
+
+        $internetDocument->CargoType = 'Cargo';
+        echo $internetDocument->CargoType;
 
         return $internetDocument->save();
     }
@@ -218,7 +219,6 @@ class InternetDocument_example
             ->setCargoType('Pallet')
             ->setCost('200')
             ->setDescription('ТЦ')
-            ->setDateTime('10.03.2015')
             ->addOptionsSeat($optionsSeat1)
             ->addOptionsSeat($optionsSeat2);
 
@@ -266,7 +266,6 @@ class InternetDocument_example
             ->setCargoType('TiresWheels')
             ->setCost('200')
             ->setDescription('ТЦ')
-            ->setDateTime('10.03.2015')
             ->addCargoDetail($tiresWheels1)
             ->addCargoDetail($tiresWheels2)
             ->addCargoDetail($tiresWheels3)
@@ -303,7 +302,7 @@ class InternetDocument_example
             ->setSeatsAmount('1')
             ->setCost('200')
             ->setDescription('ТЦ')
-            ->setDateTime('10.03.2015');
+            ->setDateTime('10.04.2015');
 
         return $internetDocument->update();
     }
@@ -391,23 +390,56 @@ class InternetDocument_example
 
     static public function getDocumentList()
     {
-        $data = new \NovaPoshta\DataMethods\InternetDocument_getDocumentList();
+        $data = new InternetDocument_getDocumentList();
+        $data->setIntDocNumber('20400000310107');
 
-        $data->IntDocNumber = '20400000310107';
+        return InternetDocument::getDocumentList($data);
+    }
 
-
-
-        $data->DateTime = '15.02.2015';
-
-        // или
-
+    static public function getDocumentList2()
+    {
+        $data = new InternetDocument_getDocumentList();
         $data->setInfoRegClientBarcodes('55552');
 
         return InternetDocument::getDocumentList($data);
     }
+
+    static public function getDocumentList3()
+    {
+        $data = new InternetDocument_getDocumentList();
+        $data->setDeliveryDateTime('20.03.2015');
+        $data->setRecipientDateTime('14.03.2015');
+        $data->setDeliveryDateTime('14.03.2015');
+        $data->setCreateTime('10.03.2015');
+        $data->setSenderRef('f867c762-e66a-11e3-8c4a-0050568002cf');
+        $data->setRecipientRef('7da56a9c-f205-11e3-8c4a-0050568002cf');
+        $data->setWeightFrom('5');
+        $data->setWeightTo('600');
+        $data->setCostFrom('5');
+        $data->setCostTo('15000');
+        $data->setSeatsAmountFrom('5');
+        $data->setSeatsAmountTo('15');
+        $data->setSeatsAmountFrom('5');
+        $data->setSeatsAmountTo('15');
+        $data->setCostOnSiteFrom('500');
+        $data->setCostOnSiteTo('1500');
+        $data->setDateTime('09.03.2015');
+        // константы для сортирования: InternetDocument_getDocumentList::ORDER_FIELD...
+        $data->setOrderField(InternetDocument_getDocumentList::ORDER_FIELD_Cost);
+        $data->setScanSheetRef('b107a458-c6fe-11e4-ac12-005056801333');
+        $data->setPage('1');
+        $data->setOrderDirection(InternetDocument_getDocumentList::ORDER_DIRECTION_ASC);
+        $data->setIsAfterpayment('true');
+
+        return InternetDocument::getDocumentList($data);
+    }
+
+    static public function getDocumentList4()
+    {
+        $data = new InternetDocument_getDocumentList();
+        $data->setDateTime('10.03.2015');
+        $data->setStateIds(array('1'));
+
+        return InternetDocument::getDocumentList($data);
+    }
 }
-
-
-$result = InternetDocument_example::save();
-
-var_dump($result);

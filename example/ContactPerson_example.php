@@ -6,7 +6,7 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\ContactPerson;
 
@@ -47,8 +47,3 @@ class ContactPerson_example
         return $contactPerson->delete();
     }
 }
-
-
-$result = ContactPerson_example::delete();
-
-var_dump($result);

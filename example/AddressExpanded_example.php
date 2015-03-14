@@ -6,7 +6,7 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\AddressExpanded;
 use NovaPoshta\DataMethods\AddressExpanded_getSettlements;
@@ -52,8 +52,3 @@ class AddressExpanded_example
         return AddressExpanded::getSettlementStreetTypes();
     }
 }
-
-
-$result = AddressExpanded_example::getSettlements();
-
-var_dump($result);

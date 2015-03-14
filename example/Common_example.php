@@ -6,7 +6,7 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\Common;
 use NovaPoshta\DataMethods\Common_getCargoDescriptionList;
@@ -92,8 +92,3 @@ class Common_example
         return Common::getTypesOfPayersForRedelivery();
     }
 }
-
-
-$result = Common_example::getTraysList();
-
-var_dump($result);

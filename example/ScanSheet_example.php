@@ -6,7 +6,7 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\ScanSheet;
 
@@ -93,7 +93,3 @@ class ScanSheet_example
     }
 }
 
-
-$result = ScanSheet_example::printScanSheet();
-
-var_dump($result);

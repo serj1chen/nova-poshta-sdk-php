@@ -6,7 +6,7 @@
  * Time: 22:00
  */
 
-include_once "../NovaPoshta/autoload.php";
+namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\Address;
 use NovaPoshta\DataMethods\Address_getStreet;
@@ -53,8 +53,8 @@ class Address_example
     {
         $data = new Address_getCities();
         $data->setRef('db5c896a-391c-11dd-90d9-001a92567626');
-//        $data->setPage(1);
-//        $data->setFindByString('Пол');
+        $data->setPage(1);
+        $data->setFindByString('Пол');
 
         return Address::getCities($data);
     }
@@ -81,14 +81,9 @@ class Address_example
     static public function getAreas()
     {
         $data = new Address_getAreas();
-//        $data->setRef('7150813d-9b87-11de-822f-000c2965ae0e');
+        $data->setRef('7150813d-9b87-11de-822f-000c2965ae0e');
         $data->setPage(1);
 
         return Address::getAreas($data);
     }
 }
-
-
-$result = Address_example::save();
-
-var_dump($result);
