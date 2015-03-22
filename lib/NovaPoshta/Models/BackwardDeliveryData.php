@@ -7,6 +7,7 @@
  */
 
 namespace NovaPoshta\Models;
+
 use NovaPoshta\Core\BaseModel;
 
 /**

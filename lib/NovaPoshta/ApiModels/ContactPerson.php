@@ -5,6 +5,8 @@ namespace NovaPoshta\ApiModels;
 use NovaPoshta\Core\ApiModel;
 
 /**
+ * ContactPerson - Модель для создания контактного лица
+ *
  * @author user
  * @version 1.0
  * @created 17-���-2015 23:07:07
@@ -14,28 +16,42 @@ use NovaPoshta\Core\ApiModel;
  * @property string LastName
  * @property string MiddleName
  * @property string Email
+ *
+ * Class ContactPerson
+ * @package NovaPoshta\ApiModels
  */
 class ContactPerson extends ApiModel
 {
+    /**
+     * save() - сохранить данные контактного лица отправителя/получателя
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     function save()
     {
         return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
+    /**
+     * update() - обновить данные контактного лица
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     function update()
     {
         return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
+    /**
+     * delete() - удалить контактное лицо отправителя/получателя
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     function delete()
     {
         return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
-    /**
-     *
-     * @param value
-     */
     function setRef($value)
     {
         $this->Ref = $value;
@@ -47,10 +63,6 @@ class ContactPerson extends ApiModel
         return $this->Ref;
     }
 
-    /**
-     * @param $value
-     * @return $this
-     */
     function setCounterpartyRef($value)
     {
         $this->CounterpartyRef = $value;
@@ -62,10 +74,6 @@ class ContactPerson extends ApiModel
         return $this->CounterpartyRef;
     }
 
-    /**
-     *
-     * @param value
-     */
     function setFirstName($value)
     {
         $this->FirstName = $value;
@@ -77,10 +85,6 @@ class ContactPerson extends ApiModel
         return $this->FirstName;
     }
 
-    /**
-     *
-     * @param value
-     */
     function setLastName($value)
     {
         $this->LastName = $value;
@@ -92,10 +96,6 @@ class ContactPerson extends ApiModel
         return $this->LastName;
     }
 
-    /**
-     *
-     * @param value
-     */
     function setMiddleName($value)
     {
         $this->MiddleName = $value;
@@ -107,10 +107,6 @@ class ContactPerson extends ApiModel
         return $this->MiddleName;
     }
 
-    /**
-     * @param $value
-     * @return $this
-     */
     function setPhone($value)
     {
         $this->Phone = $value;
@@ -122,10 +118,6 @@ class ContactPerson extends ApiModel
         return $this->Ref;
     }
 
-    /**
-     *
-     * @param value
-     */
     function setEmail($value)
     {
         $this->Email = $value;

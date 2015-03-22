@@ -12,27 +12,27 @@ use stdClass;
  */
 class AddressExpanded extends ApiModel
 {
-    static public function getCountryRegions(stdClass $data = null)
+    public static function getCountryRegions(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getSettlements(stdClass $data = null)
+    public static function getSettlements(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getSettlementStreets(stdClass $data = null)
+    public static function getSettlementStreets(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getSettlementTypes()
+    public static function getSettlementTypes()
     {
         return self::sendData(__FUNCTION__);
     }
 
-    static public function getSettlementStreetTypes()
+    public static function getSettlementStreetTypes()
     {
         return self::sendData(__FUNCTION__);
     }

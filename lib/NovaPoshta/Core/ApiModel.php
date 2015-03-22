@@ -2,9 +2,8 @@
 
 namespace NovaPoshta\Core;
 
-use NovaPoshta\Core\Serializer\SerializerFactory;
+use NovaPoshta\Models\DataContainerResponse;
 use stdClass;
-use NovaPoshta\Config;
 use NovaPoshta\Models\DataContainer;
 
 /**
@@ -12,8 +11,35 @@ use NovaPoshta\Models\DataContainer;
  * @version 1.0
  * @created 10-���-2015 23:41:09
  */
-class ApiModel extends BaseModel
+abstract class ApiModel extends BaseModel
 {
+    private static $isBatch = false;
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Пакетная передача данных
+     * @return bool
+     */
+    public static function isBatch()
+    {
+        self::$isBatch = true;
+        return self::$isBatch;
+    }
+
+    /**
+     * Отмена пакетной передачи данных
+     * @return bool
+     */
+    public static function notBatch()
+    {
+        self::$isBatch = false;
+        return self::$isBatch;
+    }
+
     protected function getThisData()
     {
         $data = new stdClass();
@@ -36,49 +62,24 @@ class ApiModel extends BaseModel
     /**
      * @param $methodName
      * @param null $data
-     * @return bool|mixed
+     * @return DataContainerResponse
      */
-    static protected function sendData($methodName, $data = null)
+    protected static function sendData($methodName, $data = null)
     {
-        $serializer = SerializerFactory::getSerializer();
-
         $dataContainer = new DataContainer();
-        $dataContainer->apiKey = Config::getApiKey();
-        $dataContainer->language = Config::getLanguage();
         $dataContainer->modelName = self::_getCalledModel();
         $dataContainer->calledMethod = $methodName;
         $dataContainer->methodProperties = $data;
 
-        $data = $serializer->serializeData($dataContainer);
-//		var_dump($data);
-//		die;
-
-        try {
-            $ch = curl_init();
-
-            curl_setopt($ch, CURLOPT_URL, Config::getUrlApi());
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/xml"));
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-
-            $response = curl_exec($ch);
-//			var_dump($response);die;
-
-            $response = $serializer->unserializeData($response);
-//			var_dump($response);
-
-            curl_close($ch);
-
-            return $response;
-        } catch (\Exception $e) {
-            return false;
-        }
+        return SendData::send($dataContainer, self::$isBatch);
     }
 
-    static private function _getCalledModel()
+    public static function getResponseBatch()
+    {
+        return SendData::getResponseBatch();
+    }
+
+    private static function _getCalledModel()
     {
         $thisNameClass = explode('\\', get_called_class());
 

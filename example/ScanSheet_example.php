@@ -12,7 +12,7 @@ use NovaPoshta\ApiModels\ScanSheet;
 
 class ScanSheet_example
 {
-    static public function save()
+    public static function save()
     {
         $scanSheets = array('70ec0f61-bf6b-11e4-a77a-005056887b8d', '70ec0f33-bf6b-11e4-a77a-005056887b8d');
 
@@ -29,7 +29,7 @@ class ScanSheet_example
         return $scanSheet->save();
     }
 
-    static public function update()
+    public static function update()
     {
         $scanSheet = new ScanSheet();
         $scanSheet->setRef('1c65213d-c00b-11e4-ac12-005056801333');
@@ -40,7 +40,7 @@ class ScanSheet_example
         return $scanSheet->update();
     }
 
-    static public function delete()
+    public static function delete()
     {
         $scanSheet = new ScanSheet();
         $scanSheet->setRef('1c65213d-c00b-11e4-ac12-005056801333');
@@ -48,7 +48,7 @@ class ScanSheet_example
         return $scanSheet->delete();
     }
 
-    static public function removeDocuments()
+    public static function removeDocuments()
     {
         $arrayDocuments = array('70ec0f2a-bf6b-11e4-a77a-005056887b8d', '70ec0f33-bf6b-11e4-a77a-005056887b8d');
 
@@ -64,7 +64,7 @@ class ScanSheet_example
         return ScanSheet::removeDocuments($data);
     }
 
-    static public function getScanSheet()
+    public static function getScanSheet()
     {
         $data = new \NovaPoshta\DataMethods\ScanSheet_getScanSheet();
         $data->setRef('9120e925-c00c-11e4-ac12-005056801333');
@@ -72,12 +72,12 @@ class ScanSheet_example
         return ScanSheet::getScanSheet($data);
     }
 
-    static public function getScanSheetList()
+    public static function getScanSheetList()
     {
         return ScanSheet::getScanSheetList();
     }
 
-    static public function printScanSheet()
+    public static function printScanSheet()
     {
         $data = new \NovaPoshta\DataMethods\ScanSheet_printScanSheet();
 

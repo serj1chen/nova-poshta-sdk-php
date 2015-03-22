@@ -14,7 +14,7 @@ use NovaPoshta\DataMethods\InternetDocument_getDocumentList;
 
 class InternetDocument_example
 {
-    static public function save()
+    public static function save()
     {
         $sender = new CounterpartyContact();
         $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626');
@@ -67,7 +67,7 @@ class InternetDocument_example
         return $internetDocument->save();
     }
 
-    static public function save_2()
+    public static function save_2()
     {
         $sender = new CounterpartyContact();
         $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626')
@@ -120,7 +120,7 @@ class InternetDocument_example
         return $internetDocument->save();
     }
 
-    static public function save_3()
+    public static function save_3()
     {
         $sender = new CounterpartyContact();
         $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626')
@@ -182,7 +182,7 @@ class InternetDocument_example
         return $internetDocument->save();
     }
 
-    static public function save_4()
+    public static function save_4()
     {
         $sender = new CounterpartyContact();
         $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626')
@@ -225,7 +225,7 @@ class InternetDocument_example
         return $internetDocument->save();
     }
 
-    static public function save_5()
+    public static function save_5()
     {
         $sender = new CounterpartyContact();
         $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626')
@@ -274,7 +274,7 @@ class InternetDocument_example
         return $internetDocument->save();
     }
 
-    static public function update()
+    public static function update()
     {
         $sender = new CounterpartyContact();
         $sender->setCity('8d5a980d-391c-11dd-90d9-001a92567626')
@@ -307,7 +307,7 @@ class InternetDocument_example
         return $internetDocument->update();
     }
 
-    static public function delete()
+    public static function delete()
     {
         $internetDocument = new InternetDocument();
         $internetDocument->setRef('70ec0f63-bf6b-11e4-a77a-005056887b8d');
@@ -315,7 +315,7 @@ class InternetDocument_example
         return $internetDocument->delete();
     }
 
-    static public function getDocumentDeliveryDate()
+    public static function getDocumentDeliveryDate()
     {
         $data = new \NovaPoshta\DataMethods\InternetDocument_getDocumentDeliveryDate();
         $data->setDateTime('16.05.2015');
@@ -326,7 +326,7 @@ class InternetDocument_example
         return InternetDocument::getDocumentDeliveryDate($data);
     }
 
-    static public function documentsTracking()
+    public static function documentsTracking()
     {
         $refs = array('20400000310076', '20400000310077');
 
@@ -341,7 +341,7 @@ class InternetDocument_example
         return InternetDocument::documentsTracking($data);
     }
 
-    static public function getDocumentPrice()
+    public static function getDocumentPrice()
     {
         $data = new \NovaPoshta\DataMethods\InternetDocument_getDocumentPrice();
         $data->setCitySender('8d5a980d-391c-11dd-90d9-001a92567626');
@@ -354,7 +354,7 @@ class InternetDocument_example
         return InternetDocument::getDocumentPrice($data);
     }
 
-    static public function printDocument()
+    public static function printDocument()
     {
         $data = new \NovaPoshta\DataMethods\InternetDocument_printDocument();
         $data->setDocumentRefs(array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d'));
@@ -367,7 +367,7 @@ class InternetDocument_example
         return InternetDocument::printDocument($data);
     }
 
-    static public function printMarkings()
+    public static function printMarkings()
     {
         $data = new \NovaPoshta\DataMethods\InternetDocument_printMarkings();
         $data->setDocumentRefs(array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d'));
@@ -380,7 +380,7 @@ class InternetDocument_example
         return InternetDocument::printMarkings($data);
     }
 
-    static public function getDocument()
+    public static function getDocument()
     {
         $data = new \NovaPoshta\DataMethods\InternetDocument_getDocument();
         $data->setRef('70ec0f61-bf6b-11e4-a77a-005056887b8d');
@@ -388,7 +388,7 @@ class InternetDocument_example
         return InternetDocument::getDocument($data);
     }
 
-    static public function getDocumentList()
+    public static function getDocumentList()
     {
         $data = new InternetDocument_getDocumentList();
         $data->setIntDocNumber('20400000310107');
@@ -396,7 +396,7 @@ class InternetDocument_example
         return InternetDocument::getDocumentList($data);
     }
 
-    static public function getDocumentList2()
+    public static function getDocumentList2()
     {
         $data = new InternetDocument_getDocumentList();
         $data->setInfoRegClientBarcodes('55552');
@@ -404,7 +404,7 @@ class InternetDocument_example
         return InternetDocument::getDocumentList($data);
     }
 
-    static public function getDocumentList3()
+    public static function getDocumentList3()
     {
         $data = new InternetDocument_getDocumentList();
         $data->setDeliveryDateTime('20.03.2015');
@@ -434,7 +434,7 @@ class InternetDocument_example
         return InternetDocument::getDocumentList($data);
     }
 
-    static public function getDocumentList4()
+    public static function getDocumentList4()
     {
         $data = new InternetDocument_getDocumentList();
         $data->setDateTime('10.03.2015');

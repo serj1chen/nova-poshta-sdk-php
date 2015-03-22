@@ -15,7 +15,7 @@ use NovaPoshta\DataMethods\AddressExpanded_getSettlementStreets;
 
 class AddressExpanded_example
 {
-    static public function getCountryRegions()
+    public static function getCountryRegions()
     {
         $data = new AddressExpanded_getCountryRegions();
         $data->setParent('dcaadf02-4b33-11e4-ab6d-005056801329');
@@ -24,7 +24,7 @@ class AddressExpanded_example
         return AddressExpanded::getCountryRegions($data);
     }
 
-    static public function getSettlements()
+    public static function getSettlements()
     {
         $data = new AddressExpanded_getSettlements();
         $data->setCountryRegion('dcaad3d6-4b33-11e4-ab6d-005056801329');
@@ -33,7 +33,7 @@ class AddressExpanded_example
         return AddressExpanded::getSettlements($data);
     }
 
-    static public function getSettlementStreets()
+    public static function getSettlementStreets()
     {
         $data = new AddressExpanded_getSettlementStreets();
         $data->setSettlement('04324fde-4d5f-11e4-ab6d-005056801329');
@@ -42,12 +42,12 @@ class AddressExpanded_example
         return AddressExpanded::getSettlementStreets($data);
     }
 
-    static public function getSettlementTypes()
+    public static function getSettlementTypes()
     {
         return AddressExpanded::getSettlementTypes();
     }
 
-    static public function getSettlementStreetTypes()
+    public static function getSettlementStreetTypes()
     {
         return AddressExpanded::getSettlementStreetTypes();
     }

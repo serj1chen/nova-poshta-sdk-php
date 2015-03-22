@@ -8,9 +8,8 @@
 
 include_once 'Core/autoload.php';
 
-if (!defined('NP_API2_ROOT')) {
-    define('NP_API2_ROOT', dirname(__FILE__) . '/');
-    define('NP_API2_NAME_LIB', 'NovaPoshta\\');
+if (!defined('NOVA_POSHTA_PATH')) {
+    define('NOVA_POSHTA_PATH', dirname(__FILE__) . '/');
 
     Autoload::init();
 }

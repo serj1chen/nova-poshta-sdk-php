@@ -11,6 +11,7 @@ use NovaPoshta\Core\BaseModel;
  */
 class DataContainerResponse extends BaseModel
 {
+    public $id;
     public $success;
     public $data = array();
     public $errors = array();

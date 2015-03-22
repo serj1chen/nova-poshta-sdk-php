@@ -18,7 +18,7 @@ use NovaPoshta\DataMethods\Counterparty_cloneLoyaltyCounterpartySender;
 
 class Counterparty_example
 {
-    static public function save()
+    public static function save()
     {
         $counterparty = new Counterparty();
         $counterparty->setCounterpartyProperty('Recipient');
@@ -33,7 +33,7 @@ class Counterparty_example
         return $counterparty->save();
     }
 
-    static public function update()
+    public static function update()
     {
         $counterparty = new Counterparty();
         $counterparty->setRef('eb863d12-ac7d-11e4-a77a-005056887b8d');
@@ -49,7 +49,7 @@ class Counterparty_example
         return $counterparty->update();
     }
 
-    static public function delete()
+    public static function delete()
     {
         $counterparty = new Counterparty();
         $counterparty->setRef('eb863d12-ac7d-11e4-a77a-005056887b8d');
@@ -57,7 +57,7 @@ class Counterparty_example
         return $counterparty->delete();
     }
 
-    static public function getCounterparties()
+    public static function getCounterparties()
     {
         $data = new Counterparty_getCounterparties();
         $data->setCounterpartyProperty('Recipient');
@@ -68,7 +68,7 @@ class Counterparty_example
         return Counterparty::getCounterparties($data);
     }
 
-    static public function getCounterpartyAddresses()
+    public static function getCounterpartyAddresses()
     {
         $data = new Counterparty_getCounterpartyAddresses();
         $data->setRef('512c13ac-1d43-11e4-acce-0050568002cf');
@@ -76,7 +76,7 @@ class Counterparty_example
         return Counterparty::getCounterpartyAddresses($data);
     }
 
-    static public function getCounterpartyContactPersons()
+    public static function getCounterpartyContactPersons()
     {
         $data = new Counterparty_getCounterpartyContactPersons();
         $data->setRef('512c13ac-1d43-11e4-acce-0050568002cf');
@@ -85,7 +85,7 @@ class Counterparty_example
         return Counterparty::getCounterpartyContactPersons($data);
     }
 
-    static public function getCounterpartyOptions()
+    public static function getCounterpartyOptions()
     {
         $data = new Counterparty_getCounterpartyOptions();
         $data->setRef('512c13ac-1d43-11e4-acce-0050568002cf');
@@ -93,7 +93,7 @@ class Counterparty_example
         return Counterparty::getCounterpartyOptions($data);
     }
 
-    static public function getCounterpartyByEDRPOU()
+    public static function getCounterpartyByEDRPOU()
     {
         $data = new Counterparty_getCounterpartyByEDRPOU();
         $data->setEDRPOU('0000000');
@@ -102,7 +102,7 @@ class Counterparty_example
         return Counterparty::getCounterpartyByEDRPOU($data);
     }
 
-    static public function cloneLoyaltyCounterpartySender()
+    public static function cloneLoyaltyCounterpartySender()
     {
         $data = new Counterparty_cloneLoyaltyCounterpartySender();
         $data->setCityRef('db5c88e0-391c-11dd-90d9-001a92567626');

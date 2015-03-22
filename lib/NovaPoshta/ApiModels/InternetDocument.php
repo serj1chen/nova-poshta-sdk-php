@@ -11,6 +11,8 @@ use NovaPoshta\Core\ApiModel;
 use NovaPoshta\Models\CounterpartyContact;
 
 /**
+ * InternetDocument - Модель для оформления отправлений
+ *
  * @author user
  * @version 1.0
  * @created 15-���-2015 13:01:37
@@ -46,6 +48,9 @@ use NovaPoshta\Models\CounterpartyContact;
  * @property array CargoDetails
  * @property array OptionsSeat
  * @property array BackwardDeliveryData
+ *
+ * Class InternetDocument
+ * @package NovaPoshta\ApiModels
  */
 class InternetDocument extends ApiModel
 {
@@ -469,62 +474,119 @@ class InternetDocument extends ApiModel
         return $this->AccompanyingDocuments;
     }
 
+    /**
+     * save() - создание ЭН
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function save()
     {
         return $this->sendData(__FUNCTION__, $this->getDataInternetDocument());
     }
 
+    /**
+     * update() - редактирование ЭН
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function update()
     {
         return $this->sendData(__FUNCTION__, $this->getDataInternetDocument());
     }
 
+    /**
+     * delete() - удаление документа
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function delete()
     {
         $this->DocumentRefs = array($this->Ref);
         return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
-    static public function getDocumentDeliveryDate(\stdClass $data = null)
+    /**
+     * getDocumentDeliveryDate - ориентировочная дата доставки
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getDocumentDeliveryDate(\stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getDocument(\stdClass $data = null)
+    /**
+     * getDocument() - получить ЭН
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getDocument(\stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getDocumentList(\stdClass $data = null)
+    /**
+     * getDocumentList() - получает список ЭН
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getDocumentList(\stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function printDocument(\stdClass $data = null)
+    /**
+     * printDocument() - печать ЭН
+     *
+     * @param stdClass $data
+     * @return string
+     */
+    public static function printDocument(\stdClass $data = null)
     {
         $link = self::getPrintLink('printDocument', $data);
 
         return $link;
     }
 
-    static public function printMarkings(\stdClass $data = null)
+    /**
+     * printMarkings() - печать маркировок
+     *
+     * @param stdClass $data
+     * @return string
+     */
+    public static function printMarkings(\stdClass $data = null)
     {
         $link = self::getPrintLink('printMarkings', $data);
 
         return $link;
     }
 
-    static public function documentsTracking(\stdClass $data = null)
+    /**
+     * documentsTracking() - трекинг документов
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function documentsTracking(\stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getDocumentPrice(\stdClass $data = null)
+    /**
+     * getDocumentPrice - расчет стоимости доставки
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getDocumentPrice(\stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static private function getPrintLink($typePrint, \stdClass $data = null)
+    private static function getPrintLink($typePrint, \stdClass $data = null)
     {
         $refs = isset($data->DocumentRefs) ? $data->DocumentRefs : null;
 

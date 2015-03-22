@@ -1,6 +1,7 @@
 <?php
 
 namespace NovaPoshta\Models;
+
 use NovaPoshta\Core\BaseModel;
 
 /**
@@ -10,6 +11,7 @@ use NovaPoshta\Core\BaseModel;
  */
 class DataContainer extends BaseModel
 {
+    public $id;
     public $modelName;
     public $calledMethod;
     public $apiKey;

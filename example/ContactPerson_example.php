@@ -12,7 +12,7 @@ use NovaPoshta\ApiModels\ContactPerson;
 
 class ContactPerson_example
 {
-    static public function save()
+    public static function save()
     {
         $contactPerson = new ContactPerson();
         $contactPerson->setCounterpartyRef('2718756a-b39b-11e4-a77a-005056887b8d');
@@ -25,7 +25,7 @@ class ContactPerson_example
         return $contactPerson->save();
     }
 
-    static public function update()
+    public static function update()
     {
         $contactPerson = new ContactPerson();
         $contactPerson->setRef('6ba7314c-b543-11e4-a77a-005056887b8d');
@@ -39,7 +39,7 @@ class ContactPerson_example
         return $contactPerson->update();
     }
 
-    static public function delete()
+    public static function delete()
     {
         $contactPerson = new ContactPerson();
         $contactPerson->setRef('6ba7314c-b543-11e4-a77a-005056887b8d');

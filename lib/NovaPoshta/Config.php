@@ -17,48 +17,48 @@ class Config
     const LANGUAGE_RU = 'ru';
     const LANGUAGE_EN = 'en';
 
-    static private $apiKey = '';
-    static private $format = self::FORMAT_JSON;
-    static private $language = self::LANGUAGE_UA;
-    static private $urlApi = 'https://api.novaposhta.ua/v2.0/';
-    static private $urlMyNovaPoshta = 'https://my.novaposhta.ua';
+    private static $apiKey = '';
+    private static $format = self::FORMAT_JSON;
+    private static $language = self::LANGUAGE_UA;
+    private static $urlApi = 'https://api.novaposhta.ua/v2.0/';
+    private static $urlMyNovaPoshta = 'https://my.novaposhta.ua';
 
-    static public function getApiKey()
+    public static function getApiKey()
     {
         return self::$apiKey;
     }
 
-    static public function setApiKey($value)
+    public static function setApiKey($value)
     {
         self::$apiKey = $value;
     }
 
-    static public function getFormat()
+    public static function getFormat()
     {
         return self::$format;
     }
 
-    static public function setFormat($value)
+    public static function setFormat($value)
     {
         self::$format = $value;
     }
 
-    static public function getLanguage()
+    public static function getLanguage()
     {
         return self::$language;
     }
 
-    static public function setLanguage($value)
+    public static function setLanguage($value)
     {
         self::$language = $value;
     }
 
-    static public function getUrlApi()
+    public static function getUrlApi()
     {
         return self::$urlApi . self::$format . '/';
     }
 
-    static public function getUrlMyNovaPoshta()
+    public static function getUrlMyNovaPoshta()
     {
         return self::$urlMyNovaPoshta;
     }

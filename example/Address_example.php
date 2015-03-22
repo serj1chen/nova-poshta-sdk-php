@@ -16,7 +16,7 @@ use NovaPoshta\DataMethods\Address_getAreas;
 
 class Address_example
 {
-    static public function save()
+    public static function save()
     {
         $address = new Address();
         $address->setCounterpartyRef('2718756a-b39b-11e4-a77a-005056887b8d');
@@ -28,7 +28,7 @@ class Address_example
         return $address->save();
     }
 
-    static public function update()
+    public static function update()
     {
         $address = new Address();
         $address->Ref = 'e29115c8-6f59-11e4-acce-0050568002cf';
@@ -41,7 +41,7 @@ class Address_example
         return $address->update();
     }
 
-    static public function delete()
+    public static function delete()
     {
         $address = new Address();
         $address->Ref = 'e29115c8-6f59-11e4-acce-0050568002cf';
@@ -49,7 +49,7 @@ class Address_example
         return $address->delete();
     }
 
-    static public function getCities()
+    public static function getCities()
     {
         $data = new Address_getCities();
         $data->setRef('db5c896a-391c-11dd-90d9-001a92567626');
@@ -59,7 +59,7 @@ class Address_example
         return Address::getCities($data);
     }
 
-    static public function getStreet()
+    public static function getStreet()
     {
         $data = new Address_getStreet();
         $data->setCityRef('8d5a980d-391c-11dd-90d9-001a92567626');
@@ -69,7 +69,7 @@ class Address_example
         return Address::getStreet($data);
     }
 
-    static public function getWarehouses()
+    public static function getWarehouses()
     {
         $data = new Address_getWarehouses();
         $data->setCityRef('ebc0eda9-93ec-11e3-b441-0050568002cf');
@@ -78,7 +78,7 @@ class Address_example
         return Address::getWarehouses($data);
     }
 
-    static public function getAreas()
+    public static function getAreas()
     {
         $data = new Address_getAreas();
         $data->setRef('7150813d-9b87-11de-822f-000c2965ae0e');

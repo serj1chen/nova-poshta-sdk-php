@@ -14,12 +14,12 @@ use NovaPoshta\DataMethods\Common_getTimeIntervals;
 
 class Common_example
 {
-    static public function getBackwardDeliveryCargoTypes()
+    public static function getBackwardDeliveryCargoTypes()
     {
         return Common::getBackwardDeliveryCargoTypes();
     }
 
-    static public function getCargoDescriptionList()
+    public static function getCargoDescriptionList()
     {
         $data = new Common_getCargoDescriptionList();
         $data->setPage(1);
@@ -28,37 +28,37 @@ class Common_example
         return Common::getCargoDescriptionList($data);
     }
 
-    static public function getCargoTypes()
+    public static function getCargoTypes()
     {
         return Common::getCargoTypes();
     }
 
-    static public function getDocumentStatuses()
+    public static function getDocumentStatuses()
     {
         return Common::getDocumentStatuses();
     }
 
-    static public function getOwnershipFormsList()
+    public static function getOwnershipFormsList()
     {
         return Common::getOwnershipFormsList();
     }
 
-    static public function getPalletsList()
+    public static function getPalletsList()
     {
         return Common::getPalletsList();
     }
 
-    static public function getPaymentForms()
+    public static function getPaymentForms()
     {
         return Common::getPaymentForms();
     }
 
-    static public function getServiceTypes()
+    public static function getServiceTypes()
     {
         return Common::getServiceTypes();
     }
 
-    static public function getTimeIntervals()
+    public static function getTimeIntervals()
     {
         $data = new Common_getTimeIntervals();
         $data->RecipientCityRef = '8d5a980d-391c-11dd-90d9-001a92567626';
@@ -67,27 +67,27 @@ class Common_example
         return Common::getTimeIntervals($data);
     }
 
-    static public function getTiresWheelsList()
+    public static function getTiresWheelsList()
     {
         return Common::getTiresWheelsList();
     }
 
-    static public function getTraysList()
+    public static function getTraysList()
     {
         return Common::getTraysList();
     }
 
-    static public function getTypesOfCounterparties()
+    public static function getTypesOfCounterparties()
     {
         return Common::getTypesOfCounterparties();
     }
 
-    static public function getTypesOfPayers()
+    public static function getTypesOfPayers()
     {
         return Common::getTypesOfPayers();
     }
 
-    static public function getTypesOfPayersForRedelivery()
+    public static function getTypesOfPayersForRedelivery()
     {
         return Common::getTypesOfPayersForRedelivery();
     }

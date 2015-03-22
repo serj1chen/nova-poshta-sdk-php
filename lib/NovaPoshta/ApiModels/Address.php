@@ -6,6 +6,8 @@ use NovaPoshta\Core\ApiModel;
 use stdClass;
 
 /**
+ * Модель для работы с адресами
+ *
  * @author user
  * @version 1.0
  * @created 14-���-2015 10:19:25
@@ -16,9 +18,17 @@ use stdClass;
  * @property string BuildingNumber
  * @property string Flat
  * @property string Note
+ *
+ * Class Address
+ * @package NovaPoshta\ApiModels
  */
 class Address extends ApiModel
 {
+    /**
+     * save() - создать адрес отправителя/получателя
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function save()
     {
         $data = $this->getThisData();
@@ -26,6 +36,10 @@ class Address extends ApiModel
         return $this->sendData(__FUNCTION__, $data);
     }
 
+    /**
+     * update() - редактировать адрес отправителя/получателя
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function update()
     {
         $data = $this->getThisData();
@@ -33,6 +47,11 @@ class Address extends ApiModel
         return $this->sendData(__FUNCTION__, $data);
     }
 
+    /**
+     * delete() - удалить ранее созданный адрес
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function delete()
     {
         $data = $this->getThisData();
@@ -106,22 +125,46 @@ class Address extends ApiModel
         return $this->BuildingRef;
     }
 
-    static public function getCities(stdClass $data = null)
+    /**
+     * getCities() - загрузить справочник городов компании «Новая Почта»
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getCities(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getStreet(stdClass $data = null)
+    /**
+     * getStreet() - загрузить справочник улиц компании «Новая Почта»
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getStreet(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getWarehouses(stdClass $data = null)
+    /**
+     * getWarehouses() - загрузить справочник отделений компании «Новая Почта»
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getWarehouses(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getAreas(stdClass $data = null)
+    /**
+     * getAreas() - загрузить справочник географических областей Украины
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getAreas(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }

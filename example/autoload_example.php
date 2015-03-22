@@ -1,8 +1,7 @@
 <?php
 
-if (!defined('NovaPoshta_example')) {
-    define('NovaPoshta_example', dirname(__FILE__) . '/');
-    define('NovaPoshta_example1', 'NovaPoshta_example\\');
+if (!defined('NOVA_POSHTA_EXAMPLE_PATH')) {
+    define('NOVA_POSHTA_EXAMPLE_PATH', dirname(__FILE__) . '/');
 
     AutoloadExample::init();
 }
@@ -20,8 +19,8 @@ class AutoloadExample
 
     public static function load($className)
     {
-        $className = str_replace(NovaPoshta_example1, '', $className);
-        $className = NovaPoshta_example . $className . '.php';
+        $className = str_replace('NovaPoshta_example', '', $className);
+        $className = NOVA_POSHTA_EXAMPLE_PATH . $className . '.php';
 
         if ((file_exists($className) === false) || (is_readable($className) === false)) {
             return false;

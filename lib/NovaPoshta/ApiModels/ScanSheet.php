@@ -9,18 +9,30 @@ use NovaPoshta\Core\InterfaceMethodCRUD;
 use stdClass;
 
 /**
+ * ScanSheet - Модель для работы с реестрами приема-передачи отправлений
+ *
  * @author user
  * @version 1.0
  * @created 14-���-2015 10:19:25
  * @property array DocumentRefs
  * @property string Ref
  * @property string Date
+ *
+ * Class ScanSheet
+ * @package NovaPoshta\ApiModels
  */
 class ScanSheet extends ApiModel implements InterfaceMethodCRUD
 {
     const PRINT_TYPE_PDF = 'pdf';
     const PRINT_TYPE_HTML = 'html';
 
+    /**
+     * Сохранить экспресс-накладные в реестр
+     *
+     * Реализация метода insertDocuments() - добавить экспресс-накладные в реестр
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function save()
     {
         $this->Ref = null;
@@ -28,12 +40,26 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
         return self::sendData('insertDocuments', $data);
     }
 
+    /**
+     * Обновить экспресс-накладные в реестр
+     *
+     * Реализация метода insertDocuments() - добавить экспресс-накладные в реестр
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function update()
     {
         $data = $this->getThisData();
         return self::sendData('insertDocuments', $data);
     }
 
+    /**
+     * Удалить реестр
+     *
+     * Реализация метода deleteScanSheet() - удалить (расформировать) реестр отправлений
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
     public function delete()
     {
         $data = new stdClass();
@@ -84,22 +110,46 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
         return $this->Date;
     }
 
-    static public function removeDocuments(stdClass $data = null)
+    /**
+     * removeDocuments() - удалить экспресс-накладные из реестра
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function removeDocuments(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getScanSheet(stdClass $data = null)
+    /**
+     * getScanSheet() - загрузить информацию по одному реестру
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getScanSheet(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function getScanSheetList(stdClass $data = null)
+    /**
+     * getScanSheetList() - загрузить список реестров
+     *
+     * @param stdClass $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getScanSheetList(stdClass $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
 
-    static public function printScanSheet(stdClass $data = null)
+    /**
+     * printScanSheet() - загрузка печатной формы реестра
+     *
+     * @param stdClass $data
+     * @return string
+     */
+    public static function printScanSheet(stdClass $data = null)
     {
         $refs = isset($data->DocumentRefs) ? $data->DocumentRefs : null;
 
