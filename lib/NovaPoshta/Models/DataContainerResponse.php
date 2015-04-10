@@ -5,9 +5,10 @@ namespace NovaPoshta\Models;
 use NovaPoshta\Core\BaseModel;
 
 /**
- * @author user
- * @version 1.0
- * @created 12-���-2015 19:39:31
+ * Контейнер для ответа с сервера
+ *
+ * Class DataContainerResponse
+ * @package NovaPoshta\Models
  */
 class DataContainerResponse extends BaseModel
 {
@@ -20,6 +21,8 @@ class DataContainerResponse extends BaseModel
 
     public function __construct(\stdClass $data = null)
     {
+        parent::__construct();
+
         if ($data) {
             foreach ($data as $key => $value) {
                 $this->{$key} = $value;

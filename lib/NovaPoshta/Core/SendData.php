@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 22.03.2015
- * Time: 11:18
- */
 
 namespace NovaPoshta\Core;
 
@@ -51,6 +45,14 @@ class SendData extends ClosedConstructor
         return self::instance()->_getResponseBatch();
     }
 
+    /**
+     * Отправить запрос
+     *
+     * @param DataContainer $dataContainer
+     * @param bool $isBatch
+     * @return bool|int|mixed|DataContainerResponse
+     * @throws NovaPoshtaException
+     */
     protected function _send(DataContainer $dataContainer, $isBatch = false)
     {
         $dataContainer->apiKey = Config::getApiKey();
@@ -78,7 +80,9 @@ class SendData extends ClosedConstructor
         return $response;
     }
 
-
+    /**
+     * @return array
+     */
     protected function _getResponseBatch()
     {
         if(empty($this->dataBatch)){
@@ -99,11 +103,18 @@ class SendData extends ClosedConstructor
         return $responseDataContainers;
     }
 
+    /**
+     * @return int
+     */
     protected function getIdBatch()
     {
         return ++self::$countBatch;
     }
 
+    /**
+     * @param $data
+     * @return bool|mixed
+     */
     protected function query($data)
     {
         try {

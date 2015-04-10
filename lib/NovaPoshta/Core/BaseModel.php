@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 14.03.2015
- * Time: 9:39
- */
 
 namespace NovaPoshta\Core;
 
 
-abstract class BaseModel extends \stdClass
+abstract class BaseModel
 {
     public function __construct()
     {

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 12.02.2015
- * Time: 22:00
- */
 
 namespace NovaPoshta_example;
 
@@ -52,7 +46,7 @@ class ScanSheet_example
     {
         $arrayDocuments = array('70ec0f2a-bf6b-11e4-a77a-005056887b8d', '70ec0f33-bf6b-11e4-a77a-005056887b8d');
 
-        $data = new \NovaPoshta\DataMethods\ScanSheet_removeDocuments();
+        $data = new \NovaPoshta\MethodParameters\ScanSheet_removeDocuments();
 
         $data->setDocumentRefs($arrayDocuments);
 
@@ -66,7 +60,7 @@ class ScanSheet_example
 
     public static function getScanSheet()
     {
-        $data = new \NovaPoshta\DataMethods\ScanSheet_getScanSheet();
+        $data = new \NovaPoshta\MethodParameters\ScanSheet_getScanSheet();
         $data->setRef('9120e925-c00c-11e4-ac12-005056801333');
 
         return ScanSheet::getScanSheet($data);
@@ -79,7 +73,7 @@ class ScanSheet_example
 
     public static function printScanSheet()
     {
-        $data = new \NovaPoshta\DataMethods\ScanSheet_printScanSheet();
+        $data = new \NovaPoshta\MethodParameters\ScanSheet_printScanSheet();
 
         $data->addDocumentRef('39d5aadd-c5ed-11e4-ac12-005056801333');
         // или

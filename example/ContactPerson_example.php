@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 12.02.2015
- * Time: 22:00
- */
 
 namespace NovaPoshta_example;
 

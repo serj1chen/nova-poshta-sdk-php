@@ -8,9 +8,8 @@ use NovaPoshta\Config;
 use NovaPoshta\Models\DataContainer;
 
 /**
- * @author user
- * @version 1.0
- * @created 10-���-2015 23:41:09
+ * Class CoreHelper
+ * @package NovaPoshta\Core
  */
 class CoreHelper
 {

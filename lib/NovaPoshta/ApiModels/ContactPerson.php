@@ -3,20 +3,21 @@
 namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Core\ApiModel;
+use NovaPoshta\MethodParameters\MethodParameters;
 
 /**
  * ContactPerson - Модель для создания контактного лица
- *
- * @author user
- * @version 1.0
- * @created 17-���-2015 23:07:07
+ * 
+ * Class ContactPerson
+ * @package NovaPoshta\ApiModels
+ * 
  * @property string Ref
  * @property string CounterpartyRef
  * @property string FirstName
  * @property string LastName
  * @property string MiddleName
  * @property string Email
- *
+ * 
  * Class ContactPerson
  * @package NovaPoshta\ApiModels
  */
@@ -27,9 +28,9 @@ class ContactPerson extends ApiModel
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    function save()
+    public function save()
     {
-        return $this->sendData(__FUNCTION__, $this->getThisData());
+        return $this->sendData(__function__, $this->getThisData());
     }
 
     /**
@@ -37,9 +38,9 @@ class ContactPerson extends ApiModel
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    function update()
+    public function update()
     {
-        return $this->sendData(__FUNCTION__, $this->getThisData());
+        return $this->sendData(__function__, $this->getThisData());
     }
 
     /**
@@ -47,86 +48,162 @@ class ContactPerson extends ApiModel
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    function delete()
+    public function delete()
     {
-        return $this->sendData(__FUNCTION__, $this->getThisData());
+        return $this->sendData(__function__, $this->getThisData());
     }
 
-    function setRef($value)
+    /**
+     * Устанавливает реф
+     * 
+     * @param $value
+     * @return $this
+     */
+    public function setRef($value)
     {
         $this->Ref = $value;
         return $this;
     }
 
-    function getRef()
+    /**
+     * Возвращает реф
+     * 
+     * @return string
+     */
+    public function getRef()
     {
         return $this->Ref;
     }
 
-    function setCounterpartyRef($value)
+    /**
+     * Устанавливает реф контрагента
+     *
+     * @param $value
+     * @return $this
+     */
+    public function setCounterpartyRef($value)
     {
         $this->CounterpartyRef = $value;
         return $this;
     }
 
-    function getCounterpartyRef()
+    /**
+     * Возвращает реф контрагента
+     * 
+     * @return string
+     */
+    public function getCounterpartyRef()
     {
         return $this->CounterpartyRef;
     }
 
-    function setFirstName($value)
+    /**
+     * Устанавливает фамилию
+     * 
+     * @param $value
+     * @return $this
+     */
+    public function setFirstName($value)
     {
         $this->FirstName = $value;
         return $this;
     }
 
-    function getFirstName()
+    /**
+     * Возвращает фамилию
+     * 
+     * @return string
+     */
+    public function getFirstName()
     {
         return $this->FirstName;
     }
 
-    function setLastName($value)
+    /**
+     * Устанавливает имя
+     * 
+     * @param $value
+     * @return $this
+     */
+    public function setLastName($value)
     {
         $this->LastName = $value;
         return $this;
     }
 
-    function getLastName()
+    /**
+     * Возвращает имя
+     * 
+     * @return string
+     */
+    public function getLastName()
     {
         return $this->LastName;
     }
 
-    function setMiddleName($value)
+    /**
+     * Устанавливает отчество
+     * 
+     * @param $value
+     * @return $this
+     */
+    public function setMiddleName($value)
     {
         $this->MiddleName = $value;
         return $this;
     }
 
-    function getMiddleName()
+    /**
+     * Возвращает отчество
+     * 
+     * @return string
+     */
+    public function getMiddleName()
     {
         return $this->MiddleName;
     }
 
-    function setPhone($value)
+    /**
+     * Устанавливает номер телефона
+     * 
+     * @param $value
+     * @return $this
+     */
+    public function setPhone($value)
     {
         $this->Phone = $value;
         return $this;
     }
 
-    function getPhone()
+    /**
+     * Возвращает номер телефона
+     * 
+     * @return string
+     */
+    public function getPhone()
     {
         return $this->Ref;
     }
 
-    function setEmail($value)
+    /**
+     * Устанавливает email
+     * 
+     * @param $value
+     * @return $this
+     */
+    public function setEmail($value)
     {
         $this->Email = $value;
         return $this;
     }
 
-    function getEmail()
+    /**
+     * Возвращает email
+     * 
+     * @return string
+     */
+    public function getEmail()
     {
         return $this->Email;
     }
-
 }

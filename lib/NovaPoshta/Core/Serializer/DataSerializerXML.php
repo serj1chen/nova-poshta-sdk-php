@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 13.03.2015
- * Time: 21:24
- */
 
 namespace NovaPoshta\Core\Serializer;
 

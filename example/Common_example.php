@@ -1,16 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 12.02.2015
- * Time: 22:00
- */
 
 namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\Common;
-use NovaPoshta\DataMethods\Common_getCargoDescriptionList;
-use NovaPoshta\DataMethods\Common_getTimeIntervals;
+use NovaPoshta\MethodParameters\Common_getCargoDescriptionList;
+use NovaPoshta\MethodParameters\Common_getTimeIntervals;
 
 class Common_example
 {

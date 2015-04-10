@@ -4,16 +4,13 @@ namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Config;
 use NovaPoshta\Core\ApiModel;
-use NovaPoshta\Core\CoreHelper;
 use NovaPoshta\Core\InterfaceMethodCRUD;
-use stdClass;
+use NovaPoshta\MethodParameters\MethodParameters;
+
 
 /**
  * ScanSheet - Модель для работы с реестрами приема-передачи отправлений
  *
- * @author user
- * @version 1.0
- * @created 14-���-2015 10:19:25
  * @property array DocumentRefs
  * @property string Ref
  * @property string Date
@@ -23,7 +20,13 @@ use stdClass;
  */
 class ScanSheet extends ApiModel implements InterfaceMethodCRUD
 {
+    /**
+     * Печать в формате PDF
+     */
     const PRINT_TYPE_PDF = 'pdf';
+    /**
+     * Печать в формате HTML
+     */
     const PRINT_TYPE_HTML = 'html';
 
     /**
@@ -67,12 +70,24 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
         return self::sendData('deleteScanSheet', $data);
     }
 
+    /**
+     * Устанавливает документы
+     *
+     * @param array $documentRefs
+     * @return $this
+     */
     public function setDocumentRefs(array $documentRefs)
     {
         $this->DocumentRefs = $documentRefs;
         return $this;
     }
 
+    /**
+     * Добавить реф документа
+     *
+     * @param $value
+     * @return $this
+     */
     public function addDocumentRef($value)
     {
         if (!isset($this->DocumentRefs)) {
@@ -82,29 +97,56 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
         return $this;
     }
 
+    /**
+     * Очистить рефы документов
+     *
+     * @return $this
+     */
     public function clearDocumentRefs()
     {
         $this->DocumentRefs = array();
         return $this;
     }
 
+    /**
+     * Устанавливает реф реестра
+     *
+     * @param $value
+     * @return $this
+     */
     public function setRef($value)
     {
         $this->Ref = $value;
         return $this;
     }
 
+    /**
+     * Возвращает реф реестра
+     *
+     * @return string
+     */
     public function getRef()
     {
         return $this->Ref;
     }
 
+    /**
+     * Устанавливает дату
+     *
+     * @param $value
+     * @return $this
+     */
     public function setDate($value)
     {
         $this->Date = $value;
         return $this;
     }
 
+    /**
+     * Возвращает дату
+     *
+     * @return string
+     */
     public function getDate()
     {
         return $this->Date;
@@ -116,7 +158,7 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
      * @param stdClass $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function removeDocuments(stdClass $data = null)
+    public static function removeDocuments(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -124,10 +166,10 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
     /**
      * getScanSheet() - загрузить информацию по одному реестру
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getScanSheet(stdClass $data = null)
+    public static function getScanSheet(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -135,10 +177,10 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
     /**
      * getScanSheetList() - загрузить список реестров
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getScanSheetList(stdClass $data = null)
+    public static function getScanSheetList(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -146,10 +188,10 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
     /**
      * printScanSheet() - загрузка печатной формы реестра
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return string
      */
-    public static function printScanSheet(stdClass $data = null)
+    public static function printScanSheet(MethodParameters $data = null)
     {
         $refs = isset($data->DocumentRefs) ? $data->DocumentRefs : null;
 

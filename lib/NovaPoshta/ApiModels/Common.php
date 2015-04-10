@@ -3,14 +3,10 @@
 namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Core\ApiModel;
-use stdClass;
+use NovaPoshta\MethodParameters\MethodParameters;
 
 /**
  * Common - Модель для работы со справочниками
- *
- * @author user
- * @version 1.0
- * @created 10-���-2015 23:46:34
  *
  * Class Common
  * @package NovaPoshta\ApiModels
@@ -30,10 +26,10 @@ class Common extends ApiModel
     /**
      * getCargoDescriptionList() - загрузить справочник описания груза
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getCargoDescriptionList(stdClass $data = null)
+    public static function getCargoDescriptionList(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -101,10 +97,10 @@ class Common extends ApiModel
     /**
      * getTimeIntervals() - загрузить список временных интервалов (для заказа услуги "Временные интервалы")
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getTimeIntervals(stdClass $data = null)
+    public static function getTimeIntervals(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }

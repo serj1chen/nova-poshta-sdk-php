@@ -1,20 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 12.02.2015
- * Time: 22:00
- */
 
 namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\Counterparty;
-use NovaPoshta\DataMethods\Counterparty_getCounterparties;
-use NovaPoshta\DataMethods\Counterparty_getCounterpartyAddresses;
-use NovaPoshta\DataMethods\Counterparty_getCounterpartyContactPersons;
-use NovaPoshta\DataMethods\Counterparty_getCounterpartyOptions;
-use NovaPoshta\DataMethods\Counterparty_getCounterpartyByEDRPOU;
-use NovaPoshta\DataMethods\Counterparty_cloneLoyaltyCounterpartySender;
+use NovaPoshta\MethodParameters\Counterparty_getCounterparties;
+use NovaPoshta\MethodParameters\Counterparty_getCounterpartyAddresses;
+use NovaPoshta\MethodParameters\Counterparty_getCounterpartyContactPersons;
+use NovaPoshta\MethodParameters\Counterparty_getCounterpartyOptions;
+use NovaPoshta\MethodParameters\Counterparty_getCounterpartyByEDRPOU;
+use NovaPoshta\MethodParameters\Counterparty_cloneLoyaltyCounterpartySender;
 
 class Counterparty_example
 {

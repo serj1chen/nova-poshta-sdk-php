@@ -5,9 +5,10 @@ namespace NovaPoshta\Models;
 use NovaPoshta\Core\BaseModel;
 
 /**
- * @author user
- * @version 1.0
- * @created 12-���-2015 16:39:31
+ * Объект для формирования запроса
+ *
+ * Class DataContainer
+ * @package NovaPoshta\Models
  */
 class DataContainer extends BaseModel
 {

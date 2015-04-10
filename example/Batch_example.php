@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 22.03.2015
- * Time: 12:58
- */
 
 namespace NovaPoshta_example;
 
 
 use NovaPoshta\ApiModels\Address;
 use NovaPoshta\ApiModels\Common;
-use NovaPoshta\DataMethods\Common_getTimeIntervals;
+use NovaPoshta\MethodParameters\Common_getTimeIntervals;
 
 class Batch_example
 {

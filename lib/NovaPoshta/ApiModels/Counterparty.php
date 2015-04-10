@@ -3,14 +3,15 @@
 namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Core\ApiModel;
-use \stdClass;
+use NovaPoshta\MethodParameters\MethodParameters;
+
 
 /**
  * Counterparty - Модель для работы с данными контрагента
  *
- * @author user
- * @version 1.0
- * @created 12-���-2015 21:48:03
+ * Class Counterparty
+ * @package NovaPoshta\ApiModels
+ *
  * @property string Ref
  * @property string CounterpartyProperty
  * @property string CityRef
@@ -22,9 +23,6 @@ use \stdClass;
  * @property string Email
  * @property string OwnershipForm
  * @property string EDRPOU
- *
- * Class Counterparty
- * @package NovaPoshta\ApiModels
  */
 class Counterparty extends ApiModel
 {
@@ -78,122 +76,243 @@ class Counterparty extends ApiModel
         return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
+    /**
+     * Устанавливает реф
+     *
+     * @param $value
+     * @return $this
+     */
     public function setRef($value)
     {
         $this->Ref = $value;
         return $this;
     }
 
+    /**
+     * Возвращает реф
+     *
+     * @return string
+     */
     public function getRef()
     {
         return $this->Ref;
     }
 
+    /**
+     * Устанавливает свойство контрагента
+     *
+     * @param $value
+     * @return $this
+     */
     public function setCounterpartyProperty($value)
     {
         $this->CounterpartyProperty = $value;
         return $this;
     }
 
+    /**
+     * Возвращает свойство контрагента
+     *
+     * @return string
+     */
     public function getCounterpartyProperty()
     {
         return $this->CounterpartyProperty;
     }
 
+    /**
+     * Устанавливает реф города
+     *
+     * @param $value
+     * @return $this
+     */
     public function setCityRef($value)
     {
         $this->CityRef = $value;
         return $this;
     }
 
+    /**
+     * Возвращает реф города
+     *
+     * @return string
+     */
     public function getCityRef()
     {
         return $this->CityRef;
     }
 
+    /**
+     * Устанавливает тип контрагента
+     *
+     * @param $value
+     * @return $this
+     */
     public function setCounterpartyType($value)
     {
         $this->CounterpartyType = $value;
         return $this;
     }
 
+    /**
+     * Возвращает тип контрагента
+     *
+     * @return string
+     */
     public function getCounterpartyType()
     {
         return $this->CounterpartyType;
     }
 
+    /**
+     * Устанавливает фамилию
+     *
+     * @param $value
+     * @return $this
+     */
     public function setFirstName($value)
     {
         $this->FirstName = $value;
         return $this;
     }
 
+    /**
+     * Возвращает фамилию
+     *
+     * @return string
+     */
     public function getFirstName()
     {
         return $this->FirstName;
     }
 
+    /**
+     * Устанавливает отчество
+     *
+     * @param $value
+     * @return $this
+     */
     public function setMiddleName($value)
     {
         $this->MiddleName = $value;
         return $this;
     }
 
+    /**
+     * Возвращает отчество
+     *
+     * @return string
+     */
     public function getMiddleName()
     {
         return $this->MiddleName;
     }
 
+    /**
+     * Устанавливает имя
+     *
+     * @param $value
+     * @return $this
+     */
     public function setLastName($value)
     {
         $this->LastName = $value;
         return $this;
     }
 
+    /**
+     * Возвращает имя
+     *
+     * @return string
+     */
     public function getLastName()
     {
         return $this->LastName;
     }
 
+    /**
+     * Устанавливает номер телефона
+     *
+     * @param $value
+     * @return $this
+     */
     public function setPhone($value)
     {
         $this->Phone = $value;
         return $this;
     }
 
+    /**
+     * Возвращает номер телефона
+     *
+     * @return string
+     */
     public function getPhone()
     {
         return $this->Phone;
     }
 
+    /**
+     * Устанавливает email
+     *
+     * @param $value
+     * @return $this
+     */
     public function setEmail($value)
     {
         $this->Email = $value;
         return $this;
     }
 
+    /**
+     * Возвращает email
+     *
+     * @return string
+     */
     public function getEmail()
     {
         return $this->Email;
     }
 
+    /**
+     * Устанавливает ОКПО
+     *
+     * @param $value
+     * @return $this
+     */
     public function setEDRPOU($value)
     {
         $this->EDRPOU = $value;
         return $this;
     }
 
+    /**
+     * Возвращает ОКПО
+     *
+     * @return string
+     */
     public function getEDRPOU()
     {
         return $this->EDRPOU;
     }
 
+    /**
+     * Устанавливает форму собственности
+     *
+     * @param $value
+     * @return $this
+     */
     public function setOwnershipForm($value)
     {
         $this->OwnershipForm = $value;
         return $this;
     }
 
+    /**
+     * Возвращает форму собственности
+     *
+     * @return string
+     */
     public function getOwnershipForm()
     {
         return $this->OwnershipForm;
@@ -206,10 +325,10 @@ class Counterparty extends ApiModel
      * Метод: cloneLoyaltyCounterpartySender — создает контрагента-отправителя, если выбранный город-отправитель
      * отличается от города в котором зарегистрирован пользователь
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function cloneLoyaltyCounterpartySender(stdClass $data = null)
+    public static function cloneLoyaltyCounterpartySender(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -217,10 +336,10 @@ class Counterparty extends ApiModel
     /**
      * getCounterparties() - загрузить список контрагентов отправителей/получателей
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getCounterparties(stdClass $data = null)
+    public static function getCounterparties(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -228,10 +347,10 @@ class Counterparty extends ApiModel
     /**
      * getCounterpartyAddresses() - загрузить список адресов контрагентов
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getCounterpartyAddresses(stdClass $data = null)
+    public static function getCounterpartyAddresses(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -239,10 +358,10 @@ class Counterparty extends ApiModel
     /**
      * getCounterpartyContactPersons() - загрузить список контактных лиц контрагента
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getCounterpartyContactPersons(stdClass $data = null)
+    public static function getCounterpartyContactPersons(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -250,10 +369,10 @@ class Counterparty extends ApiModel
     /**
      * getCounterpartyByEDRPOU() - найти контрагента по коду ОКПО
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getCounterpartyByEDRPOU(stdClass $data = null)
+    public static function getCounterpartyByEDRPOU(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }
@@ -261,10 +380,10 @@ class Counterparty extends ApiModel
     /**
      * getCounterpartyOptions() - загрузить параметры контрагента
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
-    public static function getCounterpartyOptions(stdClass $data = null)
+    public static function getCounterpartyOptions(MethodParameters $data = null)
     {
         return self::sendData(__FUNCTION__, $data);
     }

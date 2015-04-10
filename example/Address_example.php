@@ -1,18 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 12.02.2015
- * Time: 22:00
- */
 
 namespace NovaPoshta_example;
 
 use NovaPoshta\ApiModels\Address;
-use NovaPoshta\DataMethods\Address_getStreet;
-use NovaPoshta\DataMethods\Address_getWarehouses;
-use NovaPoshta\DataMethods\Address_getCities;
-use NovaPoshta\DataMethods\Address_getAreas;
+use NovaPoshta\MethodParameters\Address_getStreet;
+use NovaPoshta\MethodParameters\Address_getWarehouses;
+use NovaPoshta\MethodParameters\Address_getCities;
+use NovaPoshta\MethodParameters\Address_getAreas;
 
 class Address_example
 {
