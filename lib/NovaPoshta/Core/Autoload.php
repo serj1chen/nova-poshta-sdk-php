@@ -14,7 +14,7 @@ class Autoload
     public static function load($className)
     {
         $className = str_replace('NovaPoshta\\', '', $className);
-        $className = NOVA_POSHTA_PATH . $className . '.php';
+        $className = NOVA_POSHTA_PATH_SDK . $className . '.php';
 
         if ((file_exists($className) === false) || (is_readable($className) === false)) {
             return false;
