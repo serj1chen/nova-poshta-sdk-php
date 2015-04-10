@@ -13,8 +13,8 @@ class Autoload
 
     public static function load($className)
     {
-        $className = str_replace(NP_API2_NAME_LIB, '', $className);
-        $className = NP_API2_ROOT . $className . '.php';
+        $className = str_replace('NovaPoshta\\', '', $className);
+        $className = NOVA_POSHTA_PATH . $className . '.php';
 
         if ((file_exists($className) === false) || (is_readable($className) === false)) {
             return false;
