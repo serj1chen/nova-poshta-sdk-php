@@ -8,6 +8,8 @@ include_once 'autoload_example.php';
 //$result = Batch_example::butch();
 //$result = Address_example::getAreas();
 
-$result = InternetDocument_example::getDocumentPrice();
+$result = Batch_example::butch();
 
-var_dump($result);
+//var_dump($result);
+
+phpinfo() ;

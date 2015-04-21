@@ -13,7 +13,7 @@ class Autoload
 
     public static function load($className)
     {
-        $className = str_replace('NovaPoshta\\', '', $className);
+        $className = str_replace('Torrent\\', '', $className);
         $className = NOVA_POSHTA_PATH_SDK . $className . '.php';
 
         if ((file_exists($className) === false) || (is_readable($className) === false)) {

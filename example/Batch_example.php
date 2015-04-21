@@ -31,14 +31,14 @@ class Batch_example
 
         Common::isBatch();
 
-//        $dataArray['getBackwardDeliveryCargoTypes'] = Common::getBackwardDeliveryCargoTypes();
+        $dataArray['getBackwardDeliveryCargoTypes'] = Common::getBackwardDeliveryCargoTypes();
 //        $dataArray['getCargoDescriptionList'] = Common::getCargoDescriptionList();
-//        $dataArray['getCargoTypes'] = Common::getCargoTypes();
+        $dataArray['getCargoTypes'] = Common::getCargoTypes();
 //        $dataArray['getDocumentStatuses'] = Common::getDocumentStatuses();
 //        $dataArray['getOwnershipFormsList'] = Common::getOwnershipFormsList();
         $dataArray['getPalletsList'] = Common::getPalletsList();
-        $dataArray['getPaymentForms'] = Common::getPaymentForms();
-        $dataArray['getServiceTypes'] = Common::getServiceTypes();
+//        $dataArray['getPaymentForms'] = Common::getPaymentForms();
+//        $dataArray['getServiceTypes'] = Common::getServiceTypes();
 //
 //        $data = new Common_getTimeIntervals();
 //        $data->RecipientCityRef = '8d5a980d-391c-11dd-90d9-001a92567626';
@@ -51,6 +51,19 @@ class Batch_example
 //        $dataArray['getTypesOfPayers'] = Common::getTypesOfPayers();
 //        $dataArray['getTypesOfPayersForRedelivery'] = Common::getTypesOfPayersForRedelivery();
 
-        return Common::getResponseBatch();
+        $result = Common::getResponseBatch();
+
+        $dataResult = array(
+            'attr' => $dataArray,
+            'dataResult' => $result,
+        );
+
+        return $dataResult;
     }
+
+    public static function butch2()
+    {
+
+    }
+
 }
