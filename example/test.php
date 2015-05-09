@@ -5,11 +5,9 @@ namespace NovaPoshta_example;
 include_once "../lib/NovaPoshta/bootstrap.php";
 include_once 'autoload_example.php';
 
-//$result = Batch_example::butch();
-//$result = Address_example::getAreas();
+Config_example::initConfig();
 
-$result = Batch_example::butch();
 
-//var_dump($result);
+$result = Text_example::test();
 
-phpinfo() ;
+var_dump($result);

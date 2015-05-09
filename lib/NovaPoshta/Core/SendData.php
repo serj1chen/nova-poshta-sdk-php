@@ -12,7 +12,7 @@ use NovaPoshta\Models\DataContainerResponse;
  * Class SendData
  * @package NovaPoshta\Core
  */
-class SendData extends ClosedConstructor
+class SendData
 {
     private static $instance;
     private $serializer;
@@ -94,8 +94,8 @@ class SendData extends ClosedConstructor
         $response = $this->serializer->unserializeBatchData($response);
 
         $responseDataContainers = array();
-        foreach($this->dataBatch as $key => $item){
-            $responseDataContainers[$key] = array_pop($response);
+        foreach($response as $key => $item){
+            $responseDataContainers[$item->id] = $item;
         }
 
         $this->dataBatch = array();
@@ -122,7 +122,7 @@ class SendData extends ClosedConstructor
 
             curl_setopt($ch, CURLOPT_URL, Config::getUrlApi());
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/xml"));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/plain"));
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_POST, 1);

@@ -18,7 +18,7 @@ class DataSerializerJSONRPC2 extends SerializerFactory implements SerializerInte
 
     public function unserializeData($json)
     {
-        $data = (array)json_decode($json);
+        $data = json_decode($json);
         $dataContainer = $this->dataSerializerJSONRPC2dataContainer(array($data));
 
         return $dataContainer[0];
@@ -48,11 +48,11 @@ class DataSerializerJSONRPC2 extends SerializerFactory implements SerializerInte
         foreach($dataItems as $item){
             $dataJSONRPC2 = new \stdClass();
             $dataJSONRPC2->id = $item->id;
-            $dataJSONRPC2->method = $item->getModelName() . '.' . $item->getCalledMethod();
+            $dataJSONRPC2->method = $item->modelName . '.' . $item->calledMethod;
             $dataJSONRPC2->params = new \stdClass();
-            $dataJSONRPC2->params->methodProperties = $item->getMethodProperties();
-            $dataJSONRPC2->params->language = $item->getLanguage();
-            $dataJSONRPC2->params->apiKey = $item->getApiKey();
+            $dataJSONRPC2->params->methodProperties = $item->methodProperties;
+            $dataJSONRPC2->params->language = $item->language;
+            $dataJSONRPC2->params->apiKey = $item->apiKey;
 
             $data[] = $dataJSONRPC2;
         }
@@ -71,7 +71,6 @@ class DataSerializerJSONRPC2 extends SerializerFactory implements SerializerInte
 
                 return $dataContainerResponse;
             }
-            $data = json_decode(json_encode($data), false);
 
             $dataContainer = new DataContainerResponse();
             $dataContainer->success = isset($data->result) ? true : false;
@@ -80,7 +79,7 @@ class DataSerializerJSONRPC2 extends SerializerFactory implements SerializerInte
             } else {
                 if (isset($data->error)) {
                     $dataContainer->errors = isset($data->error->data) ? $data->error->data : '';
-                    $dataContainer->errors['code'] = isset($data->error->code) ? $data->error->code : '';
+//                    $dataContainer->errors['code'] = isset($data->error->code) ? $data->error->code : '';
                     $dataContainer->errors['message'] = isset($data->error->message) ? $data->error->message : '';
                 } else {
                     $dataContainer->errors[] = 'DataSerializerJSONRPC2.DATA_ERRORS_IS_EMPTY';

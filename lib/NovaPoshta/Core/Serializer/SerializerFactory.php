@@ -3,10 +3,9 @@
 namespace NovaPoshta\Core\Serializer;
 
 use NovaPoshta\Config;
-use NovaPoshta\Core\ClosedConstructor;
 use NovaPoshta\Core\NovaPoshtaException;
 
-class SerializerFactory extends ClosedConstructor
+class SerializerFactory
 {
     private static $serializer;
 

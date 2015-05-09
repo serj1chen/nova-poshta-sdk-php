@@ -2,8 +2,6 @@
 
 namespace NovaPoshta\Core\Serializer;
 
-use NovaPoshta\Models\DataContainer;
-
 interface SerializerBatchInterface
 {
     /**
