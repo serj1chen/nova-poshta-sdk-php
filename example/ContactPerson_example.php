@@ -12,7 +12,7 @@ class ContactPerson_example
         $contactPerson->setCounterpartyRef('2718756a-b39b-11e4-a77a-005056887b8d');
         $contactPerson->setFirstName('Пандан');
         $contactPerson->setLastName('Джедай');
-        $contactPerson->setMiddleName('Джедайович');
+        $contactPerson->setMiddleName('Джедаевич');
         $contactPerson->setPhone('380660000000');
         $contactPerson->setEmail('test@i.ua');
 
@@ -26,7 +26,7 @@ class ContactPerson_example
         $contactPerson->setCounterpartyRef('2718756a-b39b-11e4-a77a-005056887b8d');
         $contactPerson->setFirstName('Панданюк');
         $contactPerson->setLastName('Джедай');
-        $contactPerson->setMiddleName('Джедайович');
+        $contactPerson->setMiddleName('Джедаевич');
         $contactPerson->setPhone('380660000000');
         $contactPerson->setEmail('test@i.ua');
 

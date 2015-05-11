@@ -20,7 +20,7 @@ class Counterparty_example
         $counterparty->setCounterpartyType('PrivatePerson');
         $counterparty->setFirstName('Пилипко');
         $counterparty->setLastName('Вася');
-        $counterparty->setMiddleName('Сергійович');
+        $counterparty->setMiddleName('Сергеевич');
         $counterparty->setPhone('+380661122333');
         $counterparty->setEmail('test@i.ua');
 
@@ -36,7 +36,7 @@ class Counterparty_example
         $counterparty->setCounterpartyType('PrivatePerson');
         $counterparty->setFirstName('Пилипко');
         $counterparty->setLastName('Вася');
-        $counterparty->setMiddleName('Сергійович');
+        $counterparty->setMiddleName('Сергеевич');
         $counterparty->setPhone('+380661122333');
         $counterparty->setEmail('test@i.ua');
 

@@ -53,8 +53,8 @@ class InternetDocument_example
         $internetDocument->setInfoRegClientBarcodes('55552');
         $internetDocument->setSaturdayDelivery('true');
         $internetDocument->setNumberOfFloorsLifting('12');
-        $internetDocument->setAccompanyingDocuments('Великий кошик');
-        $internetDocument->setAdditionalInformation('Скло');
+        $internetDocument->setAccompanyingDocuments('Большая корзина');
+        $internetDocument->setAdditionalInformation('Стекло');
         $internetDocument->addBackwardDeliveryData($backwardDeliveryData1);
         $internetDocument->addBackwardDeliveryData($backwardDeliveryData2);
 
@@ -93,7 +93,7 @@ class InternetDocument_example
         $backwardDeliveryData2 = new \NovaPoshta\Models\BackwardDeliveryData();
         $backwardDeliveryData2->setPayerType('Sender')
             ->setCargoType('Trays')
-            ->setRedeliveryString('Пiддони( тара )')
+            ->setRedeliveryString('Поддони( тара )')
             ->addTray($trayCargoA)
             ->addTray($trayCargoE);
 

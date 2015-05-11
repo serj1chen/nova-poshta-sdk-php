@@ -16,7 +16,7 @@ class Address_example
         $address->setCounterpartyRef('2718756a-b39b-11e4-a77a-005056887b8d');
         $address->setBuildingNumber('2/2');
         $address->setFlat('22');
-        $address->setNote('Перший підїзд');
+        $address->setNote('Первый подъезд');
         $address->setStreetRef('c55c9056-4148-11dd-9198-001d60451983');
 
         return $address->save();
@@ -29,7 +29,7 @@ class Address_example
         $address->CounterpartyRef = '2718756a-b39b-11e4-a77a-005056887b8d';
         $address->BuildingNumber = '92';
         $address->Flat = '22';
-        $address->Note = 'Перший';
+        $address->Note = 'Первый';
         $address->StreetRef = 'c55c9056-4148-11dd-9198-001d60451983';
 
         return $address->update();
