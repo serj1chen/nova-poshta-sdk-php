@@ -21,6 +21,7 @@ abstract class ApiModel extends BaseModel
 
     /**
      * Пакетная передача данных
+     *
      * @return bool
      */
     public static function isBatch()
@@ -31,6 +32,7 @@ abstract class ApiModel extends BaseModel
 
     /**
      * Отмена пакетной передачи данных
+     *
      * @return bool
      */
     public static function notBatch()
@@ -73,6 +75,11 @@ abstract class ApiModel extends BaseModel
         return SendData::send($dataContainer, self::$isBatch);
     }
 
+    /**
+     * Получить пакетом данные
+     *
+     * @return array
+     */
     public static function getResponseBatch()
     {
         return SendData::getResponseBatch();

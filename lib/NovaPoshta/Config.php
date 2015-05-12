@@ -43,7 +43,7 @@ class Config
     /**
      * @var string формат по умолчанию для передачи данных
      */
-    private static $format = self::FORMAT_JSON;
+    private static $format = self::FORMAT_JSONRPC2;
     /**
      * @var string язык по умолчанию для передачи данных
      */

@@ -1,5 +1,7 @@
 <?php
 
+namespace NovaPoshta\Core;
+
 class Autoload
 {
     public static function init()
@@ -8,7 +10,7 @@ class Autoload
             spl_autoload_register('__autoload');
         }
 
-        return spl_autoload_register(array('Autoload', 'load'));
+        return spl_autoload_register(array('\NovaPoshta\Core\Autoload', 'load'));
     }
 
     public static function load($className)
