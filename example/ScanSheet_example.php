@@ -11,7 +11,7 @@ class ScanSheet_example
         $scanSheets = array('70ec0f61-bf6b-11e4-a77a-005056887b8d', '70ec0f33-bf6b-11e4-a77a-005056887b8d');
 
         $scanSheet = new ScanSheet();
-        $scanSheet->setDate('16.03.2015');
+        $scanSheet->setDate('16.06.2015');
 
         $scanSheet->setDocumentRefs($scanSheets);
 
@@ -37,7 +37,7 @@ class ScanSheet_example
     public static function delete()
     {
         $scanSheet = new ScanSheet();
-        $scanSheet->setRef('1c65213d-c00b-11e4-ac12-005056801333');
+        $scanSheet->setRef('9d868cfe-012e-11e5-ad08-005056801333');
 
         return $scanSheet->delete();
     }
@@ -77,7 +77,7 @@ class ScanSheet_example
 
         $data->addDocumentRef('39d5aadd-c5ed-11e4-ac12-005056801333');
         // или
-        //        $data->setDocumentRefs(array('39d5aadd-c5ed-11e4-ac12-005056801333'));
+        // $data->setDocumentRefs(array('39d5aadd-c5ed-11e4-ac12-005056801333'));
         // или
         // $data->addNumber('105-0002898');
 

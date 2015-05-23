@@ -10,7 +10,7 @@ namespace NovaPoshta\Core\Logger;
 interface InterfaceLogger
 {
     /**
-     * Данные оригинальные
+     * Данные оригинальные (сырые данные, в тому формате в котором отправляется запрос)
      * @param $fromData string запрос
      * @param $toData string ответ
      * @return mixed
@@ -18,7 +18,7 @@ interface InterfaceLogger
     public static function setOriginalData($toData, $fromData);
 
     /**
-     *
+     * Данные объектов запроса/ответа
      * @param $fromData
      * @param $toData
      * @return mixed

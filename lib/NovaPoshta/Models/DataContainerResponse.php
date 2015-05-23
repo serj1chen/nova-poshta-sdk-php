@@ -5,7 +5,7 @@ namespace NovaPoshta\Models;
 use NovaPoshta\Core\BaseModel;
 
 /**
- * Контейнер для ответа с сервера
+ * Контейнер с ответом сервера
  *
  * Class DataContainerResponse
  * @package NovaPoshta\Models

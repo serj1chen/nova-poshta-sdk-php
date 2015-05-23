@@ -4,8 +4,8 @@ namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Config;
 use NovaPoshta\Core\ApiModel;
-use NovaPoshta\Core\InterfaceMethodCRUD;
 use NovaPoshta\MethodParameters\MethodParameters;
+use stdClass;
 
 
 /**
@@ -18,7 +18,7 @@ use NovaPoshta\MethodParameters\MethodParameters;
  * Class ScanSheet
  * @package NovaPoshta\ApiModels
  */
-class ScanSheet extends ApiModel implements InterfaceMethodCRUD
+class ScanSheet extends ApiModel
 {
     /**
      * Печать в формате PDF
@@ -155,7 +155,7 @@ class ScanSheet extends ApiModel implements InterfaceMethodCRUD
     /**
      * removeDocuments() - удалить экспресс-накладные из реестра
      *
-     * @param stdClass $data
+     * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
     public static function removeDocuments(MethodParameters $data = null)

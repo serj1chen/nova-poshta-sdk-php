@@ -144,6 +144,8 @@ class Config
     }
 
     /**
+     * Установить класс для логирования
+     *
      * @param InterfaceLogger $logger
      */
     public static function setClassLogger(InterfaceLogger $logger)
@@ -152,7 +154,7 @@ class Config
     }
 
     /**
-     *
+     * Получить класс для логирования
      * @return InterfaceLogger
      */
     public static function getClassLogger()

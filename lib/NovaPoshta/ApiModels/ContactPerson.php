@@ -3,7 +3,6 @@
 namespace NovaPoshta\ApiModels;
 
 use NovaPoshta\Core\ApiModel;
-use NovaPoshta\MethodParameters\MethodParameters;
 
 /**
  * ContactPerson - Модель для создания контактного лица
