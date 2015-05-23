@@ -30,7 +30,7 @@ class DataSerializerXML extends SerializerFactory implements SerializerInterface
         if (!$xml) {
             $dataContainerResponse = new DataContainerResponse();
             $dataContainerResponse->success = false;
-            $dataContainerResponse->errors[] = array('DataSerializerJSONRPC2.DATA_IS_INVALID');
+            $dataContainerResponse->errors[] = array('DataSerializerXML.DATA_IS_INVALID');
 
             return $dataContainerResponse;
         }
@@ -42,6 +42,18 @@ class DataSerializerXML extends SerializerFactory implements SerializerInterface
 
         $data = json_decode(json_encode($data), false);
         $dataContainerResponse = new DataContainerResponse($data);
+
+        if($dataContainerResponse->success == 'true'){
+            $dataContainerResponse->success = true;
+        } else {
+            $dataContainerResponse->success = false;
+        }
+        $dataContainerResponse->data = (array)$dataContainerResponse->data;
+        $dataContainerResponse->warnings = (array)$dataContainerResponse->warnings;
+        $dataContainerResponse->info = (array)$dataContainerResponse->info;
+        if(is_object($dataContainerResponse->errors)){
+            $dataContainerResponse->errors = (array)$dataContainerResponse->errors;
+        }
 
         return $dataContainerResponse;
     }

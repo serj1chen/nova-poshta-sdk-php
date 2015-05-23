@@ -1,6 +1,7 @@
 <?php
 
 namespace NovaPoshta;
+use NovaPoshta\Core\Logger\InterfaceLogger;
 
 /**
  * Конфиг
@@ -56,6 +57,11 @@ class Config
      * @var string кабинет Новой Почты
      */
     private static $urlMyNovaPoshta = 'https://my.novaposhta.ua';
+
+    /**
+     * @var InterfaceLogger
+     */
+    private static $classLogger;
 
     /**
      * Возвращает API ключ
@@ -135,5 +141,22 @@ class Config
     public static function getUrlMyNovaPoshta()
     {
         return self::$urlMyNovaPoshta;
+    }
+
+    /**
+     * @param InterfaceLogger $logger
+     */
+    public static function setClassLogger(InterfaceLogger $logger)
+    {
+        self::$classLogger = $logger;
+    }
+
+    /**
+     *
+     * @return InterfaceLogger
+     */
+    public static function getClassLogger()
+    {
+        return self::$classLogger;
     }
 }

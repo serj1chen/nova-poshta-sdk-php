@@ -3,6 +3,8 @@
 namespace NovaPoshta\Core;
 
 use NovaPoshta\Config;
+use NovaPoshta\Core\Logger\BaseLogger;
+use NovaPoshta\Core\Logger\DataLogger;
 use NovaPoshta\Core\Serializer\SerializerBatchInterface;
 use NovaPoshta\Core\Serializer\SerializerFactory;
 use NovaPoshta\Models\DataContainer;
@@ -55,6 +57,8 @@ class SendData
      */
     protected function _send(DataContainer $dataContainer, $isBatch = false)
     {
+        $logger = new DataLogger();
+
         $dataContainer->apiKey = Config::getApiKey();
         $dataContainer->language = Config::getLanguage();
         $dataContainer->id = $this->getIdBatch();
@@ -67,8 +71,16 @@ class SendData
             return $dataContainer->id;
         }
 
+        $logger->toData = $dataContainer;
+
         $data = $this->serializer->serializeData($dataContainer);
+
+        $logger->toOriginalData = $data;
+
         $response = $this->query($data);
+
+        $logger->fromOriginalData = $response;
+
         if($response){
             $response = $this->serializer->unserializeData($response);
         } else {
@@ -76,6 +88,10 @@ class SendData
             $response->success = false;
             $response->errors[] = array('DataSerializerJSON.ERROR_REQUEST');
         }
+
+        $logger->fromData = $response;
+
+        BaseLogger::setDataLogger($logger);
 
         return $response;
     }

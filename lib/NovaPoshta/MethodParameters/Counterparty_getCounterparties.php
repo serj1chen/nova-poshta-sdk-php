@@ -7,6 +7,7 @@ namespace NovaPoshta\MethodParameters;
  *
  * Class Address_getStreet
  * @package NovaPoshta\DataMethods
+ * @property string Ref
  * @property string CounterpartyProperty
  * @property string Page
  * @property string FindByString
@@ -14,6 +15,18 @@ namespace NovaPoshta\MethodParameters;
  */
 class Counterparty_getCounterparties extends MethodParameters
 {
+    /**
+     * Идентификатор контрагента
+     *
+     * @param $value
+     * @return $this
+     */
+    public function setRef($value)
+    {
+        $this->Ref = $value;
+        return $this;
+    }
+
     /**
      * Устанавливает свойство контрагента
      *

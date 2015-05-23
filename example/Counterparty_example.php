@@ -58,6 +58,8 @@ class Counterparty_example
         $data->setPage(1);
         $data->setCityRef('8d5a980d-391c-11dd-90d9-001a92567626');
         $data->setFindByString('Петр');
+        // или
+        $data->setRef('adcad698-011c-11e5-ad08-005056801333');
 
         return Counterparty::getCounterparties($data);
     }
