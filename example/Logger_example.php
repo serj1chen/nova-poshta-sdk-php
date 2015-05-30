@@ -9,13 +9,13 @@ class Logger_example extends Logger
     public static function setOriginalData($toData, $fromData)
     {
         echo 'Send data:';
-        echo '<br>';
+        echo '<br><br>';
         echo $toData;
 
         echo '<br><br>';
 
         echo 'Response data:';
-        echo '<br>';
+        echo '<br><br>';
         echo $fromData;
 
         echo '<br><br>';

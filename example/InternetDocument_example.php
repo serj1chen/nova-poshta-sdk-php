@@ -377,7 +377,7 @@ class InternetDocument_example
     public static function getDocument()
     {
         $data = new \NovaPoshta\MethodParameters\InternetDocument_getDocument();
-        $data->setRef('70ec0f61-bf6b-11e4-a77a-005056887b8d');
+        $data->setRef('8b8cb4de-c6fb-11e4-a77a-005056887b8d');
 
         return InternetDocument::getDocument($data);
     }
