@@ -27,6 +27,7 @@ class DataSerializerJSON extends SerializerFactory implements SerializerInterfac
         }
 
         $data = json_decode(json_encode($data), false);
+        $data->errors = (array)$data->errors;
         $dataContainerResponse = new DataContainerResponse($data);
 
         return $dataContainerResponse;

@@ -153,7 +153,7 @@ class ScanSheet extends ApiModel
     }
 
     /**
-     * removeDocuments() - удалить экспресс-накладные из реестра
+     * Вызвать метод removeDocuments() - удалить экспресс-накладные из реестра
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -164,7 +164,7 @@ class ScanSheet extends ApiModel
     }
 
     /**
-     * getScanSheet() - загрузить информацию по одному реестру
+     * Вызвать метод getScanSheet() - загрузить информацию по одному реестру
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -175,7 +175,7 @@ class ScanSheet extends ApiModel
     }
 
     /**
-     * getScanSheetList() - загрузить список реестров
+     * Вызвать метод getScanSheetList() - загрузить список реестров
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -186,7 +186,7 @@ class ScanSheet extends ApiModel
     }
 
     /**
-     * printScanSheet() - загрузка печатной формы реестра
+     * Вызвать метод printScanSheet() - загрузка печатной формы реестра
      *
      * @param MethodParameters $data
      * @return string

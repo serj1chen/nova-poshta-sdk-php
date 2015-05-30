@@ -88,7 +88,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     const ORDER_FIELD_RecipientDateTime = 'RecipientDateTime';
 
     /**
-     *
+     * Устанавливает номер документа
      *
      * @param $value
      * @return $this
@@ -100,7 +100,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить номер документа
      *
      * @return string
      */
@@ -110,7 +110,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает номер внутреннего заказа клиента
      *
      * @param $value
      * @return $this
@@ -122,7 +122,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить номер внутреннего заказа клиента
      *
      * @return string
      */
@@ -132,7 +132,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает дата доставки
      *
      * @param $value
      * @return $this
@@ -144,7 +144,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить дата доставки
      *
      * @return string
      */
@@ -153,9 +153,8 @@ class InternetDocument_getDocumentList extends MethodParameters
         return $this->DeliveryDateTime;
     }
 
-    // фактична дата доставки
     /**
-     *
+     * Устанавливает фактическую дату и время получения
      *
      * @param $value
      * @return $this
@@ -167,7 +166,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить фактическую дату и время получения
      *
      * @return string
      */
@@ -177,7 +176,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает дату и время создания ЕН
      *
      * @param $value
      * @return $this
@@ -189,7 +188,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить дату и время создания ЕН
      *
      * @return string
      */
@@ -199,7 +198,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает идентификатор отправителя
      *
      * @param $value
      * @return $this
@@ -211,7 +210,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить идентификатор отправителя
      *
      * @return string
      */
@@ -221,7 +220,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает идентификатор получателя
      *
      * @param $value
      * @return $this
@@ -233,7 +232,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить идентификатор получателя
      *
      * @return string
      */
@@ -243,7 +242,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает вес от
      *
      * @param $value
      * @return $this
@@ -255,7 +254,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить вес от
      *
      * @return string
      */
@@ -265,7 +264,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает вес до
      *
      * @param $value
      * @return $this
@@ -277,7 +276,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить вес до
      *
      * @return string
      */
@@ -287,7 +286,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает объявленную стоимость от
      *
      * @param $value
      * @return $this
@@ -299,7 +298,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить объявленную стоимость от
      *
      * @return string
      */
@@ -309,7 +308,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает объявленную стоимость до
      *
      * @param $value
      * @return $this
@@ -321,7 +320,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить объявленную стоимость до
      *
      * @return string
      */
@@ -331,7 +330,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает количество мест от
      *
      * @param $value
      * @return $this
@@ -343,7 +342,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить количество мест от
      *
      * @return string
      */
@@ -353,7 +352,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает количество мест до
      *
      * @param $value
      * @return $this
@@ -365,7 +364,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить количество мест до
      *
      * @return string
      */
@@ -375,7 +374,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает стоимость доставки от
      *
      * @param $value
      * @return $this
@@ -387,7 +386,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить стоимость доставки от
      *
      * @return string
      */
@@ -397,7 +396,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает стоимость доставки до
      *
      * @param $value
      * @return $this
@@ -409,7 +408,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить стоимость доставки до
      *
      * @return string
      */
@@ -419,7 +418,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает статусы
      *
      * @param array $value
      * @return $this
@@ -431,7 +430,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить статусы
      *
      * @return string
      */
@@ -441,7 +440,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает дату отправки
      *
      * @param $value
      * @return $this
@@ -453,7 +452,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить дату отправки
      *
      * @return string
      */
@@ -463,7 +462,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает дату отправки от
      *
      * @param $value
      * @return $this
@@ -475,7 +474,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить дату отправки от
      *
      * @return string
      */
@@ -485,7 +484,29 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
+     * Устанавливает дату отправки до
      *
+     * @param $value
+     * @return $this
+     */
+    public function setDateTimeTo($value)
+    {
+        $this->DateTimeTo = $value;
+        return $this;
+    }
+
+    /**
+     * Получить дату отправки до
+     *
+     * @return string
+     */
+    public function getDateTimeTo()
+    {
+        return $this->DateTimeTo;
+    }
+
+    /**
+     * Устанавливает контроль оплаты
      *
      * @param $value
      * @return $this
@@ -497,7 +518,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить контроль оплаты
      *
      * @return string
      */
@@ -507,7 +528,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает страницу
      *
      * @param $value
      * @return $this
@@ -519,7 +540,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получитьстраницу
      *
      * @return string
      */
@@ -529,7 +550,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает параметр сортировки
      *
      * @param $value
      * @return $this
@@ -541,7 +562,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить параметр сортировки
      *
      * @return string
      */
@@ -551,7 +572,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает порядок сортировки
      *
      * @param $value
      * @return $this
@@ -563,7 +584,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить порядок сортировки
      *
      * @return string
      */
@@ -573,7 +594,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Устанавливает реф реестра
      *
      * @param $value
      * @return $this
@@ -585,7 +606,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     }
 
     /**
-     *
+     * Получить реф реестра
      *
      * @return string
      */

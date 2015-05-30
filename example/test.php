@@ -8,6 +8,5 @@ include_once 'autoload_example.php';
 Config_example::initConfig();
 
 
-$result = ScanSheet_example::delete();
+$result = InternetDocument_example::save();
 
-//var_dump($result);

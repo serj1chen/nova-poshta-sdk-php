@@ -6,7 +6,7 @@ use NovaPoshta\Logger;
 
 class Logger_example extends Logger
 {
-    public static function setOriginalData1($toData, $fromData)
+    public static function setOriginalData($toData, $fromData)
     {
         echo 'Send data:';
         echo '<br>';

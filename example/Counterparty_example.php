@@ -27,6 +27,17 @@ class Counterparty_example
         return $counterparty->save();
     }
 
+    // третье лицо
+    public static function save2()
+    {
+        $counterparty = new Counterparty();
+        $counterparty->setCityRef('8d5a980d-391c-11dd-90d9-001a92567626');
+        $counterparty->setCounterpartyType('Organization');
+        $counterparty->setEDRPOU('00000000');
+
+        return $counterparty->saveThirdPerson();
+    }
+
     public static function update()
     {
         $counterparty = new Counterparty();
@@ -41,6 +52,17 @@ class Counterparty_example
         $counterparty->setEmail('test@i.ua');
 
         return $counterparty->update();
+    }
+
+    // третье лицо
+    public static function update2()
+    {
+        $counterparty = new Counterparty();
+        $counterparty->setCityRef('8d5a980d-391c-11dd-90d9-001a92567626');
+        $counterparty->setCounterpartyType('Organization');
+        $counterparty->setEDRPOU('00000000');
+
+        return $counterparty->updateThirdPerson();
     }
 
     public static function delete()

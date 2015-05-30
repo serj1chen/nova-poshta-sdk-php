@@ -23,7 +23,7 @@ use NovaPoshta\Core\ApiModel;
 class ContactPerson extends ApiModel
 {
     /**
-     * save() - сохранить данные контактного лица отправителя/получателя
+     * Вызвать метод save() - сохранить данные контактного лица отправителя/получателя
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -33,7 +33,7 @@ class ContactPerson extends ApiModel
     }
 
     /**
-     * update() - обновить данные контактного лица
+     * Вызвать метод update() - обновить данные контактного лица
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -43,7 +43,7 @@ class ContactPerson extends ApiModel
     }
 
     /**
-     * delete() - удалить контактное лицо отправителя/получателя
+     * Вызвать метод delete() - удалить контактное лицо отправителя/получателя
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */

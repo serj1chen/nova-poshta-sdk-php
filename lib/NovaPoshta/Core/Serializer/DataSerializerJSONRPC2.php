@@ -78,20 +78,10 @@ class DataSerializerJSONRPC2 extends SerializerFactory implements SerializerInte
                 $dataContainer->data = $data->result;
             } else {
                 if(isset($data->error->data)){
-                    $dataContainer->errors = $data->error->data;
+                    $dataContainer->errors = (array)$data->error->data;
                 } else {
                     $dataContainer->errors = $data->error->message;
                 }
-//                $dataContainer->errors
-//                if (isset($data->error)) {
-//                    $dataContainer->errors['code'] = isset($data->error->code) ? $data->error->code : '';
-//                    var_dump($data->error);
-//                    $dataContainer->errors['message'] = isset($data->error->message) ? $data->error->message : '';
-//                }
-
-//                else {
-//                    $dataContainer->errors[] = 'DataSerializerJSONRPC2.DATA_ERRORS_IS_EMPTY';
-//                }
             }
             $dataContainer->warnings = $data->warnings;
             $dataContainer->info = $data->info;

@@ -27,7 +27,12 @@ use NovaPoshta\MethodParameters\MethodParameters;
 class Counterparty extends ApiModel
 {
     /**
-     * save() - сохранить контрагента
+     * Третье лицо
+     */
+    const THIRD_PERSON = 'ThirdPerson';
+
+    /**
+     * Вызвать метод save() - сохранить контрагента
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -37,7 +42,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * update() - обновить данные контрагента
+     * Вызвать метод update() - обновить данные контрагента
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -47,27 +52,29 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * saveThirdPerson() - сохранить контрагента с типом "третье лицо"
+     * Вызвать метод saveThirdPerson() - сохранить контрагента с типом "третье лицо"
      * Функция доступна для клиентов, заключивших договор с компанией "Новая Почта"
-     *
      */
     public function saveThirdPerson()
     {
+        $this->setCounterpartyProperty(self::THIRD_PERSON);
+
+        return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
     /**
-     * updateThirdPerson() - обновить данные контрагента с типом "третье лицо"
+     * Вызвать метод updateThirdPerson() - обновить данные контрагента с типом "третье лицо"
      * Функция доступна для клиентов, заключивших договор с компанией "Новая Почта"
-     *
      */
     public function updateThirdPerson()
     {
+        $this->setCounterpartyProperty(self::THIRD_PERSON);
 
-
+        return $this->sendData(__FUNCTION__, $this->getThisData());
     }
 
     /**
-     * delete() - удалить контрагента отправителя/получателя
+     * Вызвать метод delete() - удалить контрагента отправителя/получателя
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -319,7 +326,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * cloneLoyaltyCounterpartySender() - создать контрагента-отправителя в выбранном
+     * Вызвать метод cloneLoyaltyCounterpartySender() - создать контрагента-отправителя в выбранном
      * городе (для участников программы лояльности)
      *
      * Метод: cloneLoyaltyCounterpartySender — создает контрагента-отправителя, если выбранный город-отправитель
@@ -334,7 +341,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * getCounterparties() - загрузить список контрагентов отправителей/получателей
+     * Вызвать метод getCounterparties() - загрузить список контрагентов отправителей/получателей
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -345,7 +352,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * getCounterpartyAddresses() - загрузить список адресов контрагентов
+     * Вызвать метод getCounterpartyAddresses() - загрузить список адресов контрагентов
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -356,7 +363,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * getCounterpartyContactPersons() - загрузить список контактных лиц контрагента
+     * Вызвать метод getCounterpartyContactPersons() - загрузить список контактных лиц контрагента
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -367,7 +374,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * getCounterpartyByEDRPOU() - найти контрагента по коду ОКПО
+     * Вызвать метод getCounterpartyByEDRPOU() - найти контрагента по коду ОКПО
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -378,7 +385,7 @@ class Counterparty extends ApiModel
     }
 
     /**
-     * getCounterpartyOptions() - загрузить параметры контрагента
+     * Вызвать метод getCounterpartyOptions() - загрузить параметры контрагента
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse

@@ -12,15 +12,15 @@ use NovaPoshta\Core\Logger\InterfaceLogger;
 class Config
 {
     /**
-     * Передача данных в формате JSON
+     * Формат данных в формате JSON
      */
     const FORMAT_JSON = 'json';
     /**
-     * Передача данных в формате JSONRPC2
+     * Формат данных в формате JSONRPC2
      */
     const FORMAT_JSONRPC2 = 'jsonrpc2';
     /**
-     * Передача данных в формате XML
+     * Формат данных в формате XML
      */
     const FORMAT_XML = 'xml';
 
@@ -54,7 +54,7 @@ class Config
      */
     private static $urlApi = 'https://api.novaposhta.ua/v2.0/';
     /**
-     * @var string кабинет Новой Почты
+     * @var string URL личного кабинета Новой Почты
      */
     private static $urlMyNovaPoshta = 'https://my.novaposhta.ua';
 

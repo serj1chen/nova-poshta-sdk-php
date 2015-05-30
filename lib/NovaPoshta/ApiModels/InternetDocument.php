@@ -808,7 +808,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * save() - создание ЭН
+     * Вызвать метод save() - создание ЭН
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -818,7 +818,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * update() - редактирование ЭН
+     * Вызвать метод update() - редактирование ЭН
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -828,7 +828,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * delete() - удаление документа
+     * Вызвать метод delete() - удаление документа
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -839,7 +839,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * getDocumentDeliveryDate - ориентировочная дата доставки
+     * Вызвать метод getDocumentDeliveryDate() - ориентировочная дата доставки
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -850,7 +850,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * getDocument() - получить ЭН
+     * Вызвать метод getDocument() - получить ЭН
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -861,7 +861,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * getDocumentList() - получает список ЭН
+     * Вызвать метод getDocumentList() - получает список ЭН
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -872,7 +872,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * printDocument() - печать ЭН
+     * Вызвать метод printDocument() - печать ЭН
      *
      * @param MethodParameters $data
      * @return string
@@ -885,7 +885,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * printMarkings() - печать маркировок
+     * Вызвать метод printMarkings() - печать маркировок
      *
      * @param MethodParameters $data
      * @return string
@@ -898,7 +898,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * documentsTracking() - трекинг документов
+     * Вызвать метод documentsTracking() - трекинг документов
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -909,7 +909,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * getDocumentPrice - расчет стоимости доставки
+     * Вызвать метод getDocumentPrice() - расчет стоимости доставки
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse

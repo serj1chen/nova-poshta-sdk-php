@@ -14,7 +14,7 @@ use NovaPoshta\MethodParameters\MethodParameters;
 class Common extends ApiModel
 {
     /**
-     * getBackwardDeliveryCargoTypes() - получить список видов обратной доставки груза
+     * Вызвать метод getBackwardDeliveryCargoTypes() - получить список видов обратной доставки груза
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -24,7 +24,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getCargoDescriptionList() - загрузить справочник описания груза
+     * Вызвать метод getCargoDescriptionList() - загрузить справочник описания груза
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -35,7 +35,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getCargoTypes() - загрузить список видов груза
+     * Вызвать метод getCargoTypes() - загрузить список видов груза
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -45,7 +45,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getDocumentStatuses() - загрузить список статусов документов
+     * Вызвать метод getDocumentStatuses() - загрузить список статусов документов
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -55,7 +55,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getOwnershipFormsList() - загрузить список форм собственности
+     * Вызвать метод getOwnershipFormsList() - загрузить список форм собственности
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -65,7 +65,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getPalletsList() - загрузить список поддонов (при заказе услуги обратная доставка  поддонов)
+     * Вызвать метод getPalletsList() - загрузить список поддонов (при заказе услуги обратная доставка  поддонов)
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -75,7 +75,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getPaymentForms() - загрузить список форм оплаты
+     * Вызвать метод getPaymentForms() - загрузить список форм оплаты
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -85,7 +85,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getServiceTypes() - загрузить справочник технологий доставки
+     * Вызвать метод getServiceTypes() - загрузить справочник технологий доставки
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -95,7 +95,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getTimeIntervals() - загрузить список временных интервалов (для заказа услуги "Временные интервалы")
+     * Вызвать метод getTimeIntervals() - загрузить список временных интервалов (для заказа услуги "Временные интервалы")
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -106,7 +106,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getTiresWheelsList() - загрузить список шин и дисков (если вид груза "шины-диски")
+     * Вызвать метод getTiresWheelsList() - загрузить список шин и дисков (если вид груза "шины-диски")
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -116,7 +116,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getTraysList() - загрузить список поддонов (если заказана услуга обратной доставки поддонов)
+     * Вызвать метод getTraysList() - загрузить список поддонов (если заказана услуга обратной доставки поддонов)
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -126,7 +126,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getTypesOfCounterparties() - загрузить список типов контрагентов отправителей
+     * Вызвать метод getTypesOfCounterparties() - загрузить список типов контрагентов отправителей
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -136,7 +136,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getTypesOfPayers() - загрузить список видов плательщиков
+     * Вызвать метод getTypesOfPayers() - загрузить список видов плательщиков
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -146,7 +146,7 @@ class Common extends ApiModel
     }
 
     /**
-     * getTypesOfPayersForRedelivery() - загрузить список видов плательщиков обратной доставки
+     * Вызвать метод getTypesOfPayersForRedelivery() - загрузить список видов плательщиков обратной доставки
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */

@@ -22,7 +22,7 @@ use NovaPoshta\MethodParameters\MethodParameters;
 class Address extends ApiModel
 {
     /**
-     * save() - создать адрес отправителя/получателя
+     * Вызвать метод save() - создать адрес отправителя/получателя
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -34,7 +34,7 @@ class Address extends ApiModel
     }
 
     /**
-     * update() - редактировать адрес отправителя/получателя
+     * Вызвать метод update() - редактировать адрес отправителя/получателя
      * @return \NovaPoshta\Models\DataContainerResponse
      */
     public function update()
@@ -45,7 +45,7 @@ class Address extends ApiModel
     }
 
     /**
-     * delete() - удалить ранее созданный адрес
+     * Вызвать метод delete() - удалить ранее созданный адрес
      *
      * @return \NovaPoshta\Models\DataContainerResponse
      */
@@ -189,7 +189,7 @@ class Address extends ApiModel
     }
 
     /**
-     * getCities() - загрузить справочник городов компании «Новая Почта»
+     * Вызвать метод getCities() - загрузить справочник городов компании «Новая Почта»
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -200,7 +200,7 @@ class Address extends ApiModel
     }
 
     /**
-     * getStreet() - загрузить справочник улиц компании «Новая Почта»
+     * Вызвать метод getStreet() - загрузить справочник улиц компании «Новая Почта»
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -211,7 +211,7 @@ class Address extends ApiModel
     }
 
     /**
-     * getWarehouses() - загрузить справочник отделений компании «Новая Почта»
+     * Вызвать метод getWarehouses() - загрузить справочник отделений компании «Новая Почта»
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
@@ -222,7 +222,7 @@ class Address extends ApiModel
     }
 
     /**
-     * getAreas() - загрузить справочник географических областей Украины
+     * Вызвать метод getAreas() - загрузить справочник географических областей Украины
      *
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse

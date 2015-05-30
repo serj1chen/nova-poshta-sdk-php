@@ -46,8 +46,8 @@ class InternetDocument_example
         $internetDocument->setSeatsAmount('2');
         $internetDocument->setCost('2');
         $internetDocument->setDescription(' fd  fsf2');
-        $internetDocument->setDateTime('10.04.2015');
-        $internetDocument->setPreferredDeliveryDate('20.04.2015');
+        $internetDocument->setDateTime('10.06.2015');
+        $internetDocument->setPreferredDeliveryDate('20.06.2015');
         $internetDocument->setTimeInterval('CityDeliveryTimeInterval2');
         $internetDocument->setPackingNumber('55');
         $internetDocument->setInfoRegClientBarcodes('55552');

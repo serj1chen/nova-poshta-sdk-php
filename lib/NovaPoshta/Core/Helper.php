@@ -3,10 +3,10 @@
 namespace NovaPoshta\Core;
 
 /**
- * Class CoreHelper
+ * Class Helper
  * @package NovaPoshta\Core
  */
-class CoreHelper
+class Helper
 {
 
 }
