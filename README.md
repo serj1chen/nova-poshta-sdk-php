@@ -48,38 +48,38 @@ SDK разработана по официальной документации.
 
 <b>Работа с методами модели: save, update, delete.</b> Заполнить модель нужными значениями и вызвать нужный метод. Пример:
 
-   $counterparty = new Counterparty();
-   $counterparty->setCounterpartyProperty('Recipient');
-   $counterparty->setCityRef('db5c88d0-391c-11dd-90d9-001a92567626');
-   $counterparty->setCounterpartyType('PrivatePerson');
-   $counterparty->setFirstName('Пилипко');
-   $counterparty->setLastName('Вася');
-   $counterparty->setMiddleName('Сергеевич');
-   $counterparty->setPhone('+380661122333');
-   $counterparty->setEmail('test@i.ua');
-
-   $result = $counterparty->save();
+      $counterparty = new Counterparty();
+      $counterparty->setCounterpartyProperty('Recipient');
+      $counterparty->setCityRef('db5c88d0-391c-11dd-90d9-001a92567626');
+      $counterparty->setCounterpartyType('PrivatePerson');
+      $counterparty->setFirstName('Пилипко');
+      $counterparty->setLastName('Вася');
+      $counterparty->setMiddleName('Сергеевич');
+      $counterparty->setPhone('+380661122333');
+      $counterparty->setEmail('test@i.ua');
+      
+      $result = $counterparty->save();
 
 <b>Работа с статическими методами.</b> В методы передавать объект MethodParameters:
 
-   $data = new MethodParameters();
-   $data->CounterpartyProperty = 'Recipient';
-   $data->Page = 1;
-   $data->CityRef = '8d5a980d-391c-11dd-90d9-001a92567626';
-   $data->FindByString = 'Петр';
-
-   $result = Counterparty::getCounterparties($data);
+      $data = new MethodParameters();
+      $data->CounterpartyProperty = 'Recipient';
+      $data->Page = 1;
+      $data->CityRef = '8d5a980d-391c-11dd-90d9-001a92567626';
+      $data->FindByString = 'Петр';
+   
+      $result = Counterparty::getCounterparties($data);
   
 Или можно использовать классы [MethodParameters] с параметрами статистического метода. Названия классов складывается с двух
 частей, с названия модели ([ApiModels]) и названия статического метода. Пример использования:
 
-   $data = new Counterparty_getCounterparties();
-   $data->setCounterpartyProperty('Recipient');
-   $data->setPage(1);
-   $data->setCityRef('8d5a980d-391c-11dd-90d9-001a92567626');
-   $data->setFindByString('Петр');
-
-   $result = Counterparty::getCounterparties($data);
+      $data = new Counterparty_getCounterparties();
+      $data->setCounterpartyProperty('Recipient');
+      $data->setPage(1);
+      $data->setCityRef('8d5a980d-391c-11dd-90d9-001a92567626');
+      $data->setFindByString('Петр');
+   
+      $result = Counterparty::getCounterparties($data);
 
 ### Модели хелперы для работы с моделями ([Models])
 
@@ -90,7 +90,7 @@ SDK разработана по официальной документации.
 Если Вам нужно логировать данные отправки/получения запросов. Нужно создать класс который наследуется от [Logger.php]
 и передать экземпляр этотого класса в метод setClassLogger вайла [Config.php].
 
-   Config::setClassLogger(new Logger_example());
+      Config::setClassLogger(new Logger_example());  
 
 Пример класса логирования: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/Logger_example.php].
 (Соответственно у Вас будут данные куда-то записоываться)
