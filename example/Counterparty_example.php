@@ -9,6 +9,7 @@ use NovaPoshta\MethodParameters\Counterparty_getCounterpartyContactPersons;
 use NovaPoshta\MethodParameters\Counterparty_getCounterpartyOptions;
 use NovaPoshta\MethodParameters\Counterparty_getCounterpartyByEDRPOU;
 use NovaPoshta\MethodParameters\Counterparty_cloneLoyaltyCounterpartySender;
+use NovaPoshta\MethodParameters\MethodParameters;
 
 class Counterparty_example
 {
@@ -82,6 +83,17 @@ class Counterparty_example
         $data->setFindByString('Петр');
         // или
 //        $data->setRef('adcad698-011c-11e5-ad08-005056801333');
+
+        return Counterparty::getCounterparties($data);
+    }
+
+    public static function getCounterparties2()
+    {
+        $data = new MethodParameters();
+        $data->CounterpartyProperty = 'Recipient';
+        $data->Page = 1;
+        $data->CityRef = '8d5a980d-391c-11dd-90d9-001a92567626';
+        $data->FindByString = 'Петр';
 
         return Counterparty::getCounterparties($data);
     }
