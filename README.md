@@ -12,9 +12,43 @@ SDK разработана по официальной документации.
 на страницу официальной документации API 2 личного кабинета: [Новой почты]. SDK не является официальным SDK Новой
 почты, я его разработал в личных целях.
 
+## Установка
+
+### Способ 1 (composer)
+
+Самый простой способ установить SDK через composer.
+
+Создайте файл `composer.json` в корне Вашого проэкта:
+ 
+      {
+          "require": {
+              "serj1chen/nova-poshta-sdk-php": "2.0.*"
+          }
+      }
+
+Установить composer:
+
+      $ curl -sS https://getcomposer.org/installer | php
+      $ php composer.phar install
+
+Подключить автолоадер composer:
+
+      include_once "vendor/autoload.php";
+      
+      
+### Способ 2 (git)
+
+Клонировать репозиторий
+
+      git clone git://github.com/serj1chen/nova-poshta-sdk-php
+      
+Подключить автолоадер SDK:
+
+      include_once "nova-poshta-sdk-php/lib/NovaPoshta/bootstrap.php";
+
 ## Структура SDK
 
-### Настрайка файла конфигурации ([Config])
+### Настройка файла конфигурации ([Config])
 Перед тем как начать работать с API, нужно настроить файл конфигурции:
 
        Config::setApiKey('<Ваш ключ>');
@@ -29,7 +63,7 @@ SDK разработана по официальной документации.
 - FORMAT_JSONRPC2 (рекомендую)
 - FORMAT_XML
 
-### Работа с моделямы SDK ([ApiModels])
+### Работа с моделями SDK ([ApiModels])
 
 Все модели лежат в папке [ApiModels].
 
@@ -70,7 +104,7 @@ SDK разработана по официальной документации.
    
       $result = Counterparty::getCounterparties($data);
   
-Или можно использовать классы [MethodParameters] с параметрами статистического метода. Названия классов складывается с двух
+Или можно использовать классы [MethodParameters] с параметрами статический метода. Названия классов складывается с двух
 частей, с названия модели ([ApiModels]) и названия статического метода. Пример использования:
 
       $data = new Counterparty_getCounterparties();
@@ -88,12 +122,12 @@ SDK разработана по официальной документации.
 ### Логирования ([Logger])
 
 Если Вам нужно логировать данные отправки/получения запросов. Нужно создать класс который наследуется от [Logger.php]
-и передать экземпляр этотого класса в метод setClassLogger вайла [Config.php].
+и передать экземпляр этотого класса в метод setClassLogger файла [Config.php].
 
       Config::setClassLogger(new Logger_example());  
 
 Пример класса логирования: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/Logger_example.php].
-(Соответственно у Вас будут данные куда-то записоываться)
+(Соответственно у Вас будут данные куда-то записываться)
 
 Метод <b>setOriginalData</b>: запрос/ответ API Новой почты.
 Параметры: toData - запрос (тип: string); fromData - ответ (тип: string).
