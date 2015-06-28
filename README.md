@@ -51,6 +51,8 @@ SDK разработана по официальной документации.
 ### Настройка файла конфигурации ([Config])
 Перед тем как начать работать с API, нужно настроить файл конфигурции:
 
+       Use NovaPoshta\Config;
+       
        Config::setApiKey('<Ваш ключ>');
        Config::setFormat(Config::FORMAT_JSONRPC2);
        Config::setLanguage(Config::LANGUAGE_UA);
@@ -82,6 +84,8 @@ SDK разработана по официальной документации.
 
 <b>Работа с методами модели: save, update, delete.</b> Заполнить модель нужными значениями и вызвать нужный метод. Пример:
 
+      use NovaPoshta\ApiModels\Counterparty;
+      
       $counterparty = new Counterparty();
       $counterparty->setCounterpartyProperty('Recipient');
       $counterparty->setCityRef('db5c88d0-391c-11dd-90d9-001a92567626');
@@ -96,6 +100,9 @@ SDK разработана по официальной документации.
 
 <b>Работа с статическими методами.</b> В методы передавать объект MethodParameters:
 
+      use NovaPoshta\ApiModels\Counterparty;
+      use NovaPoshta\MethodParameters\MethodParameters;
+      
       $data = new MethodParameters();
       $data->CounterpartyProperty = 'Recipient';
       $data->Page = 1;
@@ -107,6 +114,10 @@ SDK разработана по официальной документации.
 Или можно использовать классы [MethodParameters] с параметрами статический метода. Названия классов складывается с двух
 частей, с названия модели ([ApiModels]) и названия статического метода. Пример использования:
 
+      use NovaPoshta\ApiModels\Counterparty;
+      use NovaPoshta\MethodParameters\MethodParameters;
+      use NovaPoshta\MethodParameters\Counterparty_getCounterparties;
+      
       $data = new Counterparty_getCounterparties();
       $data->setCounterpartyProperty('Recipient');
       $data->setPage(1);
@@ -124,6 +135,8 @@ SDK разработана по официальной документации.
 Если Вам нужно логировать данные отправки/получения запросов. Нужно создать класс который наследуется от [Logger.php]
 и передать экземпляр этотого класса в метод setClassLogger файла [Config.php].
 
+      Use NovaPoshta\Config;
+      
       Config::setClassLogger(new Logger_example());  
 
 Пример класса логирования: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/Logger_example.php].
