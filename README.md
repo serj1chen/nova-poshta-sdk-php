@@ -18,7 +18,7 @@ SDK разработана по официальной документации.
 
 Самый простой способ установить SDK через composer.
 
-Создайте файл `composer.json` в корне Вашого проэкта:
+Создайте файл `composer.json` в корне Вашего проекта:
  
       {
           "require": {
@@ -49,7 +49,7 @@ SDK разработана по официальной документации.
 ## Структура SDK
 
 ### Настройка файла конфигурации ([Config])
-Перед тем как начать работать с API, нужно настроить файл конфигурции:
+Перед тем как начать работать с API, нужно настроить файл конфигурации:
 
        Use NovaPoshta\Config;
        
@@ -59,7 +59,7 @@ SDK разработана по официальной документации.
       
 Пример: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/Config_example.php]
 
-Возможные форматы передачи данных (формат вказывать в метод setFormat):
+Возможные форматы передачи данных (формат указывать  в метод setFormat):
 
 - FORMAT_JSON
 - FORMAT_JSONRPC2 (рекомендую)
@@ -78,7 +78,7 @@ SDK разработана по официальной документации.
 - InternetDocument: Модель для оформления отправлений. Пример: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/InternetDocument_example.php]
 - ScanSheet: Модель для работы с реестрами приема-передачи отправлений. Пример: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/ScanSheet_example.php]
 
-В классах моделей описаны все методы в коментариях.
+В классах моделей описаны все методы в комментариях.
 
 ### Работа с методами моделей
 
@@ -133,7 +133,7 @@ SDK разработана по официальной документации.
 ### Логирования ([Logger])
 
 Если Вам нужно логировать данные отправки/получения запросов. Нужно создать класс который наследуется от [Logger.php]
-и передать экземпляр этотого класса в метод setClassLogger файла [Config.php].
+и передать экземпляр этого класса в метод setClassLogger файла [Config.php].
 
       Use NovaPoshta\Config;
       
@@ -146,7 +146,7 @@ SDK разработана по официальной документации.
 Параметры: toData - запрос (тип: string); fromData - ответ (тип: string).
 
 Метод <b>setData</b>: запрос/ответ API Новой почты в формате SDK.
-Параметры: toData - запрос (обект: [DataContainer]); fromData - ответ (объект: [DataContainerResponse]).
+Параметры: toData - запрос (объект: [DataContainer]); fromData - ответ (объект: [DataContainerResponse]).
 
 
 
