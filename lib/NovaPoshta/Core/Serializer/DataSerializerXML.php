@@ -5,7 +5,7 @@ namespace NovaPoshta\Core\Serializer;
 use NovaPoshta\Models\DataContainer;
 use NovaPoshta\Models\DataContainerResponse;
 
-class DataSerializerXML extends SerializerFactory implements SerializerInterface
+class DataSerializerXML implements SerializerInterface
 {
     public function serializeData(DataContainer $data)
     {

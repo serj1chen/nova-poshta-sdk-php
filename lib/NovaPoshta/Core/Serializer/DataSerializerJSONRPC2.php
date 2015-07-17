@@ -5,7 +5,7 @@ namespace NovaPoshta\Core\Serializer;
 use NovaPoshta\Models\DataContainer;
 use NovaPoshta\Models\DataContainerResponse;
 
-class DataSerializerJSONRPC2 extends SerializerFactory implements SerializerInterface, SerializerBatchInterface
+class DataSerializerJSONRPC2 implements SerializerInterface, SerializerBatchInterface
 {
     public function serializeData(DataContainer $data)
     {

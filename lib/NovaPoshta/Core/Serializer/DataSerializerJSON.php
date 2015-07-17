@@ -6,7 +6,7 @@ use NovaPoshta\Models\DataContainer;
 use NovaPoshta\Models\DataContainerResponse;
 
 
-class DataSerializerJSON extends SerializerFactory implements SerializerInterface
+class DataSerializerJSON implements SerializerInterface
 {
     public function serializeData(DataContainer $data)
     {

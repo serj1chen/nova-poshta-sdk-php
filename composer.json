@@ -12,7 +12,8 @@
   "authors": [
     {
       "name": "Chenakal Sergii",
-      "homepage": "https://github.com/serj1chen"
+      "homepage": "https://github.com/serj1chen",
+      "email": "s.chenakal@gmail.com"
     }
   ],
   "require": {
