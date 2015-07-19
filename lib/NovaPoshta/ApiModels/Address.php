@@ -57,6 +57,28 @@ class Address extends ApiModel
     }
 
     /**
+     * Устанавливает реф
+     *
+     * @param $value
+     * @return $this
+     */
+    public function setRef($value)
+    {
+        $this->Ref = $value;
+        return $this;
+    }
+
+    /**
+     * Возвращает реф
+     *
+     * @return string
+     */
+    public function getRef()
+    {
+        return $this->Ref;
+    }
+
+    /**
      * Устанавливает реф контрагента
      *
      * @param $value

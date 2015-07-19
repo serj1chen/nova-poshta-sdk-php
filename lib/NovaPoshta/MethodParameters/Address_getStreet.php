@@ -28,10 +28,9 @@ class Address_getStreet extends MethodParameters
     /**
      * Возвращает реф города
      *
-     * @param $value
      * @return string
      */
-    public function getCityRef($value)
+    public function getCityRef()
     {
         return $this->CityRef;
     }

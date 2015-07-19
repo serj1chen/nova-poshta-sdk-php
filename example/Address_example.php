@@ -25,12 +25,12 @@ class Address_example
     public static function update()
     {
         $address = new Address();
-        $address->Ref = 'e29115c8-6f59-11e4-acce-0050568002cf';
-        $address->CounterpartyRef = '2718756a-b39b-11e4-a77a-005056887b8d';
-        $address->BuildingNumber = '92';
-        $address->Flat = '22';
-        $address->Note = 'Первый';
-        $address->StreetRef = 'c55c9056-4148-11dd-9198-001d60451983';
+        $address->setRef('e29115c8-6f59-11e4-acce-0050568002cf');
+        $address->setCounterpartyRef('2718756a-b39b-11e4-a77a-005056887b8d');
+        $address->setBuildingNumber('92');
+        $address->setFlat('22');
+        $address->setNote('Первый');
+        $address->setStreetRef('c55c9056-4148-11dd-9198-001d60451983');
 
         return $address->update();
     }
@@ -38,7 +38,7 @@ class Address_example
     public static function delete()
     {
         $address = new Address();
-        $address->Ref = 'e29115c8-6f59-11e4-acce-0050568002cf';
+        $address->setRef('e29115c8-6f59-11e4-acce-0050568002cf');
 
         return $address->delete();
     }

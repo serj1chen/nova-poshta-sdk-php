@@ -130,7 +130,8 @@ class Config
      */
     public static function getUrlApi()
     {
-        return self::$urlApi . self::$format . '/';
+        return 'http://webclient.host/data/get/container/'. self::getFormat() . '/?XDEBUG_SESSION_START=11816';
+//        return self::$urlApi . self::$format . '/';
     }
 
     /**
