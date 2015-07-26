@@ -12,7 +12,7 @@ use NovaPoshta\Core\BaseModel;
  * @property string PayerType
  * @property string CargoType
  * @property string RedeliveryString
- * @property Cargo Tray
+ * @property Cargo Trays
  */
 class BackwardDeliveryData extends BaseModel
 {

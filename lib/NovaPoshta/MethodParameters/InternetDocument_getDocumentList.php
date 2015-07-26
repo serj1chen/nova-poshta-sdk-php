@@ -25,6 +25,7 @@ namespace NovaPoshta\MethodParameters;
  * @property string StateIds
  * @property string DateTime
  * @property string DateTimeFrom
+ * @property string DateTimeTo
  * @property string isAfterpayment
  * @property string Page
  * @property string OrderField

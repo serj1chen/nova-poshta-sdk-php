@@ -171,7 +171,6 @@ class InternetDocument_example
             ->addBackwardDeliveryData($backwardDeliveryData);
 
         $internetDocument->CargoType = 'Cargo';
-        echo $internetDocument->CargoType;
 
         return $internetDocument->save();
     }

@@ -26,8 +26,6 @@ use stdClass;
  * @property string SeatsAmount
  * @property string Description
  * @property string CargoType
- * @property string CargoDescription
- * @property string Amount
  * @property string Weight
  * @property string VolumeWeight
  * @property string VolumeGeneral
@@ -87,13 +85,6 @@ class InternetDocument extends ApiModel
                 $data->RecipientAddress = $attr->getAddress();
                 $data->ContactRecipient = $attr->getContact();
                 $data->RecipientsPhone = $attr->getPhone();
-            } elseif ($key == 'OptionsSeat' && isset($attr)) {
-                $optionsSeats = array();
-                foreach ($attr as $optionsSeat) {
-                    $optionsSeats[] = (array)$optionsSeat;
-                }
-                $data->{$key} = $optionsSeats;
-                $data->Weight = 1;
             } elseif (isset($this->{$key})) {
                 $data->{$key} = $attr;
             }
@@ -713,6 +704,9 @@ class InternetDocument extends ApiModel
      */
     public function getOptionsSeats()
     {
+        if (!isset($this->OptionsSeat)) {
+            $this->OptionsSeat = array();
+        }
         return $this->OptionsSeat;
     }
 
@@ -749,6 +743,9 @@ class InternetDocument extends ApiModel
      */
     public function getBackwardDeliveryData()
     {
+        if (!isset($this->BackwardDeliveryData)) {
+            $this->BackwardDeliveryData = array();
+        }
         return $this->BackwardDeliveryData;
     }
 
