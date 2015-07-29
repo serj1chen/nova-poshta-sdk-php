@@ -7,7 +7,7 @@ namespace NovaPoshta\MethodParameters;
  *
  * Class ScanSheet_removeDocuments
  * @package NovaPoshta\DataMethods
- * @property string DocumentRefs
+ * @property array DocumentRefs
  */
 class ScanSheet_removeDocuments extends MethodParameters
 {

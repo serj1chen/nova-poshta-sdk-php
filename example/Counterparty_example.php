@@ -47,10 +47,10 @@ class Counterparty_example
         $counterparty->setCityRef('db5c88d0-391c-11dd-90d9-001a92567626');
         $counterparty->setCounterpartyType('PrivatePerson');
         $counterparty->setFirstName('Пилипко');
-        $counterparty->setLastName('Вася');
+        $counterparty->setLastName('Петя');
         $counterparty->setMiddleName('Сергеевич');
         $counterparty->setPhone('+380661122333');
-        $counterparty->setEmail('test@i.ua');
+        $counterparty->setEmail('test2@i.ua');
 
         return $counterparty->update();
     }

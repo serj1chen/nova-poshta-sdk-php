@@ -5,7 +5,7 @@ namespace NovaPoshta\MethodParameters;
 /**
  * Class BasePrintDocumentParameters
  * @package NovaPoshta\DataMethods
- * @property string DocumentRefs
+ * @property array DocumentRefs
  * @property string Type
  * @property string Copies
  */
@@ -14,12 +14,12 @@ abstract class BasePrintDocumentParameters extends MethodParameters
     /**
      * Устанавливает рефы документов
      *
-     * @param array $value
+     * @param array $documentRefs
      * @return $this
      */
-    public function setDocumentRefs(array $value)
+    public function setDocumentRefs(array $documentRefs)
     {
-        $this->DocumentRefs = $value;
+        $this->DocumentRefs = $documentRefs;
         return $this;
     }
 

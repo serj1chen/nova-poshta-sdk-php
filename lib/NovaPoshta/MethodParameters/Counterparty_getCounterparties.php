@@ -28,6 +28,16 @@ class Counterparty_getCounterparties extends MethodParameters
     }
 
     /**
+     * Возвращает реф
+     *
+     * @return string
+     */
+    public function getRef()
+    {
+        return $this->Ref;
+    }
+
+    /**
      * Устанавливает свойство контрагента
      *
      * @param $value
