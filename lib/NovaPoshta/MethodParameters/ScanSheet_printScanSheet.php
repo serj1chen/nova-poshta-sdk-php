@@ -44,7 +44,7 @@ class ScanSheet_printScanSheet extends BasePrintDocumentParameters
     }
 
     /**
-     * Очищает номера ре
+     * Очищает номера реестров
      *
      * @return $this
      */

@@ -29,7 +29,7 @@ class Common_getCargoDescriptionList extends MethodParameters
      *
      * @return string
      */
-    public function getPagen()
+    public function getPage()
     {
         return $this->Page;
     }
