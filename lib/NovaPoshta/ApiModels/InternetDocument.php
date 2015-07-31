@@ -16,7 +16,7 @@ use stdClass;
  *
  * @property CounterpartyContact Sender
  * @property CounterpartyContact Recipient
- * @property CounterpartyContact ThirdPerson
+ * @property string              ThirdPerson
  * @property string              Ref
  * @property string              DateTime
  * @property string              ServiceType
@@ -73,18 +73,12 @@ class InternetDocument extends ApiModel
         $data = new stdClass();
 
         foreach ($this as $key => $attr) {
-            if ($key == 'Sender' && isset($attr)) {
-                $data->CitySender = $attr->getCity();
-                $data->Sender = $attr->getRef();
-                $data->SenderAddress = $attr->getAddress();
-                $data->ContactSender = $attr->getContact();
-                $data->SendersPhone = $attr->getPhone();
-            } elseif ($key == 'Recipient' && isset($attr)) {
-                $data->CityRecipient = $attr->getCity();
-                $data->Recipient = $attr->getRef();
-                $data->RecipientAddress = $attr->getAddress();
-                $data->ContactRecipient = $attr->getContact();
-                $data->RecipientsPhone = $attr->getPhone();
+            if($attr instanceof CounterpartyContact){
+                $data->{'City' . $key} = $attr->getCity();
+                $data->{$key} = $attr->getRef();
+                $data->{$key . 'Address'} = $attr->getAddress();
+                $data->{'Contact' . $key} = $attr->getContact();
+                $data->{$key . 'sPhone'} = $attr->getPhone();
             } elseif (isset($this->{$key})) {
                 $data->{$key} = $attr;
             }

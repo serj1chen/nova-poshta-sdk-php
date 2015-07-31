@@ -40,28 +40,28 @@ class Config
     /**
      * @var string API ключ
      */
-    private static $apiKey = '';
+    protected static $apiKey = '';
     /**
      * @var string формат по умолчанию для передачи данных
      */
-    private static $format = self::FORMAT_JSONRPC2;
+    protected static $format = self::FORMAT_JSONRPC2;
     /**
      * @var string язык по умолчанию для передачи данных
      */
-    private static $language = self::LANGUAGE_UA;
+    protected static $language = self::LANGUAGE_UA;
     /**
      * @var string URL API2
      */
-    private static $urlApi = 'https://api.novaposhta.ua/v2.0/';
+    protected static $urlApi = 'https://api.novaposhta.ua/v2.0/';
     /**
      * @var string URL личного кабинета Новой Почты
      */
-    private static $urlMyNovaPoshta = 'https://my.novaposhta.ua';
+    protected static $urlMyNovaPoshta = 'https://my.novaposhta.ua';
 
     /**
      * @var InterfaceLogger
      */
-    private static $classLogger;
+    protected static $classLogger;
 
     /**
      * Возвращает API ключ
@@ -155,6 +155,7 @@ class Config
 
     /**
      * Получить класс для логирования
+     *
      * @return InterfaceLogger
      */
     public static function getClassLogger()
