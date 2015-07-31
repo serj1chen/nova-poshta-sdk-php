@@ -76,7 +76,7 @@ class Config
     /**
      * Устанавливает API ключ
      *
-     * @param $value
+     * @param string $value
      */
     public static function setApiKey($value)
     {
@@ -96,7 +96,7 @@ class Config
     /**
      * Устанавливает формат передачи данных
      *
-     * @param $value
+     * @param string $value
      */
     public static function setFormat($value)
     {
@@ -116,7 +116,7 @@ class Config
     /**
      * Устанавливает язык для ответа с Новой почты
      *
-     * @param $value
+     * @param string $value
      */
     public static function setLanguage($value)
     {
