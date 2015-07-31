@@ -20,7 +20,7 @@ class CounterpartyContact extends BaseModel
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -42,7 +42,7 @@ class CounterpartyContact extends BaseModel
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCity($value)
@@ -64,7 +64,7 @@ class CounterpartyContact extends BaseModel
     /**
      * Устанавливает
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setAddress($value)
@@ -86,7 +86,7 @@ class CounterpartyContact extends BaseModel
     /**
      * Устанавливает контактное лицо
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setContact($value)
@@ -108,7 +108,7 @@ class CounterpartyContact extends BaseModel
     /**
      * Устанавливает номер телефона
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPhone($value)

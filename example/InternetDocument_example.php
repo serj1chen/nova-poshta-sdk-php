@@ -79,8 +79,8 @@ class InternetDocument_example
 
         $backwardDeliveryData1 = new \NovaPoshta\Models\BackwardDeliveryData();
         $backwardDeliveryData1->setPayerType('Sender')
-            ->setCargoType('Other')
-            ->setRedeliveryString('Чемодан');
+            ->setCargoType('CreditDocuments')
+            ->setRedeliveryString('true');
 
         $trayCargoA = new \NovaPoshta\Models\Cargo();
         $trayCargoA->setAmount(3)
@@ -108,7 +108,7 @@ class InternetDocument_example
             ->setSeatsAmount('1')
             ->setCost('200')
             ->setDescription('ТЦ')
-            ->addBackwardDeliveryData($backwardDeliveryData2)
+//            ->addBackwardDeliveryData($backwardDeliveryData2)
             ->addBackwardDeliveryData($backwardDeliveryData1);
 
         return $internetDocument->save();
@@ -422,7 +422,7 @@ class InternetDocument_example
         $data->setScanSheetRef('b107a458-c6fe-11e4-ac12-005056801333');
         $data->setPage('1');
         $data->setOrderDirection(InternetDocument_getDocumentList::ORDER_DIRECTION_ASC);
-        $data->setIsAfterpayment('true');
+        $data->setIsAfterpayment(true);
 
         return InternetDocument::getDocumentList($data);
     }

@@ -8,14 +8,14 @@ namespace NovaPoshta\MethodParameters;
  * Class Address_getStreet
  * @package NovaPoshta\DataMethods
  * @property string Ref
- * @property string Page
+ * @property int    Page
  */
 class Counterparty_getCounterpartyContactPersons extends MethodParameters
 {
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -37,7 +37,7 @@ class Counterparty_getCounterpartyContactPersons extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param int $value
      * @return $this
      */
     public function setPage($value)
@@ -49,7 +49,7 @@ class Counterparty_getCounterpartyContactPersons extends MethodParameters
     /**
      * Получить страницу
      *
-     * @return string
+     * @return int
      */
     public function getPage()
     {

@@ -7,7 +7,7 @@ namespace NovaPoshta\MethodParameters;
  *
  * Class InternetDocument_documentsTracking
  * @package NovaPoshta\DataMethods
- * @property string Documents
+ * @property array Documents
  */
 class InternetDocument_documentsTracking extends MethodParameters
 {
@@ -36,7 +36,7 @@ class InternetDocument_documentsTracking extends MethodParameters
     /**
      * Добавить номер документа
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function addDocument($value)

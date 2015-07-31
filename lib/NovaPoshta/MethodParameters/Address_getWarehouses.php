@@ -15,7 +15,7 @@ class Address_getWarehouses extends MethodParameters
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRef($value)
@@ -37,7 +37,7 @@ class Address_getWarehouses extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)

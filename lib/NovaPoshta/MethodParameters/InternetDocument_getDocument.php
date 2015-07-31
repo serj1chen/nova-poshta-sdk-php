@@ -14,7 +14,7 @@ class InternetDocument_getDocument extends MethodParameters
     /**
      * Устанавливает реф документа
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)

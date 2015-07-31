@@ -17,7 +17,7 @@ class InternetDocument_getDocumentDeliveryDate extends MethodParameters
     /**
      * Устанавливает дату
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTime($value)
@@ -39,7 +39,7 @@ class InternetDocument_getDocumentDeliveryDate extends MethodParameters
     /**
      * Устанавливает реф города отправителя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCitySender($value)
@@ -61,7 +61,7 @@ class InternetDocument_getDocumentDeliveryDate extends MethodParameters
     /**
      * Устанавливает реф города получателя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRecipient($value)
@@ -83,7 +83,7 @@ class InternetDocument_getDocumentDeliveryDate extends MethodParameters
     /**
      * Устанавливает технологию доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setServiceType($value)

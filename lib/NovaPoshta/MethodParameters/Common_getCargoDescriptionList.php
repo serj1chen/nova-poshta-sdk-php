@@ -15,7 +15,7 @@ class Common_getCargoDescriptionList extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)
@@ -37,7 +37,7 @@ class Common_getCargoDescriptionList extends MethodParameters
     /**
      * Устанавливает строку для поиска описания груза
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFindByString($value)

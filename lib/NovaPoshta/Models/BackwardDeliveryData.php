@@ -12,14 +12,14 @@ use NovaPoshta\Core\BaseModel;
  * @property string PayerType
  * @property string CargoType
  * @property string RedeliveryString
- * @property Cargo Trays
+ * @property array  Trays
  */
 class BackwardDeliveryData extends BaseModel
 {
     /**
      * Устанавливает тип плательщика
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPayerType($value)
@@ -41,7 +41,7 @@ class BackwardDeliveryData extends BaseModel
     /**
      * Устанавливает тип груза
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCargoType($value)
@@ -63,7 +63,7 @@ class BackwardDeliveryData extends BaseModel
     /**
      * Устанавливает описания груза
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRedeliveryString($value)

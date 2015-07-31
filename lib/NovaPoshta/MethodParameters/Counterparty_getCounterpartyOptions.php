@@ -14,7 +14,7 @@ class Counterparty_getCounterpartyOptions extends MethodParameters
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)

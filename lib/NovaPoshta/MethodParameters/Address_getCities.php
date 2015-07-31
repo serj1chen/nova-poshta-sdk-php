@@ -16,7 +16,7 @@ class Address_getCities extends MethodParameters
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -38,7 +38,7 @@ class Address_getCities extends MethodParameters
     /**
      * Устанавливает строку для поиска города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFindByString($value)
@@ -60,7 +60,7 @@ class Address_getCities extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)

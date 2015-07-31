@@ -59,7 +59,7 @@ class Address extends ApiModel
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -81,7 +81,7 @@ class Address extends ApiModel
     /**
      * Устанавливает реф контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCounterpartyRef($value)
@@ -103,7 +103,7 @@ class Address extends ApiModel
     /**
      * Устанавливает реф улицы
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setStreetRef($value)
@@ -125,7 +125,7 @@ class Address extends ApiModel
     /**
      * Устанавливает номер дома
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setBuildingNumber($value)
@@ -147,7 +147,7 @@ class Address extends ApiModel
     /**
      * Устанавливает номер квартиры
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFlat($value)
@@ -169,7 +169,7 @@ class Address extends ApiModel
     /**
      * Устанавливает комментарий
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setNote($value)
@@ -191,7 +191,7 @@ class Address extends ApiModel
     /**
      * Устанавливает реф дома
      *
-     * @param $value
+     * @param  string$value
      * @return $this
      */
     public function setBuildingRef($value)

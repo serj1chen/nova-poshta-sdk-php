@@ -47,7 +47,7 @@ abstract class BasePrintDocumentParameters extends MethodParameters
     /**
      * Добавляет реф документа
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function addDocumentRef($value)
@@ -62,7 +62,7 @@ abstract class BasePrintDocumentParameters extends MethodParameters
     /**
      * Устанавливает тип печати
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setType($value)
@@ -84,7 +84,7 @@ abstract class BasePrintDocumentParameters extends MethodParameters
     /**
      * Устанавливает количество копий
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCopies($value)

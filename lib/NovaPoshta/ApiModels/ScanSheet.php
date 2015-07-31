@@ -111,7 +111,7 @@ class ScanSheet extends ApiModel
     /**
      * Устанавливает реф реестра
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -133,7 +133,7 @@ class ScanSheet extends ApiModel
     /**
      * Устанавливает дату
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDate($value)

@@ -8,7 +8,7 @@ namespace NovaPoshta\MethodParameters;
  * Class Address_getStreet
  * @package NovaPoshta\DataMethods
  * @property string CityRef
- * @property string Page
+ * @property int    Page
  * @property string FindByString
  */
 class Address_getStreet extends MethodParameters
@@ -16,7 +16,7 @@ class Address_getStreet extends MethodParameters
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRef($value)
@@ -38,7 +38,7 @@ class Address_getStreet extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param int $value
      * @return $this
      */
     public function setPage($value)
@@ -50,7 +50,7 @@ class Address_getStreet extends MethodParameters
     /**
      * Возвращает страницу
      *
-     * @return string
+     * @return int
      */
     public function getPage()
     {
@@ -60,7 +60,7 @@ class Address_getStreet extends MethodParameters
     /**
      * Устанавливает строку для поиска улицы
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFindByString($value)

@@ -15,7 +15,7 @@ class Address_getAreas extends MethodParameters
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -37,7 +37,7 @@ class Address_getAreas extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)

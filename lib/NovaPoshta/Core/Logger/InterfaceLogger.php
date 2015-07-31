@@ -11,6 +11,7 @@ interface InterfaceLogger
 {
     /**
      * Данные оригинальные (сырые данные, в тому формате в котором отправляется запрос)
+     *
      * @param $fromData string запрос
      * @param $toData string ответ
      * @return mixed
@@ -19,6 +20,7 @@ interface InterfaceLogger
 
     /**
      * Данные объектов запроса/ответа
+     *
      * @param $fromData
      * @param $toData
      * @return mixed

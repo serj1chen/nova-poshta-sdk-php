@@ -18,7 +18,7 @@ class Counterparty_getCounterparties extends MethodParameters
     /**
      * Идентификатор контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -40,7 +40,7 @@ class Counterparty_getCounterparties extends MethodParameters
     /**
      * Устанавливает свойство контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCounterpartyProperty($value)
@@ -62,7 +62,7 @@ class Counterparty_getCounterparties extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)
@@ -84,7 +84,7 @@ class Counterparty_getCounterparties extends MethodParameters
     /**
      * Устанавливает строку для поиска контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFindByString($value)
@@ -106,7 +106,7 @@ class Counterparty_getCounterparties extends MethodParameters
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRef($value)

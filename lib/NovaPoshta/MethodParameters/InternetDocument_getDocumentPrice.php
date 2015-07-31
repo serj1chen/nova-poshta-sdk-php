@@ -10,8 +10,8 @@ namespace NovaPoshta\MethodParameters;
  * @property string CitySender
  * @property string CityRecipient
  * @property string ServiceType
- * @property string Weight
- * @property string Cost
+ * @property float  Weight
+ * @property float  Cost
  * @property string DateTime
  */
 class InternetDocument_getDocumentPrice extends MethodParameters
@@ -19,7 +19,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Устанавливает реф города отправителя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCitySender($value)
@@ -41,7 +41,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Устанавливает реф города получателя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRecipient($value)
@@ -63,7 +63,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Устанавливает технологию доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setServiceType($value)
@@ -85,7 +85,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Устанавливает вес
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setWeight($value)
@@ -97,7 +97,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Получить вес
      *
-     * @return string
+     * @return float
      */
     public function getWeight()
     {
@@ -107,7 +107,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Устанавливает цену
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setCost($value)
@@ -119,7 +119,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Получить цену
      *
-     * @return string
+     * @return float
      */
     public function getCost()
     {
@@ -129,7 +129,7 @@ class InternetDocument_getDocumentPrice extends MethodParameters
     /**
      * Устанавливает дату
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTime($value)

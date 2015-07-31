@@ -86,7 +86,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -108,7 +108,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает свойство контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCounterpartyProperty($value)
@@ -130,7 +130,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRef($value)
@@ -152,7 +152,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает тип контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCounterpartyType($value)
@@ -174,7 +174,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает фамилию
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFirstName($value)
@@ -196,7 +196,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает отчество
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setMiddleName($value)
@@ -218,7 +218,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает имя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setLastName($value)
@@ -240,7 +240,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает номер телефона
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPhone($value)
@@ -262,7 +262,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает email
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setEmail($value)
@@ -284,7 +284,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает ОКПО
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setEDRPOU($value)
@@ -306,7 +306,7 @@ class Counterparty extends ApiModel
     /**
      * Устанавливает форму собственности
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setOwnershipForm($value)

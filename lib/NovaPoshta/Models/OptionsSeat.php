@@ -10,18 +10,18 @@ use NovaPoshta\Core\BaseModel;
  *
  * Class OptionsSeat
  * @package NovaPoshta\Models
- * @property string volumetricVolume
- * @property string volumetricWidth
- * @property string volumetricLength
- * @property string volumetricHeight
- * @property string weight
+ * @property float volumetricVolume
+ * @property float volumetricWidth
+ * @property float volumetricLength
+ * @property float volumetricHeight
+ * @property float weight
  */
 class OptionsSeat extends BaseModel
 {
     /**
      * Устанавливает объем
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setVolumetricVolume($value)
@@ -33,7 +33,7 @@ class OptionsSeat extends BaseModel
     /**
      * Возвращает объем
      *
-     * @return string
+     * @return float
      */
     public function getVolumetricVolume()
     {
@@ -43,7 +43,7 @@ class OptionsSeat extends BaseModel
     /**
      * Устанавливает ширину
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setVolumetricWidth($value)
@@ -55,7 +55,7 @@ class OptionsSeat extends BaseModel
     /**
      * Возвращает ширину
      *
-     * @return string
+     * @return float
      */
     public function getVolumetricWidth()
     {
@@ -65,7 +65,7 @@ class OptionsSeat extends BaseModel
     /**
      * Устанавливает длину
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setVolumetricLength($value)
@@ -77,7 +77,7 @@ class OptionsSeat extends BaseModel
     /**
      * Возвращает длину
      *
-     * @return string
+     * @return float
      */
     public function getVolumetricLength()
     {
@@ -87,7 +87,7 @@ class OptionsSeat extends BaseModel
     /**
      * Устанавливает высоту
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setVolumetricHeight($value)
@@ -99,7 +99,7 @@ class OptionsSeat extends BaseModel
     /**
      * Возвращает высоту
      *
-     * @return string
+     * @return float
      */
     public function getVolumetricHeight()
     {
@@ -109,7 +109,7 @@ class OptionsSeat extends BaseModel
     /**
      * Устанавливает вес
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setWeight($value)
@@ -121,7 +121,7 @@ class OptionsSeat extends BaseModel
     /**
      * Возвращает вес
      *
-     * @return string
+     * @return float
      */
     public function getWeight()
     {

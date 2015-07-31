@@ -142,7 +142,7 @@ class Batch_example
         $internetDocument->setTimeInterval('CityDeliveryTimeInterval2');
         $internetDocument->setPackingNumber('55');
         $internetDocument->setInfoRegClientBarcodes('55552');
-        $internetDocument->setSaturdayDelivery('true');
+        $internetDocument->setSaturdayDelivery(true);
         $internetDocument->setNumberOfFloorsLifting('12');
         $internetDocument->setAccompanyingDocuments('Великий кошик');
         $internetDocument->setAdditionalInformation('Скло');

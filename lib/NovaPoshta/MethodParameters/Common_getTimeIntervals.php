@@ -15,7 +15,7 @@ class Common_getTimeIntervals extends MethodParameters
     /**
      * Устанавливает получателя реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRecipientCityRef($value)
@@ -37,7 +37,7 @@ class Common_getTimeIntervals extends MethodParameters
     /**
      * Устанавливает дату
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTime($value)

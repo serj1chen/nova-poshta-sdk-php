@@ -14,20 +14,20 @@ namespace NovaPoshta\MethodParameters;
  * @property string CreateTime
  * @property string SenderRef
  * @property string RecipientRef
- * @property string WeightFrom
- * @property string WeightTo
- * @property string CostFrom
- * @property string CostTo
- * @property string SeatsAmountFrom
- * @property string SeatsAmountTo
- * @property string CostOnSiteFrom
- * @property string CostOnSiteTo
- * @property string StateIds
+ * @property float  WeightFrom
+ * @property float  WeightTo
+ * @property float  CostFrom
+ * @property float  CostTo
+ * @property int    SeatsAmountFrom
+ * @property int    SeatsAmountTo
+ * @property float  CostOnSiteFrom
+ * @property float  CostOnSiteTo
+ * @property array  StateIds
  * @property string DateTime
  * @property string DateTimeFrom
  * @property string DateTimeTo
- * @property string isAfterpayment
- * @property string Page
+ * @property bool   isAfterpayment
+ * @property int    Page
  * @property string OrderField
  * @property string OrderDirection
  * @property string ScanSheetRef
@@ -91,7 +91,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает номер документа
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setIntDocNumber($value)
@@ -113,7 +113,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает номер внутреннего заказа клиента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setInfoRegClientBarcodes($value)
@@ -135,7 +135,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает дата доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDeliveryDateTime($value)
@@ -157,7 +157,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает фактическую дату и время получения
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRecipientDateTime($value)
@@ -179,7 +179,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает дату и время создания ЕН
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCreateTime($value)
@@ -201,7 +201,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает идентификатор отправителя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setSenderRef($value)
@@ -223,7 +223,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает идентификатор получателя
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRecipientRef($value)
@@ -245,7 +245,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает вес от
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setWeightFrom($value)
@@ -257,7 +257,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить вес от
      *
-     * @return string
+     * @return float
      */
     public function getWeightFrom()
     {
@@ -267,7 +267,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает вес до
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setWeightTo($value)
@@ -279,7 +279,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить вес до
      *
-     * @return string
+     * @return float
      */
     public function getWeightTo()
     {
@@ -289,7 +289,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает объявленную стоимость от
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setCostFrom($value)
@@ -301,7 +301,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить объявленную стоимость от
      *
-     * @return string
+     * @return float
      */
     public function getCostFrom()
     {
@@ -311,7 +311,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает объявленную стоимость до
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setCostTo($value)
@@ -323,7 +323,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить объявленную стоимость до
      *
-     * @return string
+     * @return float
      */
     public function getCostTo()
     {
@@ -333,7 +333,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает количество мест от
      *
-     * @param $value
+     * @param int $value
      * @return $this
      */
     public function setSeatsAmountFrom($value)
@@ -345,7 +345,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить количество мест от
      *
-     * @return string
+     * @return int
      */
     public function getSeatsAmountFrom()
     {
@@ -355,7 +355,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает количество мест до
      *
-     * @param $value
+     * @param int $value
      * @return $this
      */
     public function setSeatsAmountTo($value)
@@ -367,7 +367,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить количество мест до
      *
-     * @return string
+     * @return int
      */
     public function getSeatsAmountTo()
     {
@@ -377,7 +377,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает стоимость доставки от
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setCostOnSiteFrom($value)
@@ -389,7 +389,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить стоимость доставки от
      *
-     * @return string
+     * @return float
      */
     public function getCostOnSiteFrom()
     {
@@ -399,7 +399,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает стоимость доставки до
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setCostOnSiteTo($value)
@@ -411,7 +411,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить стоимость доставки до
      *
-     * @return string
+     * @return float
      */
     public function getCostOnSiteTo()
     {
@@ -443,7 +443,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает дату отправки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTime($value)
@@ -465,7 +465,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает дату отправки от
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTimeFrom($value)
@@ -487,7 +487,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает дату отправки до
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTimeTo($value)
@@ -509,7 +509,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает контроль оплаты
      *
-     * @param $value
+     * @param bool $value
      * @return $this
      */
     public function setIsAfterpayment($value)
@@ -521,7 +521,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Получить контроль оплаты
      *
-     * @return string
+     * @return bool
      */
     public function getIsAfterpayment()
     {
@@ -531,7 +531,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)
@@ -553,7 +553,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает параметр сортировки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setOrderField($value)
@@ -575,7 +575,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает порядок сортировки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setOrderDirection($value)
@@ -597,7 +597,7 @@ class InternetDocument_getDocumentList extends MethodParameters
     /**
      * Устанавливает реф реестра
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setScanSheetRef($value)

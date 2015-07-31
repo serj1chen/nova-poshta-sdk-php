@@ -17,33 +17,33 @@ use stdClass;
  * @property CounterpartyContact Sender
  * @property CounterpartyContact Recipient
  * @property CounterpartyContact ThirdPerson
- * @property string Ref
- * @property string DateTime
- * @property string ServiceType
- * @property string PaymentMethod
- * @property string PayerType
- * @property string Cost
- * @property string SeatsAmount
- * @property string Description
- * @property string CargoType
- * @property string Weight
- * @property string VolumeWeight
- * @property string VolumeGeneral
- * @property string Pack
- * @property string AdditionalInformation
- * @property string PackingNumber
- * @property string InfoRegClientBarcodes
- * @property string SaturdayDelivery
- * @property string SameDayDelivery
- * @property string ForwardingCount
- * @property string IsTakeAttorney
- * @property string PreferredDeliveryDate
- * @property string TimeInterval
- * @property string NumberOfFloorsLifting
- * @property string AccompanyingDocuments
- * @property array CargoDetails
- * @property array OptionsSeat
- * @property array BackwardDeliveryData
+ * @property string              Ref
+ * @property string              DateTime
+ * @property string              ServiceType
+ * @property string              PaymentMethod
+ * @property string              PayerType
+ * @property float               Cost
+ * @property int                 SeatsAmount
+ * @property string              Description
+ * @property string              CargoType
+ * @property float               Weight
+ * @property float               VolumeWeight
+ * @property float               VolumeGeneral
+ * @property string              Pack
+ * @property string              AdditionalInformation
+ * @property string              PackingNumber
+ * @property string              InfoRegClientBarcodes
+ * @property bool                SaturdayDelivery
+ * @property string              SameDayDelivery
+ * @property string              ForwardingCount
+ * @property bool                IsTakeAttorney
+ * @property string              PreferredDeliveryDate
+ * @property string              TimeInterval
+ * @property string              NumberOfFloorsLifting
+ * @property string              AccompanyingDocuments
+ * @property array               CargoDetails
+ * @property array               OptionsSeat
+ * @property array               BackwardDeliveryData
  *
  * Class InternetDocument
  * @package NovaPoshta\ApiModels
@@ -184,7 +184,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает дата создания
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDateTime($value)
@@ -206,7 +206,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает технологию доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setServiceType($value)
@@ -228,7 +228,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает форму оплаты
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPaymentMethod($value)
@@ -250,7 +250,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает тип плательщика обратной доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPayerType($value)
@@ -272,7 +272,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает объявленную стоимость
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCost($value)
@@ -294,7 +294,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает количество мест отправления
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setSeatsAmount($value)
@@ -316,7 +316,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает описания груза
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setDescription($value)
@@ -338,7 +338,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает вид обратной доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCargoType($value)
@@ -360,7 +360,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает вес фактический, кг
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setWeight($value)
@@ -372,7 +372,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает вес фактический, кг
      *
-     * @return string
+     * @return float
      */
     public function getWeight()
     {
@@ -382,7 +382,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает вес объемный, кг
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setVolumeWeight($value)
@@ -394,7 +394,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает вес объемный, кг
      *
-     * @return string
+     * @return float
      */
     public function getVolumeWeight()
     {
@@ -404,7 +404,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает объем общий, м.куб
      *
-     * @param $value
+     * @param float $value
      * @return $this
      */
     public function setVolumeGeneral($value)
@@ -416,7 +416,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает объем общий, м.куб
      *
-     * @return string
+     * @return float
      */
     public function getVolumeGeneral()
     {
@@ -448,7 +448,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает дополнительную информацию об отправлении (любая, необходимая Клиенту информация в ЭН)
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setAdditionalInformation($value)
@@ -470,7 +470,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает № упаковки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPackingNumber($value)
@@ -492,7 +492,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает номер внутреннего заказа Клиента (не хранится в ИС "Новая Почта")
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setInfoRegClientBarcodes($value)
@@ -514,7 +514,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает субботнюю доставку
      *
-     * @param $value
+     * @param bool $value
      * @return $this
      */
     public function setSaturdayDelivery($value)
@@ -526,7 +526,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает субботнюю доставку
      *
-     * @return string
+     * @return bool
      */
     public function getSaturdayDelivery()
     {
@@ -536,7 +536,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает день-в-день
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setSameDayDelivery($value)
@@ -558,7 +558,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает экспедирование
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setForwardingCount($value)
@@ -580,7 +580,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает забор доверенности
      *
-     * @param $value
+     * @param bool $value
      * @return $this
      */
     public function setIsTakeAttorney($value)
@@ -592,7 +592,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает забор доверенности
      *
-     * @return string
+     * @return bool
      */
     public function getIsTakeAttorney()
     {
@@ -602,7 +602,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает желаемаую дату доставки
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPreferredDeliveryDate($value)
@@ -624,7 +624,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает доставку временных интервалов
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setTimeInterval($value)

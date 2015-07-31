@@ -14,7 +14,7 @@ class ScanSheet_printScanSheet extends BasePrintDocumentParameters
     /**
      * Добавляет номер реестра
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function addNumber($value)

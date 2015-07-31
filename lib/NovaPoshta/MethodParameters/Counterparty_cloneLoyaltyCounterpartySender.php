@@ -14,7 +14,7 @@ class Counterparty_cloneLoyaltyCounterpartySender extends MethodParameters
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRef($value)

@@ -55,7 +55,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает реф
      * 
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -77,7 +77,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает реф контрагента
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCounterpartyRef($value)
@@ -99,7 +99,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает фамилию
      * 
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setFirstName($value)
@@ -121,7 +121,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает имя
      * 
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setLastName($value)
@@ -143,7 +143,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает отчество
      * 
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setMiddleName($value)
@@ -165,7 +165,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает номер телефона
      * 
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPhone($value)
@@ -187,7 +187,7 @@ class ContactPerson extends ApiModel
     /**
      * Устанавливает email
      * 
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setEmail($value)

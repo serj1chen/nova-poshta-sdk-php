@@ -36,7 +36,7 @@ class ScanSheet_removeDocuments extends MethodParameters
     /**
      * Добавить реф реестра
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function addDocumentRef($value)

@@ -15,7 +15,7 @@ class Counterparty_getCounterpartyAddresses extends MethodParameters
     /**
      * Устанавливет реф
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setRef($value)
@@ -37,7 +37,7 @@ class Counterparty_getCounterpartyAddresses extends MethodParameters
     /**
      * Устанавливает страницу
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setPage($value)

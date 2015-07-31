@@ -10,14 +10,14 @@ use NovaPoshta\Core\BaseModel;
  * Class Cargo
  * @package NovaPoshta\Models
  * @property string CargoDescription
- * @property string Amount
+ * @property int    Amount
  */
 class Cargo extends BaseModel
 {
     /**
      * Устанавливает реф груза
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCargoDescription($value)
@@ -39,7 +39,7 @@ class Cargo extends BaseModel
     /**
      * Устанавливает количество груза
      *
-     * @param $value
+     * @param int $value
      * @return $this
      */
     public function setAmount($value)
@@ -51,7 +51,7 @@ class Cargo extends BaseModel
     /**
      * Возвращает количество груза
      *
-     * @return string
+     * @return int
      */
     public function getAmount()
     {

@@ -15,7 +15,7 @@ class Counterparty_getCounterpartyByEDRPOU extends MethodParameters
     /**
      * Устанавливает ОКПО
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setEDRPOU($value)
@@ -37,7 +37,7 @@ class Counterparty_getCounterpartyByEDRPOU extends MethodParameters
     /**
      * Устанавливает реф города
      *
-     * @param $value
+     * @param string $value
      * @return $this
      */
     public function setCityRef($value)
