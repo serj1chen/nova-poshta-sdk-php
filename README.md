@@ -136,7 +136,7 @@ SDK разработана по официальной документации.
 Если Вам нужно логировать данные отправки/получения запросов. Нужно создать класс который наследуется от [Logger.php]
 и передать экземпляр этого класса в метод setClassLogger файла [Config.php].
 
-      Use NovaPoshta\Config;
+      use NovaPoshta\Config;
       
       Config::setClassLogger(new Logger_example());  
 
