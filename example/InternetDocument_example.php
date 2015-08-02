@@ -108,7 +108,7 @@ class InternetDocument_example
             ->setSeatsAmount('1')
             ->setCost('200')
             ->setDescription('ТЦ')
-//            ->addBackwardDeliveryData($backwardDeliveryData2)
+            ->addBackwardDeliveryData($backwardDeliveryData2)
             ->addBackwardDeliveryData($backwardDeliveryData1);
 
         return $internetDocument->save();
@@ -169,8 +169,6 @@ class InternetDocument_example
             ->addOptionsSeat($optionsSeat3)
             ->addOptionsSeat($optionsSeat4)
             ->addBackwardDeliveryData($backwardDeliveryData);
-
-        $internetDocument->CargoType = 'Cargo';
 
         return $internetDocument->save();
     }

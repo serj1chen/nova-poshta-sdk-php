@@ -27,6 +27,14 @@ use NovaPoshta\MethodParameters\MethodParameters;
 class Counterparty extends ApiModel
 {
     /**
+     * Отправитель
+     */
+    const SENDER = 'Sender';
+    /**
+     * Получатель
+     */
+    const RECIPIENT = 'Recipient';
+    /**
      * Третье лицо
      */
     const THIRD_PERSON = 'ThirdPerson';

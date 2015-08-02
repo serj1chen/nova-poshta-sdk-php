@@ -146,7 +146,7 @@ SDK разработана по официальной документации.
 Метод <b>setOriginalData</b>: запрос/ответ API Новой почты.
 Параметры: toData - запрос (тип: string); fromData - ответ (тип: string).
 
-Метод <b>setData</b>: запрос/ответ API Новой почты в формате SDK.
+Метод <b>setData</b>: запрос/ответ API Новой почты у формате SDK.
 Параметры: toData - запрос (объект: [DataContainer]); fromData - ответ (объект: [DataContainerResponse]).
 
 

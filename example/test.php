@@ -8,5 +8,5 @@ include_once 'autoload_example.php';
 Config_example::initConfig();
 
 
-$result = InternetDocument_example::save();
+$result = Other_example::createEN();
 

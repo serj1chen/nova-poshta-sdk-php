@@ -242,7 +242,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * Устанавливает тип плательщика обратной доставки
+     * Устанавливает плательщика
      *
      * @param string $value
      * @return $this
@@ -254,7 +254,7 @@ class InternetDocument extends ApiModel
     }
 
     /**
-     * Возвращает тип плательщика обратной доставки
+     * Возвращает плательщика
      *
      * @return string
      */
@@ -266,7 +266,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает объявленную стоимость
      *
-     * @param string $value
+     * @param float $value
      * @return $this
      */
     public function setCost($value)
@@ -278,7 +278,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает объявленную стоимость
      *
-     * @return string
+     * @return float
      */
     public function getCost()
     {
@@ -288,7 +288,7 @@ class InternetDocument extends ApiModel
     /**
      * Устанавливает количество мест отправления
      *
-     * @param string $value
+     * @param int $value
      * @return $this
      */
     public function setSeatsAmount($value)
@@ -300,7 +300,7 @@ class InternetDocument extends ApiModel
     /**
      * Возвращает количество мест отправления
      *
-     * @return string
+     * @return int
      */
     public function getSeatsAmount()
     {
