@@ -1,4 +1,4 @@
-# Новая почта. SDK для личного кабинета API 2
+# Новая Почта. SDK для личного кабинета API 2
 
 Для быстрого оформления большого количества отправлений используется способ электронного обмена данными между
 информационной системой компании «Новая Почта» и программным комплексом Партнера/Клиента. Обмен данными
@@ -9,8 +9,8 @@
 Важно! Все создаваемые ключи ограничены во времени действия, настоятельно рекомендуется учитывать данное ограничение.
 
 SDK разработана по официальной документации. За более детальной информацией по описанию моделей и методов обращайтесь
-на страницу официальной документации API 2 личного кабинета: [Новой почты]. SDK не является официальным SDK Новой
-почты, я его разработал в личных целях.
+на страницу официальной документации API 2 личного кабинета: [Новой Почты]. SDK не является официальным SDK Новой
+Почты, я его разработал в личных целях.
 
 ## Подключить SDK
 
@@ -143,15 +143,15 @@ SDK разработана по официальной документации.
 Пример класса логирования: [https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/example/Logger_example.php].
 (Соответственно у Вас будут данные куда-то записываться)
 
-Метод <b>setOriginalData</b>: запрос/ответ API Новой почты.
+Метод <b>setOriginalData</b>: запрос/ответ API Новой Почты.
 Параметры: toData - запрос (тип: string); fromData - ответ (тип: string).
 
-Метод <b>setData</b>: запрос/ответ API Новой почты у формате SDK.
+Метод <b>setData</b>: запрос/ответ API Новой Почты у формате SDK.
 Параметры: toData - запрос (объект: [DataContainer]); fromData - ответ (объект: [DataContainerResponse]).
 
 
 
-** SDK не является официальным SDK Новой почты
+** SDK не является официальным SDK Новой Почты
 
 
 License
@@ -164,7 +164,7 @@ MIT
 
 
 
-[Новой почты]:https://my.novaposhta.ua
+[Новой Почты]:https://my.novaposhta.ua
 [ApiModels]:https://github.com/serj1chen/NovaPoshta-SDK-PHP/tree/master/lib/NovaPoshta/ApiModels
 [MethodParameters]:https://github.com/serj1chen/NovaPoshta-SDK-PHP/tree/master/lib/NovaPoshta/MethodParameters
 [Config]:https://github.com/serj1chen/NovaPoshta-SDK-PHP/blob/master/lib/NovaPoshta/Config.php

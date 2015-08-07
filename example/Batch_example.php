@@ -29,8 +29,7 @@ class Batch_example
             'getTypesOfPayersForRedelivery' => null,
         );
 
-
-        Common::isBatch();
+        Common::batch();
 
         $dataArray['getBackwardDeliveryCargoTypes'] = Common::getBackwardDeliveryCargoTypes();
         $dataArray['getCargoDescriptionList'] = Common::getCargoDescriptionList();
@@ -69,7 +68,7 @@ class Batch_example
             'document2' => null,
         );
 
-        Common::isBatch();
+        Common::batch();
 
 
         $sender = new CounterpartyContact();

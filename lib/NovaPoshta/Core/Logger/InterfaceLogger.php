@@ -1,6 +1,8 @@
 <?php
 
 namespace NovaPoshta\Core\Logger;
+use NovaPoshta\Models\DataContainer;
+use NovaPoshta\Models\DataContainerResponse;
 
 /**
  * Логирования
@@ -12,8 +14,8 @@ interface InterfaceLogger
     /**
      * Данные оригинальные (сырые данные, в тому формате в котором отправляется запрос)
      *
-     * @param $fromData string запрос
-     * @param $toData string ответ
+     * @param string $fromData запрос
+     * @param string $toData ответ
      * @return mixed
      */
     public static function setOriginalData($toData, $fromData);
@@ -21,9 +23,9 @@ interface InterfaceLogger
     /**
      * Данные объектов запроса/ответа
      *
-     * @param $fromData
-     * @param $toData
+     * @param DataContainer $toData
+     * @param DataContainerResponse $fromData
      * @return mixed
      */
-    public static function setData($toData, $fromData);
+    public static function setData(DataContainer $toData, DataContainerResponse $fromData);
 }

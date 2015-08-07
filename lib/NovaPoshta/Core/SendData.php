@@ -17,13 +17,17 @@ use NovaPoshta\Models\DataContainerResponse;
 class SendData
 {
     private static $instance;
-    private $serializer;
-    protected $dataBatch = array();
     private static $countBatch = 0;
+
+    private $serializer;
+    private $logger = null;
+
+    protected $dataBatch = array();
 
     protected function __construct()
     {
         $this->serializer = SerializerFactory::getSerializer();
+        $this->logger = new DataLogger();
     }
 
     /**
@@ -57,8 +61,6 @@ class SendData
      */
     protected function _send(DataContainer $dataContainer, $isBatch = false)
     {
-        $logger = new DataLogger();
-
         $dataContainer->apiKey = Config::getApiKey();
         $dataContainer->language = Config::getLanguage();
         $dataContainer->id = $this->getIdBatch();
@@ -71,15 +73,15 @@ class SendData
             return $dataContainer->id;
         }
 
-        $logger->toData = $dataContainer;
+        $this->logger->toData = $dataContainer;
 
         $data = $this->serializer->serializeData($dataContainer);
 
-        $logger->toOriginalData = $data;
+        $this->logger->toOriginalData = $data;
 
         $response = $this->query($data);
 
-        $logger->fromOriginalData = $response;
+        $this->logger->fromOriginalData = $response;
 
         if($response){
             $response = $this->serializer->unserializeData($response);
@@ -89,9 +91,9 @@ class SendData
             $response->errors[] = array('DataSerializerJSON.ERROR_REQUEST');
         }
 
-        $logger->fromData = $response;
+        $this->logger->fromData = $response;
 
-        BaseLogger::setDataLogger($logger);
+        $this->setDataLogger();
 
         return $response;
     }
@@ -105,8 +107,16 @@ class SendData
             return array();
         }
 
+        $this->logger->toBatchData = $this->dataBatch;
+
         $data = $this->serializer->serializeBatchData($this->dataBatch);
+
+        $this->logger->toOriginalData = $data;
+
         $response = $this->query($data);
+
+        $this->logger->fromOriginalData = $response;
+
         $response = $this->serializer->unserializeBatchData($response);
 
         $responseDataContainers = array();
@@ -114,9 +124,18 @@ class SendData
             $responseDataContainers[$item->id] = $item;
         }
 
+        $this->logger->fromBatchData = $responseDataContainers;
+
+        $this->setDataLogger();
+
         $this->dataBatch = array();
 
         return $responseDataContainers;
+    }
+
+    protected function setDataLogger()
+    {
+        BaseLogger::setDataLogger($this->logger);
     }
 
     /**

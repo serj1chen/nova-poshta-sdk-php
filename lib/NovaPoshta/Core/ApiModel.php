@@ -24,7 +24,7 @@ abstract class ApiModel extends BaseModel
      *
      * @return bool
      */
-    public static function isBatch()
+    public static function batch()
     {
         self::$isBatch = true;
         return self::$isBatch;

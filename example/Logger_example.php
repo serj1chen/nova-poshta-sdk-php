@@ -3,6 +3,8 @@
 namespace NovaPoshta_example;
 
 use NovaPoshta\Logger;
+use NovaPoshta\Models\DataContainer;
+use NovaPoshta\Models\DataContainerResponse;
 
 class Logger_example extends Logger
 {
@@ -21,7 +23,7 @@ class Logger_example extends Logger
         echo '<br><br>';
     }
 
-    public static function setData($toData, $fromData)
+    public static function setData(DataContainer $toData, DataContainerResponse $fromData)
     {
         echo 'Send data object:';
         echo '<br>';
