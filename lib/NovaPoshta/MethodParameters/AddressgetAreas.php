@@ -5,12 +5,12 @@ namespace NovaPoshta\MethodParameters;
 /**
  * Параметры метода getAreas модели Address
  *
- * Class Address_getStreet
+ * Class AddressGetAreas
  * @package NovaPoshta\DataMethods
  * @property string Ref
  * @property string Page
  */
-class Address_getAreas extends MethodParameters
+class AddressGetAreas extends MethodParameters
 {
     /**
      * Устанавливает реф
