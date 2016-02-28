@@ -21,8 +21,8 @@
     "ext-json": "*"
   },
   "autoload": {
-    "psr-0": {
-      "NovaPoshta": "lib/"
+    "psr-4": {
+      "NovaPoshta\\": "lib/"
     }
   }
 }
