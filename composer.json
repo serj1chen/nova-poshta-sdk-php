@@ -22,6 +22,6 @@
     "ext-json": "*"
   },
   "autoload": {
-    "files": ["lib/bootstrap.php"]
+    "files": ["lib/NovaPoshta/bootstrap.php"]
   }
 }
