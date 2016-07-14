@@ -253,4 +253,15 @@ class Address extends ApiModel
     {
         return self::sendData(__FUNCTION__, $data);
     }
+
+    /**
+     * Вызвать метод getSettlements() - загрузить справочник населенных пунктов Украины
+     *
+     * @param MethodParameters $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getSettlements(MethodParameters $data = null)
+    {
+        return self::sendData(__FUNCTION__, $data);
+    }
 }
