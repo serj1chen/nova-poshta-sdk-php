@@ -7,6 +7,8 @@ use NovaPoshta\Core\Logger\BaseLogger;
 use NovaPoshta\Core\Logger\DataLogger;
 use NovaPoshta\Core\Serializer\SerializerBatchInterface;
 use NovaPoshta\Core\Serializer\SerializerFactory;
+use NovaPoshta\Core\Cache;
+use NovaPoshta\Core\Connect;
 use NovaPoshta\Models\DataContainer;
 use NovaPoshta\Models\DataContainerResponse;
 
@@ -79,8 +81,16 @@ class SendData
 
         $this->logger->toOriginalData = $data;
 
-        $response = $this->query($data);
-
+        //$response = $this->query($data);
+        //$cacheResponse = $this->getAnswer($dataContainer);
+        
+        $source = Cache::getSource($dataContainer);
+        if ($source === 'cache') {
+            $response = Cache::getCache($data);
+        } else {
+            $response = Connect::sendQueryToApi($data);
+        }
+        
         $this->logger->fromOriginalData = $response;
 
         if($response){
@@ -90,11 +100,13 @@ class SendData
             $response->success = false;
             $response->errors[] = array('DataSerializerJSON.ERROR_REQUEST');
         }
+        
+        $response->mycache = Cache::getCacheLog($this->logger->fromOriginalData);
 
         $this->logger->fromData = $response;
 
         $this->setDataLogger();
-
+        
         return $response;
     }
 
@@ -145,6 +157,15 @@ class SendData
     {
         return ++self::$countBatch;
     }
+    
+//    /**
+//     * Выбор источника данных: кэш или API Новой Почты
+//     */
+//    protected function getAnswer(DataContainer $dataContainer)
+//    {
+//        $cacheResponse = Connect::getAnswer($dataContainer);
+//        return $cacheResponse;
+//    }
 
     /**
      * @param $data
@@ -152,24 +173,6 @@ class SendData
      */
     protected function query($data)
     {
-        try {
-            $ch = curl_init();
-
-            curl_setopt($ch, CURLOPT_URL, Config::getUrlApi());
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/plain"));
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-
-            $response = curl_exec($ch);
-
-            curl_close($ch);
-
-            return $response;
-        } catch (\Exception $e) {
-            return false;
-        }
+       return Connect::sendQueryToApi($data);
     }
 }

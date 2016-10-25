@@ -18,6 +18,7 @@ class DataContainerResponse extends BaseModel
     public $errors = array();
     public $warnings = array();
     public $info = array();
+    public $mycache = array();
 
     public function __construct(\stdClass $data = null)
     {
