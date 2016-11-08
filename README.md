@@ -1,5 +1,7 @@
 # Новая Почта. SDK для личного кабинета API 2
 
+[Статья на habrahabr]
+
 Для быстрого оформления большого количества отправлений используется способ электронного обмена данными между
 информационной системой компании «Новая Почта» и программным комплексом Партнера/Клиента. Обмен данными
 осуществляется путем передачи информации через программную среду АРІ.
@@ -163,7 +165,7 @@ MIT
 
 
 
-
+[Статья на habrahabr]:https://habrahabr.ru/post/264209/
 [Новой Почты]:https://my.novaposhta.ua
 [ApiModels]:https://github.com/serj1chen/NovaPoshta-SDK-PHP/tree/master/lib/NovaPoshta/ApiModels
 [MethodParameters]:https://github.com/serj1chen/NovaPoshta-SDK-PHP/tree/master/lib/NovaPoshta/MethodParameters
