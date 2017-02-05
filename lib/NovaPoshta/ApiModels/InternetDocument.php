@@ -24,6 +24,7 @@ use stdClass;
  * @property string              PayerType
  * @property float               Cost
  * @property int                 SeatsAmount
+ * @property float               AfterpaymentOnGoodsCost
  * @property string              Description
  * @property string              CargoType
  * @property float               Weight
@@ -217,6 +218,28 @@ class InternetDocument extends ApiModel
     public function getServiceType()
     {
         return $this->ServiceType;
+    }
+    
+    /**
+     * Устанавливает сумму оплаты для услуги контроль оплаты (оплата на рассчетный счет)
+     *
+     * @param float $value
+     * @return $this
+     */
+    public function setAfterpaymentOnGoodsCost($value)
+    {
+        $this->AfterpaymentOnGoodsCost = $value;
+        return $this;
+    }
+
+    /**
+     * Возвращает сумму оплаты для услуги контроль оплаты (оплата на рассчетный счет)
+     *
+     * @return float
+     */
+    public function getAfterpaymentOnGoodsCost()
+    {
+        return $this->AfterpaymentOnGoodsCost;
     }
 
     /**
