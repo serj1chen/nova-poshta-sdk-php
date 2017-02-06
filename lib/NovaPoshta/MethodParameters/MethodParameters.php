@@ -10,6 +10,8 @@ use NovaPoshta\Core\BaseModel;
  * Class MethodParameters
  *
  * @property array $DocumentRefs
+ * @property string $Copies
+ * @property string $Type
  * @package NovaPoshta\MethodParameters
  */
 class MethodParameters extends BaseModel
