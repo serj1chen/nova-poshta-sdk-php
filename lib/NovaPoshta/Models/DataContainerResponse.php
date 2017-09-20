@@ -16,6 +16,7 @@ class DataContainerResponse extends BaseModel
     public $success;
     public $data = array();
     public $errors = array();
+    public $errorCodes = array();
     public $warnings = array();
     public $info = array();
 
