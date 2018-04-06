@@ -11,6 +11,7 @@ namespace NovaPoshta\MethodParameters;
  * @property string FindByString
  * @property string Page
  */
+
 class Address_getSettlements extends MethodParameters
 {
     /**
