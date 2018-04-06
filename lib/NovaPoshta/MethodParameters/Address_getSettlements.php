@@ -3,7 +3,7 @@
 namespace NovaPoshta\MethodParameters;
 
 /**
- * Параметры метода getCities модели Address
+ * Параметры метода getSettlements модели Address
  *
  * Class Address_getStreet
  * @package NovaPoshta\DataMethods
@@ -11,7 +11,7 @@ namespace NovaPoshta\MethodParameters;
  * @property string FindByString
  * @property string Page
  */
-class Address_getCities extends MethodParameters
+class Address_getSettlements extends MethodParameters
 {
     /**
      * Устанавливает реф

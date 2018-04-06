@@ -914,6 +914,7 @@ class InternetDocument extends ApiModel
     /**
      * Вызвать метод documentsTracking() - трекинг документов
      *
+     * @deprecated
      * @param MethodParameters $data
      * @return \NovaPoshta\Models\DataContainerResponse
      */
