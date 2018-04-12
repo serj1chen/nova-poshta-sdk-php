@@ -244,6 +244,17 @@ class Address extends ApiModel
     }
 
     /**
+     * Вызвать метод getWarehouses() - загрузить справочник типов отделений компании «Новая Почта»
+     *
+     * @param MethodParameters $data
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getWarehouseTypes(MethodParameters $data = null)
+    {
+        return self::sendData(__FUNCTION__, $data);
+    }
+
+    /**
      * Вызвать метод getAreas() - загрузить справочник географических областей Украины
      *
      * @param MethodParameters $data

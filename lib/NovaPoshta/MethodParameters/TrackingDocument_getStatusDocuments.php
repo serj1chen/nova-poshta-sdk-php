@@ -1,17 +1,24 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Vladyslav Tychyna
+ * Date: 02.04.18
+ * Time: 16:12
+ */
 
 namespace NovaPoshta\MethodParameters;
 
+
 /**
- * Параметры метода documentsTracking модели InternetDocument
+ * Параметры метода getStatusDocuments модели TrackingDocument
  *
- * Class InternetDocument_documentsTracking
+ * Class TrackingDocument_getStatusDocuments
  * @package NovaPoshta\DataMethods
  * @property array Documents
- * @deprecated
  */
-class InternetDocument_documentsTracking extends MethodParameters
+class TrackingDocument_getStatusDocuments extends MethodParameters
 {
+
     /**
      * Устанавливает номера документов
      *
@@ -19,8 +26,9 @@ class InternetDocument_documentsTracking extends MethodParameters
      *
      * @return $this
      */
-    public function setDocuments(array $value)
+    public function addDocuments(array $value)
     {
+
         $this->Documents = $value;
 
         return $this;
@@ -46,7 +54,7 @@ class InternetDocument_documentsTracking extends MethodParameters
     public function addDocument($value)
     {
         if (!$this->Documents) {
-            $this->Documents = array();
+            $this->Documents = [];
         }
         $this->Documents[] = $value;
 
