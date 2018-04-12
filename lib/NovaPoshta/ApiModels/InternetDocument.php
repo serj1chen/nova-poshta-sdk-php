@@ -17,6 +17,7 @@ use stdClass;
  * @property CounterpartyContact Sender
  * @property CounterpartyContact Recipient
  * @property string              ThirdPerson
+ * @property string                 NewAddress
  * @property string              Ref
  * @property string              DateTime
  * @property string              ServiceType
@@ -45,6 +46,15 @@ use stdClass;
  * @property array               CargoDetails
  * @property array               OptionsSeat
  * @property array               BackwardDeliveryData
+ * @property string              RecipientCityName
+ * @property string              RecipientArea
+ * @property string              RecipientRegion
+ * @property string              RecipientAddressName
+ * @property string              RecipientHouse
+ * @property string              RecipientFlat
+ * @property string              RecipientName
+ * @property string              RecipientType
+ * @property string              RecipientsPhone
  *
  * Class InternetDocument
  * @package NovaPoshta\ApiModels
@@ -68,6 +78,11 @@ class InternetDocument extends ApiModel
      * Печатать 4 экземпляра
      */
     const PRINT_COPIES_FOURFOLD = 'fourfold';
+
+    /**
+     * @var int Использование нового адресного справочника. 1 - ДА, 0 - НЕТ
+     */
+    public $NewAddress = 0;
 
     private function getDataInternetDocument()
     {
@@ -884,6 +899,189 @@ class InternetDocument extends ApiModel
     {
         return self::sendData(__FUNCTION__, $data);
     }
+
+    /**
+     * @return string
+     */
+    public function getRecipientCityName()
+    {
+        return $this->RecipientCityName;
+    }
+
+    /**
+     * @param string $RecipientCityName
+     */
+    public function setRecipientCityName($RecipientCityName)
+    {
+        $this->RecipientCityName = $RecipientCityName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientArea()
+    {
+        return $this->RecipientArea;
+    }
+
+    /**
+     * @param string $RecipientArea
+     */
+    public function setRecipientArea($RecipientArea)
+    {
+        $this->RecipientArea = $RecipientArea;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientRegion()
+    {
+        return $this->RecipientAreaRegion;
+    }
+
+    /**
+     * @param string $RecipientRegion
+     */
+    public function setRecipientRegion($RecipientRegion)
+    {
+        $this->RecipientAreaRegion = $RecipientRegion;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientAddressName()
+    {
+        return $this->RecipientAddressName;
+    }
+
+    /**
+     * @param string $RecipientAddressName
+     */
+    public function setRecipientAddressName($RecipientAddressName)
+    {
+        $this->RecipientAddressName = $RecipientAddressName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientHouse()
+    {
+        return $this->RecipientHouse;
+    }
+
+    /**
+     * @param string $RecipientHouse
+     */
+    public function setRecipientHouse($RecipientHouse)
+    {
+        $this->RecipientHouse = $RecipientHouse;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientFlat()
+    {
+        return $this->RecipientFlat;
+    }
+
+    /**
+     * @param string $RecipientFlat
+     */
+    public function setRecipientFlat($RecipientFlat)
+    {
+        $this->RecipientFlat = $RecipientFlat;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientName()
+    {
+        return $this->RecipientName;
+    }
+
+    /**
+     * @param string $RecipientName
+     */
+    public function setRecipientName($RecipientName)
+    {
+        $this->RecipientName = $RecipientName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientType()
+    {
+        return $this->RecipientType;
+    }
+
+    /**
+     * @param string $RecipientType
+     */
+    public function setRecipientType($RecipientType)
+    {
+        $this->RecipientType = $RecipientType;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRecipientsPhone()
+    {
+        return $this->RecipientsPhone;
+    }
+
+    /**
+     * @param string $RecipientsPhone
+     */
+    public function setRecipientsPhone($RecipientsPhone)
+    {
+        $this->RecipientsPhone = $RecipientsPhone;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNewAddress()
+    {
+        return $this->NewAddress;
+    }
+
+    /**
+     * @param int $NewAddress
+     */
+    public function setNewAddress($NewAddress)
+    {
+        $this->NewAddress = $NewAddress;
+
+        return $this;
+    }
+
+
+
 
     /**
      * Вызвать метод printDocument() - печать ЭН
