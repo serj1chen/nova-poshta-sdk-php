@@ -8,7 +8,6 @@ namespace NovaPoshta\MethodParameters;
  * Class InternetDocument_documentsTracking
  * @package NovaPoshta\DataMethods
  * @property array Documents
- * @deprecated
  */
 class InternetDocument_documentsTracking extends MethodParameters
 {

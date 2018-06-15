@@ -27,7 +27,6 @@ class DataSerializerJSON implements SerializerInterface
         }
 
         $data = json_decode(json_encode($data), false);
-        $data->errorCodes = (array)$data->errorCodes;
         $data->errors = (array)$data->errors;
         $dataContainerResponse = new DataContainerResponse($data);
 

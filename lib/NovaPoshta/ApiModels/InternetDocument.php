@@ -17,7 +17,7 @@ use stdClass;
  * @property CounterpartyContact Sender
  * @property CounterpartyContact Recipient
  * @property string              ThirdPerson
- * @property string                 NewAddress
+ * @property string              NewAddress
  * @property string              Ref
  * @property string              DateTime
  * @property string              ServiceType
@@ -78,11 +78,6 @@ class InternetDocument extends ApiModel
      * Печатать 4 экземпляра
      */
     const PRINT_COPIES_FOURFOLD = 'fourfold';
-
-    /**
-     * @var int Использование нового адресного справочника. 1 - ДА, 0 - НЕТ
-     */
-    public $NewAddress = 0;
 
     private function getDataInternetDocument()
     {
@@ -234,7 +229,7 @@ class InternetDocument extends ApiModel
     {
         return $this->ServiceType;
     }
-    
+
     /**
      * Устанавливает сумму оплаты для услуги контроль оплаты (оплата на рассчетный счет)
      *
@@ -1072,6 +1067,7 @@ class InternetDocument extends ApiModel
 
     /**
      * @param int $NewAddress
+     * Использование нового адресного справочника. 1 - ДА, 0 - НЕТ
      */
     public function setNewAddress($NewAddress)
     {
