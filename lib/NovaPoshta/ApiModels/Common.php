@@ -154,4 +154,14 @@ class Common extends ApiModel
     {
         return self::sendData(__FUNCTION__);
     }
+
+    /**
+     * Вызвать метод getMessageCodeText() - получить список ошибок с описанием на 3 языках
+     *
+     * @return \NovaPoshta\Models\DataContainerResponse
+     */
+    public static function getMessageCodeText()
+    {
+        return self::sendData(__FUNCTION__);
+    }
 }
