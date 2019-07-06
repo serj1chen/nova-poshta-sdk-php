@@ -1104,6 +1104,19 @@ class InternetDocument extends ApiModel
 
         return $link;
     }
+    
+    /**
+     * Вызвать метод printMarking100x100() - печать маркировок Zebra 100*100 
+     *
+     * @param MethodParameters $data
+     * @return string
+     */
+    public static function printMarking100x100(MethodParameters $data = null)
+    {
+        $link = self::getPrintLink('printMarking100x100', $data);
+
+        return $link;
+    }
 
     /**
      * Вызвать метод documentsTracking() - трекинг документов
