@@ -371,6 +371,19 @@ class InternetDocument_example
         return InternetDocument::printMarkings($data);
     }
 
+    public static function printMarking100x100()
+    {
+        $data = new \NovaPoshta\MethodParameters\InternetDocument_printMarkings();
+        $data->setDocumentRefs(array('3b4e5620-b490-11e4-a77a-005056887b8d', '3b4e5620-b490-11e4-a77a-005056887b8d'));
+        // или
+        $data->addDocumentRef('3b4e5620-b490-11e4-a77a-005056887b8d');
+
+        $data->setType(InternetDocument::PRINT_TYPE_HTML);
+        $data->setCopies(InternetDocument::PRINT_COPIES_FOURFOLD);
+
+        return InternetDocument::printMarking100x100($data);
+    }
+
     public static function getDocument()
     {
         $data = new \NovaPoshta\MethodParameters\InternetDocument_getDocument();
