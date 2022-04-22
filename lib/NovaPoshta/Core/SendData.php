@@ -156,6 +156,8 @@ class SendData
             $ch = curl_init();
 
             curl_setopt($ch, CURLOPT_URL, Config::getUrlApi());
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::getConnectTimeout());
+            curl_setopt($ch, CURLOPT_TIMEOUT, Config::getTimeout());
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/plain"));
             curl_setopt($ch, CURLOPT_HEADER, 0);

@@ -57,6 +57,14 @@ class Config
      * @var string URL личного кабинета Новой Почты
      */
     protected static $urlMyNovaPoshta = 'https://my.novaposhta.ua';
+    /**
+     * @var int Максимальное время установления соединения с сервером
+     */
+    protected static $connectTimeout = 5;
+    /**
+     * @var int Максимальное время передачи ответа от сервера
+     */
+    protected static $timeout = 10;
 
     /**
      * @var InterfaceLogger
@@ -141,6 +149,48 @@ class Config
     public static function getUrlMyNovaPoshta()
     {
         return self::$urlMyNovaPoshta;
+    }
+
+    /**
+     * Возвращает максимальное время установления соединения с сервером
+     *
+     * @return int
+     */
+    public static function getConnectTimeout()
+    {
+        return self::$connectTimeout;
+    }
+
+    /**
+     * Устанавливает максимальное время установления соединения с сервером
+     *
+     * @param int $value
+     * @return void
+     */
+    public static function setConnectTimeout($value)
+    {
+        self::$connectTimeout = $value;
+    }
+
+    /**
+     * Возвращает максимальное время передачи ответа от сервера
+     *
+     * @return int
+     */
+    public static function getTimeout()
+    {
+        return self::$timeout;
+    }
+
+    /**
+     * Устанавливает максимальное время передачи ответа от сервера
+     *
+     * @param int $value
+     * @return void
+     */
+    public static function setTimeout($value)
+    {
+        self::$timeout = $value;
     }
 
     /**
